@@ -1,13 +1,119 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Respira Black';
+  src: url('./assets/fonts/Respira\ Black.ttf') format('opentype');;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Sporting Grotesque';
+  src: url('./assets/fonts/SportingGrotesque-Regular.otf') format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sporting Grotesque';
+  src: url('./assets/fonts/SportingGrotesque-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-respira {
+  font-family: 'Respira Black';
+
+}
+
+.font-sporting-regular {
+  font-family: 'Sporting Grotesque';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-sporting-bold {
+  font-family: 'Sporting Grotesque';
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canela Trial';
+  src: url('./assets/fonts/Canela-RegularItalic-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Canela Trial';
+  src: url('./assets/fonts/Canela-Bold-Trial.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canela Trial';
+  src: url('./assets/fonts/Canela-LightItalic-Trial.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Canela Trial';
+  src: url('./assets/fonts/Canela-Regular-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.font-canela-regular {
+  font-family: 'Canela Trial', serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-canela-light-italic {
+  font-family: 'Canela Trial', serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.font-canela-bold {
+font-family: 'Canela Trial', serif;
+font-weight: bold;
+font-style: normal;
+
+}
+
+.font-canela-italic {
+  font-family: 'Canela Trial', serif;
+  font-style: italic;
+}
+
+.letter-spacing-tight {
+  letter-spacing: -0.1em; /* Réduit l'espacement de 10% */
+}
+
+.hover-font-change:hover {
+  font-family: 'Canela Trial', serif;
+  font-weight: 300;
+  font-style: italic;
+  transition: font-family 0.3s ease-in-out;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+h1, span {
+  line-height: 1;
 }
