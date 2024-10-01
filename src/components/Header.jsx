@@ -27,39 +27,43 @@ const Header = () => {
 
   return (
     <>
-      <header className="font-sporting letter-spacing-tight text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px]  flex justify-between items-center p-10 overflow-hidden">
-        <Link
-          to="home"
-          smooth={true}
-          duration={1000}
-          className="cursor-pointer "
-        >
-          <div onClick={handleNavigationHome}>
-            <h1 className=" tracking-wide">Maurine Cornillon </h1>
-            <h2 className="tracking-wide">Web Developer</h2>
-          </div>
-        </Link>
-
-        <Link
-          to="menu"
-          smooth={true}
-          duration={1000}
-          className="cursor-pointer text-[2px] sm:text-[10px] md:text-[12px] lg:text-[10px] xl:text-[16px]"
-        >
-          <div
-            onClick={handleCrossClick}
-            className="flex justify-center items-center h-full relative"
+      <header className="font-sporting text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[12px]   relative w-full p-10">
+        <div className="flex justify-between items-center">
+          <Link
+            to="home"
+            smooth={true}
+            duration={1000}
+            className="cursor-pointer"
           >
-            <div className="group cursor-pointer relative w-8 h-8">
-              <div className="absolute top-1/2 left-0 w-full h-[0.5px] bg-black transform -translate-y-1/2 transition-transform duration-300 group-hover:rotate-90"></div>
-              <div className="absolute top-0 left-1/2 h-full w-[0.5px] bg-black transform -translate-x-1/2 transition-transform duration-300 group-hover:rotate-90"></div>
+            <div onClick={handleNavigationHome} className="w-30px">
+              <h1 className="tracking-wide">Maurine Cornillon</h1>
+              <h2 className="tracking-wide">Web Developer</h2>
             </div>
-          </div>
-        </Link>
+          </Link>
 
-        <div className="text-right">
-          <p className=" tracking-wide">Paris, France</p>
-          <span className="ml-4  tracking-wide">{currentTime}</span>
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <Link
+              to="menu"
+              smooth={true}
+              duration={1000}
+              className="cursor-pointer"
+            >
+              <div
+                onClick={handleCrossClick}
+                className="flex justify-center items-center h-full relative"
+              >
+                <div className="group cursor-pointer relative w-8 h-8">
+                  <div className="absolute top-1/2 left-0 w-full h-[0.5px] bg-black transform -translate-y-1/2 transition-transform duration-300 group-hover:rotate-90"></div>
+                  <div className="absolute top-0 left-1/2 h-full w-[0.5px] bg-black transform -translate-x-1/2 transition-transform duration-300 group-hover:rotate-90"></div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-right">
+            <p className="tracking-wide">Paris, France</p>
+            <span className="ml-4 tracking-wide">{currentTime}</span>
+          </div>
         </div>
       </header>
     </>
