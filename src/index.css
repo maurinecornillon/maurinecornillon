@@ -71,13 +71,16 @@
   font-family: 'Canela Trial', serif;
   font-weight: normal;
   font-style: normal;
+  
 }
 
 .font-canela-light-italic {
   font-family: 'Canela Trial', serif;
-  font-weight: 300;
+  font-weight: 100;
   font-style: italic;
+  
 }
+
 
 .font-canela-bold {
 font-family: 'Canela Trial', serif;
@@ -102,6 +105,26 @@ font-style: normal;
   transition: font-family 0.3s ease-in-out;
 }
 
+.cursor-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.custom-cursor {
+  mix-blend-mode: difference;
+  z-index: 9999;
+
+}
+
+.custom-cursor {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -117,3 +140,46 @@ main {
 h1, span {
   line-height: 1;
 }
+
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+
+
+
+.word {
+  display: inline-block;
+  background: linear-gradient(90deg, #000 50%,#d3d3d3 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background-position 0.6s ease; /* Transition fluide sur le changement de position du dégradé */
+  background-size: 200% 100%;
+  background-position: 100% 0; /* Position de départ du dégradé, mot entièrement en gris */
+}
+
+.word.active {
+  background-position: 0 0; /* Le dégradé bouge pour remplir progressivement le mot de noir */
+}
+
+.skills-section {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skills-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+

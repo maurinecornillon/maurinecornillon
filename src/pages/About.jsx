@@ -57,7 +57,7 @@ const About = () => {
         <div className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
           <div>
             <motion.h1
-              className="text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
+              className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ type: "spring", stiffness: 60, damping: 20 }}
@@ -68,7 +68,7 @@ const About = () => {
 
           <div className="mt-60">
             <motion.h2
-              className="text-[150px] text-gray-300 font-canela-light-italic tracking-widest m-0 p-0 leading-none"
+              className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] text-gray-300 font-canela-light-italic tracking-widest m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{
@@ -83,6 +83,7 @@ const About = () => {
           </div>
         </div>
       </div>
+
       {/* Profile component */}
       <motion.div
         ref={refProfile}
@@ -102,11 +103,10 @@ const About = () => {
       </motion.div>
 
       {/* Skills component */}
-
       <div className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
         <div>
           <motion.h1
-            className="text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
+            className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ type: "spring", stiffness: 60, damping: 20 }}
@@ -117,7 +117,7 @@ const About = () => {
 
         <div className="mt-60">
           <motion.h2
-            className="text-[150px] text-gray-300 font-canela-light-italic tracking-widest m-0 p-0 leading-none"
+            className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] text-gray-300 font-canela-light-italic tracking-widest m-0 p-0 leading-none"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{
@@ -148,8 +148,6 @@ const About = () => {
       >
         <Skills />
       </motion.div>
-
-      {/* Contact components */}
 
       <motion.div
         ref={refContact}

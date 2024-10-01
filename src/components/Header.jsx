@@ -56,6 +56,7 @@ const Header = () => {
             </div>
           </div>
         </Link>
+
         <div className="text-right">
           <p className=" tracking-wide">Paris, France</p>
           <span className="ml-4  tracking-wide">{currentTime}</span>

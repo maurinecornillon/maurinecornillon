@@ -7,6 +7,9 @@ module.exports = {
         sporting: ["Sporting Grotesque", "sans-serif"],
         canela: ["Canela Trial", "serif"],
       },
+      letterSpacing: {
+        tightest: "0.1em",
+      },
       colors: {
         primary: "#FFFFFF",
         secondary: "#212121",

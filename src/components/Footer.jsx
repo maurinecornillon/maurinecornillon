@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa"; // Ajout de l'icône GitH
 
 const Footer = () => {
   return (
-    <footer className="w-full flex justify-between items-center px-10 pt-20 pb-10">
+    <footer className="w-full flex justify-between items-center px-10 pt-0 pb-10">
       {/* Left side - Social icons */}
       <div className="flex space-x-4">
         {/* LinkedIn */}

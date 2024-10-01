@@ -1,17 +1,80 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useTransform, useScroll } from "framer-motion";
 import Header from "../components/Header";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-import cover1 from "../assets/img/TEST.png";
-import cover2 from "../assets/img/cover1.jpg";
-import cover3 from "../assets/img/cover3.jpeg";
-import cover4 from "../assets/img/cover4.jpeg";
-
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
+
+import cover1 from "../assets/img/cover1.jpg";
+
+const cards = [
+  {
+    url: cover1,
+    text1: "FRONT-END",
+    text2: "BACK-END",
+    text3: "JS VANILLA",
+    text4: "NODEJS",
+    text5: "MONGODB",
+    text6: "DOCKER",
+    title: "ESTIMEO",
+    id: 1,
+  },
+  {
+    url: cover1,
+    text2: "FRONT-END",
+    text3: "BACK-END",
+    text1: "PROJECT MANAGEMENT",
+    text7: "UI/UX",
+    text4: "REACTJS",
+    text5: "NODEJS",
+    text6: "MONGODB",
+    title: "LINKERA",
+    id: 2,
+  },
+  {
+    url: cover1,
+    text2: "FRONT-END",
+    text3: "BACK-END",
+    text1: "LEAD DEV",
+    text5: "UI/UX",
+    text4: "PYTHON",
+    title: "OTOME GAME",
+    id: 3,
+  },
+  {
+    url: cover1,
+    title: "ANNAMOLLY",
+    text1: "FRONT-END",
+    text2: "BACK-END",
+    text6: "UI/UX",
+    text4: "REACTJS",
+    text5: "NODEJS",
+    text3: "MONGODB",
+    id: 4,
+  },
+  {
+    url: cover1,
+    title: "SMARTBACK",
+    text1: "FRONT-END",
+    text4: "PO",
+    text3: "UI/UX",
+    text2: "REACTJS",
+    id: 5,
+  },
+];
 
 const Projects = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  // Adjusted x transformation to avoid the extra space at the end
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.1,
@@ -45,7 +108,7 @@ const Projects = () => {
         <main className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
           <div>
             <motion.h1
-              className="text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
+              className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ type: "spring", stiffness: 60, damping: 20 }}
@@ -56,7 +119,7 @@ const Projects = () => {
 
           <div className="mt-60">
             <motion.h2
-              className="text-[150px] text-gray-300 font-canela-light-italic tracking-widest m-0 p-0 leading-none"
+              className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px]  text-gray-300 font-canela-light-italic tracking-widest m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{
@@ -86,41 +149,16 @@ const Projects = () => {
           delay: 0.2,
         }}
       >
-        <div className="container mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-            {[
-              { id: 1, title: "ESTIMEO", img: cover1 },
-              { id: 2, title: "LINKERA", img: cover2 },
-              { id: 3, title: "OTOME GAME5", img: cover3 },
-              { id: 4, title: "SMART BACK", img: cover4 },
-            ].map((project) => (
-              <div key={project.id}>
-                <div className="mb-4">
-                  <p className="text-4xl font-bold font-sporting-bold text-black">
-                    0{project.id}.
-                  </p>
-                  <p className="text-lg font-light font-sporting-regular text-black">
-                    Visual identity for an alternative investment broker
-                  </p>
-                </div>
-                <div className="relative group">
-                  <div className="overflow-hidden rounded-lg">
-                    <img
-                      src={project.img}
-                      alt={project.title}
-                      className="w-full h-[500px] object-cover transition-transform duration-300 transform group-hover:scale-110 group-hover:-rotate-3"
-                    />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <h2 className="text-white font-sporting-bold text-4xl font-bold mix-blend-difference opacity-0 group-hover:opacity-100 group-hover:duration-0">
-                      {project.title}
-                    </h2>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <section ref={targetRef} className="relative h-[300vh]">
+          <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+            <motion.div style={{ x }} className="flex p-10 gap-4 w-full">
+              {/* Adjusted the width to 100vw to prevent extra space */}
+              {cards.map((card) => (
+                <Card card={card} key={card.id} />
+              ))}
+            </motion.div>
           </div>
-        </div>
+        </section>
       </motion.div>
 
       <motion.div
@@ -139,8 +177,74 @@ const Projects = () => {
       >
         <Contact />
       </motion.div>
+
       <Footer />
     </>
+  );
+};
+
+const Card = ({ card }) => {
+  const navigate = useNavigate(); // Use navigate inside the Card component
+
+  const handleNavigation = (title) => {
+    switch (title) {
+      case "ESTIMEO":
+        navigate("/estimeo");
+        break;
+      case "LINKERA":
+        navigate("/linkera");
+        break;
+      case "OTOME GAME":
+        navigate("/otome-game");
+        break;
+      case "ANNAMOLLY":
+        navigate("/annamolly");
+        break;
+      case "SMARTBACK":
+        navigate("/smartback");
+        break;
+      default:
+        break;
+    }
+  };
+
+  return (
+    <div
+      key={card.id}
+      onClick={() => handleNavigation(card.title)}
+      className="relative h-[450px] min-w-[450px] border-4 border-black bg-white p-4 group transition-all duration-300 ease-in-out cursor-pointer"
+    >
+      {/* Image en haut à droite */}
+      <div className="absolute top-4 right-4 w-16 h-16 transition-all duration-300 ease-in-out group-hover:opacity-0">
+        <span className="text-[100px] font-sporting-bold">•</span>
+      </div>
+
+      {/* Texte de remplacement lors du hover */}
+      <div className="absolute top-4 right-4 w-16 h-16 group-hover:w-60 group-hover:h-24 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out flex flex-col text-right">
+        <p className="text-[12px] font-sporting-regular">{card.text1}</p>
+        <p className="text-[12px] font-sporting-regular">{card.text2}</p>
+        <p className="text-[12px] font-sporting-regular">{card.text3}</p>
+        <p className="text-[12px] font-sporting-regular">{card.text4}</p>
+        <p className="text-[12px] font-sporting-regular">{card.text5}</p>
+        <p className="text-[12px] font-sporting-regular">{card.text6}</p>
+        <p className="text-[12px] font-sporting-regular">{card.text7}</p>
+      </div>
+
+      {/* Numéro en haut à gauche */}
+      <span className="absolute top-4 left-4 text-[60px] font-sporting-bold group-hover:text-[80px] transition-all duration-300 ease-in-out">
+        {card.id}.
+      </span>
+
+      {/* Titre en bas à gauche */}
+      <div className="absolute bottom-4 left-4">
+        <h2 className="text-2xl font-sporting-bold group-hover:text-4xl transition-all duration-300 ease-in-out">
+          {card.title}
+        </h2>
+      </div>
+
+      {/* Overlay sur hover */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+    </div>
   );
 };
 
