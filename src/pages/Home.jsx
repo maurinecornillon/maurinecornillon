@@ -78,9 +78,10 @@ const Home = () => {
             autoPlay
             loop
             muted
-            className="w-full h-full object-cover w-full h-full object-cover"
+            playsInline
+            className="w-full h-full object-cover"
           >
-            <source src={require("../assets/img/video.mp4")} type="video/mp4" />{" "}
+            <source src={require("../assets/img/video.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

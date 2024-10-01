@@ -103,7 +103,7 @@ const About = () => {
       </motion.div>
 
       {/* Skills component */}
-      <div className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
+      {/* <div className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
         <div>
           <motion.h1
             className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
@@ -130,7 +130,7 @@ const About = () => {
             skills
           </motion.h2>
         </div>
-      </div>
+      </div> */}
 
       <motion.div
         ref={refSkills}
