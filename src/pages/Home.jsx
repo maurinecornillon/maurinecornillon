@@ -11,13 +11,26 @@ const Home = () => {
   const [loading, setLoading] = useState(true); // État pour gérer le chargement
 
   useEffect(() => {
-    // Simuler un délai de chargement ou détecter la fin du chargement de la page
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        setLoading(false); // Une fois le chargement terminé
-      }, 3000); // Temps en millisecondes (ici 3 secondes pour l'exemple)
-    });
+    const video = document.querySelector("video");
 
+    const handleVideoLoaded = () => {
+      setTimeout(() => {
+        setLoading(false); // Fin du chargement après au moins 3 secondes
+      }, 3000);
+    };
+
+    if (video) {
+      video.addEventListener("canplaythrough", handleVideoLoaded);
+    }
+
+    return () => {
+      if (video) {
+        video.removeEventListener("canplaythrough", handleVideoLoaded);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
