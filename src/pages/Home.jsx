@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Presentation from "../components/Presentation";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -167,8 +166,6 @@ const Home = () => {
           >
             <Contact />
           </motion.div>
-
-          <Footer />
         </>
       )}
     </>

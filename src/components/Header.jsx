@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="font-sporting text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[12px]   relative w-full p-10">
+      <header className="font-sporting text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[12px] relative w-full p-10">
         <div className="flex justify-between items-center">
           <Link
             to="home"
@@ -41,7 +41,8 @@ const Header = () => {
             </div>
           </Link>
 
-          <div className="absolute left-1/2 transform -translate-x-1/2">
+          {/* Ici on change la structure pour centrer correctement */}
+          <div className="flex-grow flex justify-center">
             <Link
               to="menu"
               smooth={true}

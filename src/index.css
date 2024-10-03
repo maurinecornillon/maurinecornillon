@@ -168,6 +168,19 @@ h1, span {
   background-position: 100% 0; /* Position de départ du dégradé, mot entièrement en gris */
 }
 
+.word1 {
+  
+  display: inline-block;
+  background: linear-gradient(90deg, #000 50%,#d3d3d3 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: black;
+  transition: background-position 0.6s ease; /* Transition fluide sur le changement de position du dégradé */
+  background-size: 200% 100%;
+  background-position: 100% 0; /* Position de départ du dégradé, mot entièrement en gris */
+}
+
+
 .word.active {
   background-position: 0 0; /* Le dégradé bouge pour remplir progressivement le mot de noir */
 }

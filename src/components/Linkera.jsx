@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-import un from "../assets/img/linkera/test.png";
-import deux from "../assets/img/linkera/Data Room.png";
-import trois from "../assets/img/linkera/Messages.png";
-import mockup2 from "../assets/img/Mockup4.png";
+import deux from "../assets/img/linkera/MockupLinkera.png";
+import trois from "../assets/img/linkera/MockupLinkera2.png";
+
 
 const Linkera = () => {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ const Linkera = () => {
     navigate("/projects");
   };
 
-  const images = [mockup2, un, deux, trois];
+  const images = [deux, trois];
 
   // Hook pour capturer le scroll global et l'appliquer au carrousel avec ajustement de vitesse
   useEffect(() => {

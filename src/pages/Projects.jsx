@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { useTransform, useScroll } from "framer-motion";
 import Header from "../components/Header";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -177,8 +176,6 @@ const Projects = () => {
       >
         <Contact />
       </motion.div>
-
-      <Footer />
     </>
   );
 };
@@ -198,7 +195,7 @@ const Card = ({ card }) => {
         navigate("/otome-game");
         break;
       case "ANNAMOLLY":
-        navigate("/annamolly");
+        navigate("/anna");
         break;
       case "SMARTBACK":
         navigate("/smartback");

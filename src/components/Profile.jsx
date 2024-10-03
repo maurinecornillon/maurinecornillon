@@ -98,8 +98,8 @@ const Profile = () => {
               key={index}
               className={`word ${
                 item.specialFont
-                  ? "font-canela-light-italic text-[50px]"
-                  : "font-sporting-regular text-[40px]"
+                  ? "font-canela-light-italic text-[50px] tracking-wide"
+                  : "font-sporting-regular tracking-normal text-[40px]"
               }`}
             >
               {item.word}&nbsp;
@@ -114,8 +114,8 @@ const Profile = () => {
               key={index}
               className={`word ${
                 item.specialFont
-                  ? "font-canela-light-italic text-[50px]"
-                  : "font-sporting-regular text-[40px]"
+                  ? "font-canela-light-italic tracking-wide text-[50px]"
+                  : "font-sporting-regular tracking-normal text-[40px]"
               }`}
             >
               {item.word}&nbsp;
@@ -130,8 +130,8 @@ const Profile = () => {
               key={index}
               className={`word ${
                 item.specialFont
-                  ? "font-canela-light-italic font-light text-[50px]"
-                  : "font-sporting-regular font-light text-[40px]"
+                  ? "font-canela-light-italic tracking-wide text-[50px]"
+                  : "font-sporting-regular tracking-normal text-[40px]"
               }`}
             >
               {item.word}&nbsp;

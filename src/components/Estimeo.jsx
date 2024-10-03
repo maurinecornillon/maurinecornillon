@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-import mockup1 from "../assets/img/Mockup4.png";
-import mockup2 from "../assets/img/Mockup4.png";
-import mockup3 from "../assets/img/Mockup4.png";
+import deux from "../assets/img/estimeo/MockupEstimeo.png";
+import trois from "../assets/img/linkera/MockupLinkera2.png";
 
 const Estimeo = () => {
   const navigate = useNavigate();
@@ -14,7 +13,7 @@ const Estimeo = () => {
     navigate("/projects");
   };
 
-  const images = [mockup1, mockup2, mockup3];
+  const images = [deux, trois];
 
   // Hook pour capturer le scroll global et l'appliquer au carrousel avec ajustement de vitesse
   useEffect(() => {
@@ -66,36 +65,33 @@ const Estimeo = () => {
         </div>
 
         {/* Colonne de droite - Titre et texte */}
-        <div
-          className="w-1/2 flex flex-col justify-center items-start px-12"
-          ref={rightColumnRef} // Référence pour empêcher le scroll
-        >
-          {/* Rendre cette colonne sticky pour qu'elle ne bouge pas */}
-          <div className="sticky top-0">
-            {/* Flèche pour revenir en arrière */}
-            <div className="mb-8">
-              <button onClick={handleBack} className="text-lg hover:opacity-75">
-                ← Back
-              </button>
-            </div>
+        <div className="w-1/2 px-12 relative" ref={rightColumnRef}>
+          {/* Flèche pour revenir en arrière */}
+          <div className="absolute p-10 top-4 left-4">
+            <button onClick={handleBack} className="text-lg hover:opacity-75">
+              ← Back
+            </button>
+          </div>
 
+          {/* Contenu fixe */}
+          <div className="mt-80">
             {/* Titre du projet */}
-            <h1 className="text-[6vw] font-sporting-bold leading-tight mb-4">
+            <h1 className="text-[6vw] mt-40 font-sporting-bold leading-tight mb-4">
               ESTIMEO
             </h1>
 
             {/* Paragraphe explicatif */}
-            <p className="text-[14px] leading-relaxed font-sporting-regular mb-6">
+            <p className="text-[14px] leading-relaxed font-sporting-regular mb-6 mt-10">
               Estimeo is an automated rating and valuation platform specifically
-              designed for startups. It leverages predictive algorithms and key
-              success factors to evaluate the potential of innovative projects.
-              The platform provides startups with pre-analysis and pre-audit
-              reports, considering both tangible and intangible assets. By
-              connecting startups with investors and financial partners, Estimeo
-              aims to build trust in the growth potential of these businesses
-              and help them capitalize on their strengths​( PitchBook )​(
-              EU-Startups ). This tool, now integrated with Linkera, plays a
-              crucial role in the startup ecosystem by offering clear,
+              designed for startups. It leverages predictive algorithms and
+              keysucc ess factors to evaluate the potential of innovative
+              projects. The platform provides startups with pre-analysis and
+              pre-audit reports, considering both tangible and intangible
+              assets. By connecting startups with investors and financial
+              partners, Estimeo aims to build trust in the growth potential of
+              these businesses and help them capitalize on their strengths​
+              (PitchBook, EU-Startups). This tool, now integrated with Linkera,
+              plays a crucial role in the startup ecosystem by offering clear,
               data-driven insights for valuation and risk analysis.
             </p>
           </div>

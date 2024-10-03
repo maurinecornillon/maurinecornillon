@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Profile from "../components/Profile";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -165,8 +164,6 @@ const About = () => {
       >
         <Contact />
       </motion.div>
-
-      <Footer />
     </>
   );
 };
