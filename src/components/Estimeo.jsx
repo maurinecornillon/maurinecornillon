@@ -76,23 +76,23 @@ const Estimeo = () => {
           {/* Contenu fixe */}
           <div className="mt-80">
             {/* Titre du projet */}
-            <h1 className="text-[6vw] mt-40 font-sporting-bold leading-tight mb-4">
+            <h1 className="text-[4vw] mt-40 font-sporting-bold leading-tight mb-4">
               ESTIMEO
             </h1>
 
             {/* Paragraphe explicatif */}
             <p className="text-[14px] leading-relaxed font-sporting-regular mb-6 mt-10">
-              Estimeo is an automated rating and valuation platform specifically
-              designed for startups. It leverages predictive algorithms and
-              keysucc ess factors to evaluate the potential of innovative
-              projects. The platform provides startups with pre-analysis and
-              pre-audit reports, considering both tangible and intangible
-              assets. By connecting startups with investors and financial
-              partners, Estimeo aims to build trust in the growth potential of
-              these businesses and help them capitalize on their strengths​
-              (PitchBook, EU-Startups). This tool, now integrated with Linkera,
-              plays a crucial role in the startup ecosystem by offering clear,
-              data-driven insights for valuation and risk analysis.
+              Estimeo is an automated rating and valuation platform tailored for
+              startups. It used predictive algorithms to evaluate both tangible
+              and intangible assets, providing detailed pre-analysis reports. By
+              linking startups with investors, it helped build trust and support
+              growth. Estimeo was later acquired and merged with Linkera, so the
+              platform no longer exists.
+              <br />
+              <br />
+              As a full-stack developer, I worked on the V2 of their web
+              application, updating financial calculation algorithms and
+              managing maintenance and bug fixes.
             </p>
           </div>
         </div>

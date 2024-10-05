@@ -12,17 +12,6 @@ import cover1 from "../assets/img/cover1.jpg";
 const cards = [
   {
     url: cover1,
-    text1: "FRONT-END",
-    text2: "BACK-END",
-    text3: "JS VANILLA",
-    text4: "NODEJS",
-    text5: "MONGODB",
-    text6: "DOCKER",
-    title: "ESTIMEO",
-    id: 1,
-  },
-  {
-    url: cover1,
     text2: "FRONT-END",
     text3: "BACK-END",
     text1: "PROJECT MANAGEMENT",
@@ -35,13 +24,14 @@ const cards = [
   },
   {
     url: cover1,
-    text2: "FRONT-END",
-    text3: "BACK-END",
-    text1: "LEAD DEV",
-    text5: "UI/UX",
-    text4: "PYTHON",
-    title: "OTOME GAME",
-    id: 3,
+    text1: "FRONT-END",
+    text2: "BACK-END",
+    text3: "JS VANILLA",
+    text4: "NODEJS",
+    text5: "MONGODB",
+    text6: "DOCKER",
+    title: "ESTIMEO",
+    id: 2,
   },
   {
     url: cover1,
@@ -52,7 +42,7 @@ const cards = [
     text4: "REACTJS",
     text5: "NODEJS",
     text3: "MONGODB",
-    id: 4,
+    id: 3,
   },
   {
     url: cover1,
@@ -61,7 +51,26 @@ const cards = [
     text4: "PO",
     text3: "UI/UX",
     text2: "REACTJS",
+    id: 4,
+  },
+
+  {
+    url: cover1,
+    text2: "RENPY",
+    text1: "LEAD DEV",
+    text5: "UI/UX",
+    text4: "PYTHON",
+    title: "OTOME GAME",
     id: 5,
+  },
+  {
+    url: cover1,
+    text1: "FRONT-END",
+    text2: "BACK-END",
+    text4: "UI/UX",
+    text3: "CANVAS",
+    title: "FIGHT GAME",
+    id: 6,
   },
 ];
 
@@ -72,7 +81,7 @@ const Projects = () => {
   });
 
   // Adjusted x transformation to avoid the extra space at the end
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -185,20 +194,23 @@ const Card = ({ card }) => {
 
   const handleNavigation = (title) => {
     switch (title) {
+      case "ANNAMOLLY":
+        navigate("/anna");
+        break;
       case "ESTIMEO":
         navigate("/estimeo");
         break;
       case "LINKERA":
         navigate("/linkera");
         break;
-      case "OTOME GAME":
-        navigate("/otome-game");
-        break;
-      case "ANNAMOLLY":
-        navigate("/anna");
-        break;
       case "SMARTBACK":
         navigate("/smartback");
+        break;
+      case "OTOME GAME":
+        navigate("/otome");
+        break;
+      case "FIGHT GAME":
+        navigate("/game");
         break;
       default:
         break;

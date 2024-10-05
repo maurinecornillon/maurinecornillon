@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import deux from "../assets/img/linkera/MockupLinkera.png";
-import trois from "../assets/img/linkera/MockupLinkera2.png";
-
+import trois from "../assets/img/linkera/MockUpLinkera3.png";
+import un from "../assets/img/linkera/MockUp2Linkera.png";
 
 const Linkera = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Linkera = () => {
     navigate("/projects");
   };
 
-  const images = [deux, trois];
+  const images = [deux, un, trois];
 
   // Hook pour capturer le scroll global et l'appliquer au carrousel avec ajustement de vitesse
   useEffect(() => {
@@ -77,19 +77,24 @@ const Linkera = () => {
           {/* Contenu fixe */}
           <div className="mt-80">
             {/* Titre du projet */}
-            <h1 className="text-[6vw] mt-40 font-sporting-bold leading-tight mb-4">
+            <h1 className="text-[4vw] mt-40 font-sporting-bold leading-tight mb-4">
               LINKERA
             </h1>
 
             {/* Paragraphe explicatif */}
             <p className="text-[14px] leading-relaxed font-sporting-regular mb-6 mt-10">
-              Linkera is a platform that simplifies the processes of business
-              sales, acquisitions, and fundraising. It offers tools for listing
-              companies, connecting buyers and sellers, managing confidentiality
-              agreements, and conducting valuations. For startups, Linkera helps
-              streamline fundraising by identifying potential investors and
-              preparing businesses to present their projects, ensuring faster
-              and more efficient transactions​.
+              Linkera is a platform that simplifies business sales,
+              acquisitions, and fundraising. It offers tools for company
+              listings, connecting buyers and sellers, managing confidentiality
+              agreements, and conducting valuations. For startups, it
+              streamlines fundraising by identifying potential investors and
+              preparing businesses for transactions.
+              <br />
+              <br />
+              As part of a tech team, I contributed to building the first
+              version of Linkera as a full-stack developer. I focused on UI/UX
+              design and developed algorithms for financial calculations and
+              automated PDF generation.
             </p>
           </div>
         </div>

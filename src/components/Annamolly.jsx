@@ -77,9 +77,8 @@ const AnnaMolly = () => {
           {/* Contenu fixe */}
           <div className="mt-80">
             {/* Titre du projet */}
-            <h1 className="text-[6vw] mt-40 font-sporting-bold leading-tight mb-4">
-              ANO <br />
-              MUSIC
+            <h1 className="text-[4vw] mt-40 font-sporting-bold leading-tight mb-4">
+              ANOMUSIC
             </h1>
 
             {/* Paragraphe explicatif */}
@@ -89,6 +88,10 @@ const AnnaMolly = () => {
               artists to share their tracks. Sign up, follow new artists, and
               explore your feed in search of your new favorite sound. With genre
               filters, discover what you never thought you’d hear.
+              <br />
+              <br />
+              This project is a side development I work on during my free time,
+              combining my two passions: coding and music.
             </p>
           </div>
         </div>

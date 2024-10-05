@@ -110,7 +110,7 @@ const Presentation = () => {
               key={index}
               className={`word1 ${
                 item.specialFont
-                  ? "font-canela-light-italic text-[é0px] sm:text-[40px] lg:text-[60px]  tracking-wide"
+                  ? "font-canela-light-italic text-[20px] sm:text-[40px] lg:text-[60px]  tracking-wide"
                   : "font-sporting-regular text-[20px] sm:text-[40px] lg:text-[50px]  tracking-normal"
               }`}
             >
