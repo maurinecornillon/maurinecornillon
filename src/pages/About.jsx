@@ -53,10 +53,10 @@ const About = () => {
     <>
       <div className="flex flex-col h-screen justify-between">
         <Header />
-        <div className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
+        <main className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
           <div>
             <motion.h1
-              className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
+              className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[120px] xl:text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ type: "spring", stiffness: 60, damping: 20 }}
@@ -65,9 +65,9 @@ const About = () => {
             </motion.h1>
           </div>
 
-          <div className="mt-60">
+          <div className="mt-10 sm:mt-20 md:mt-40 lg:mt-60">
             <motion.h2
-              className="text-[50px] sm:text-[80px] md:text-[100px] lg:text-[150px] xl:text-[150px] text-gray-300 font-canela-light-italic tracking-widest m-0 p-0 leading-none"
+              className="text-[60px] sm:text-[60px] md:text-[80px] lg:text-[120px] xl:text-[160px] text-gray-300 font-canela-light-italic tracking-widest ml-4 mt-4 m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{
@@ -80,7 +80,7 @@ const About = () => {
               profile
             </motion.h2>
           </div>
-        </div>
+        </main>
       </div>
 
       {/* Profile component */}
