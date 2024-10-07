@@ -117,7 +117,7 @@ const ProjectsWeb = () => {
       >
         <section ref={targetRef} className="relative h-[300vh]">
           <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex p-10 gap-4 w-full">
+            <motion.div style={{ x }} className="flex p-10 gap-4">
               {/* Adjusted the width to 100vw to prevent extra space */}
               {cards.map((card) => (
                 <Card card={card} key={card.id} />
