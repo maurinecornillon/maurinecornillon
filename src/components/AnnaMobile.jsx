@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
-import { useScroll } from "framer-motion";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 
 // Liste d'images pour le carrousel
 import accueil from "../assets/img/anna/Anna2.png";
 import menu from "../assets/img/anna/Anna1.png";
 import share from "../assets/img/anna/Anna3.png";
+
 const images = [
   {
     src: accueil,
@@ -26,9 +26,6 @@ const images = [
 
 const AnnaMobile = () => {
   const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
 
   return (
     <>

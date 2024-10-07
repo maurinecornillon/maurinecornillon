@@ -1,15 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { useTransform, useScroll } from "framer-motion";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import Contact from "../components/Contact";
 
-import cover1 from "../assets/img/cover1.jpg";
+import Contact from "../components/Contact";
 
 const cards = [
   {
-    url: cover1,
     text2: "FRONT-END",
     text3: "BACK-END",
     text1: "PROJECT MANAGEMENT",
@@ -21,7 +16,6 @@ const cards = [
     id: 1,
   },
   {
-    url: cover1,
     text1: "FRONT-END",
     text2: "BACK-END",
     text3: "JS VANILLA",
@@ -32,7 +26,6 @@ const cards = [
     id: 2,
   },
   {
-    url: cover1,
     title: "ANNAMOLLY",
     text1: "FRONT-END",
     text2: "BACK-END",
@@ -43,7 +36,6 @@ const cards = [
     id: 3,
   },
   {
-    url: cover1,
     title: "SMARTBACK",
     text1: "FRONT-END",
     text4: "PO",
@@ -53,7 +45,6 @@ const cards = [
   },
 
   {
-    url: cover1,
     text2: "RENPY",
     text1: "LEAD DEV",
     text5: "UI/UX",
@@ -62,7 +53,6 @@ const cards = [
     id: 5,
   },
   {
-    url: cover1,
     text1: "FRONT-END",
     text2: "BACK-END",
     text4: "UI/UX",
@@ -132,7 +122,6 @@ const Card = ({ card }) => {
         <p>{card.text1}</p>
         <p>{card.text2}</p>
         <p>{card.text3}</p>
-        {/* Affiche plus de détails si nécessaire */}
       </div>
       <span className="absolute top-4 left-4 text-[40px] font-sporting-bold ">
         {card.id}.
