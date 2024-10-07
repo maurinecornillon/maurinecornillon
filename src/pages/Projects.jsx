@@ -50,29 +50,13 @@ const Projects = () => {
         <main className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
           <div>
             <motion.h1
-              className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[120px] xl:text-[150px] font-respira tracking-widest m-0 p-0 leading-none"
+              className="text-[60px] sm:text-[80px] md:text-[180px] lg:text-[190px] xl:text-[280px] font-respira tracking-widest m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ type: "spring", stiffness: 60, damping: 20 }}
             >
-              Projects_
+              Projects
             </motion.h1>
-          </div>
-
-          <div className="mt-10 sm:mt-20 md:mt-40 lg:mt-60">
-            <motion.h2
-              className="text-[60px] sm:text-[60px] md:text-[80px] lg:text-[120px] xl:text-[160px] text-gray-300 font-canela-light-italic tracking-widest ml-4 mt-4 m-0 p-0 leading-none"
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 60,
-                damping: 20,
-                delay: 0.2,
-              }}
-            >
-              work
-            </motion.h2>
           </div>
         </main>
       </div>
