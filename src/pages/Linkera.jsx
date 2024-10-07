@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import throttle from "lodash.throttle"; // Pour limiter le nombre d'appels de l'événement de scroll
 
 import Header from "../components/Header";
 import Contact from "../components/Contact";
@@ -9,8 +10,6 @@ import LinkeraMobile from "../components/LinkeraMobile";
 import BackgroundLinkeraMobile from "../components/BackgroundLinkeraMobile";
 import BackgroundLinkeraWeb from "../components/LinkeraBackground";
 
-// import mockup from "../assets/img/linkera/MockupLinkera.png";
-
 const Linkera = () => {
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
@@ -18,8 +17,8 @@ const Linkera = () => {
   }, []);
 
   const controls = useAnimation();
-  const [inView] = useInView({
-    threshold: 0.1,
+  const [inView, ref] = useInView({
+    threshold: window.innerWidth < 640 ? 0.05 : 0.1, // Ajuste le seuil pour les petits écrans
   });
 
   useEffect(() => {
@@ -33,18 +32,22 @@ const Linkera = () => {
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
-      console.log(position);
+      console.log(position); // Gère ici les animations en fonction du scroll
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Utilisation d'un throttle pour limiter la fréquence d'appel
+    const throttledScroll = throttle(handleScroll, 200);
+
+    window.addEventListener("scroll", throttledScroll);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", throttledScroll);
     };
   }, []);
 
   const controlsContact = useAnimation();
   const [refContact, inViewContact] = useInView({
-    threshold: 0.1,
+    threshold: window.innerWidth < 640 ? 0.05 : 0.1, // Seuil ajusté pour mobile
   });
 
   useEffect(() => {
@@ -64,6 +67,7 @@ const Linkera = () => {
           <div className="w-full flex justify-center">
             <motion.h1
               className="text-center text-[6vw] sm:text-[6vw] lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
+              style={{ willChange: "transform" }} // Ajoute will-change pour optimiser les transformations
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{
