@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -10,6 +10,22 @@ import AnnaMobile from "../components/AnnaMobile";
 import mockup from "../assets/img/anna/MockupAnnaMolly.png";
 
 const Anna = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640); // Définir mobile si largeur < 640px
+    };
+
+    handleResize(); // Vérifie la taille lors du premier rendu
+
+    window.addEventListener("resize", handleResize); // Met à jour la taille à chaque redimensionnement
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup pour éviter les fuites de mémoire
+    };
+  }, []);
+
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
     window.scrollTo(0, 0);
@@ -79,13 +95,14 @@ const Anna = () => {
 
         {/* Section avec l'effet de parallaxe en dessous du titre */}
         <div
-          className="bg-fixed bg-cover h-[100vh] "
+          className="bg-fixed h-[100vh]"
           style={{
             backgroundImage: `url(${mockup})`,
             backgroundPosition: "center top 40%",
+            backgroundSize: isMobile ? "contain" : "cover", // Changer la taille de l'image selon l'état
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
-
         {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
