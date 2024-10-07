@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -11,7 +10,10 @@ import LinkeraMobile from "../components/LinkeraMobile";
 import mockup from "../assets/img/linkera/MockupLinkera.png";
 
 const Linkera = () => {
-  const navigate = useNavigate();
+  useEffect(() => {
+    // Force le défilement en haut lors du chargement du composant
+    window.scrollTo(0, 0);
+  }, []);
 
   const controls = useAnimation();
   const [inView] = useInView({
@@ -59,7 +61,7 @@ const Linkera = () => {
         <div className="h-[100vh] flex items-center justify-center bg-white">
           <div className="w-full flex justify-center">
             <motion.h1
-              className="text-center text-[8vw] sm:text-[6vw] lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
+              className="text-center text-[6vw] sm:text-[6vw] lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{
@@ -81,13 +83,7 @@ const Linkera = () => {
             backgroundImage: `url(${mockup})`,
             backgroundPosition: "center top 40%",
           }}
-        >
-          <div className="h-full flex items-center justify-center">
-            <h2 className="text-black md:hidden  sm:text-[6vw] lg:text-[4vw] max-w-[100%] font-sporting-regular ">
-              LINKERA
-            </h2>
-          </div>
-        </div>
+        ></div>
 
         {/* Premier paragraphe avec padding responsive */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
@@ -139,5 +135,3 @@ const Linkera = () => {
 };
 
 export default Linkera;
-
-

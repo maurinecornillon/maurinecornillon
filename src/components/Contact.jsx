@@ -6,7 +6,7 @@ const Contact = () => {
     <>
       <div className="flex flex-column justify-start items-center bg-[#212121] text-white h-[40vw] rounded-tl-[100px] rounded-tr-[100px] px-20 sm:px-20 md:px-20">
         <div className="text-left">
-          <h2 className=" text-[20px] sm:text-[40px] lg:text-[90px]  font-sporting-regular">
+          <h2 className=" text-[20px] sm:text-[40px] lg:text-[90px] font-sporting-regular">
             • LET'S <br />
             COLLABORATE
           </h2>
@@ -19,7 +19,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-      <footer className="w-full bg-[#212121] flex justify-between items-center px-20 pt-0 pb-10">
+      <footer className="w-full bg-[#212121] flex justify-between items-center px-4 sm:px-10 md:px-20 pt-0 pb-4 sm:pb-6 md:pb-10">
         {/* Left side - Social icons */}
         <div className="flex space-x-4">
           {/* LinkedIn */}
@@ -29,7 +29,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="cursor-pointer"
           >
-            <FaLinkedin className=" text-[20px] sm:text-[10px] md:text-[10px] lg:text-[20px] xl:text-[30px]  text-white cursor-pointer" />
+            <FaLinkedin className="text-[20px] sm:text-[15px] md:text-[20px] lg:text-[20px] xl:text-[30px] text-white cursor-pointer" />
           </a>
 
           {/* GitHub */}
@@ -39,12 +39,12 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="cursor-pointer"
           >
-            <FaGithub className="text-white text-[20px] sm:text-[10px] md:text-[10px] lg:text-[20px] xl:text-[30px]  cursor-pointer" />
+            <FaGithub className="text-[20px] sm:text-[15px] md:text-[20px] lg:text-[20px] xl:text-[30px] text-white cursor-pointer" />
           </a>
         </div>
 
         {/* Right side - Copyright text */}
-        <div className=" text-[10px] sm:text-[10px] md:text-[10px] lg:text-[20px] xl:text-[20px] text-white font-bold">
+        <div className="text-[10px] sm:text-[10px] md:text-[10px] lg:text-[20px] xl:text-[20px] text-white font-bold">
           © M.B 2024
         </div>
       </footer>

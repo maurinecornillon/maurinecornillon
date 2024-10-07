@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -11,11 +10,9 @@ import LinkeraMobile from "../components/LinkeraMobile";
 import mockup from "../assets/img/linkera/MockupLinkera.png";
 
 const SmartBack = () => {
-  const navigate = useNavigate();
-
-  const handleBack = () => {
-    navigate("/projects");
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const controls = useAnimation();
   const [inView] = useInView({
