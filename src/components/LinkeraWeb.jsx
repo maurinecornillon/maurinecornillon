@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Liste d'images pour le carrousel
-import accueil from "../../src/assets/img/linkera/Test.png";
+import accueil from "../../src/assets/img/linkera/Accueil.png";
 import message from "../assets/img/linkera/Message.png";
 import dataroom from "../assets/img/linkera/DataRoom.png";
 
