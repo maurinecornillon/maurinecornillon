@@ -6,11 +6,11 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Linkera from "./pages/Linkera";
-import Estimeo from "./components/Estimeo";
-import AnnaMolly from "./components/Annamolly";
-import Otome from "./components/Otome";
-import Game from "./components/Game";
-import SmartBack from "./components/SmartBack";
+import Estimeo from "./pages/Estimeo";
+import Anna from "./pages/Anna";
+import Otome from "./pages/Otome";
+import Game from "./pages/Game";
+// import SmartBack from "./pages/SmartBack";
 
 function App() {
   return (
@@ -22,11 +22,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/estimeo" element={<Estimeo />} />
-        <Route path="/anna" element={<AnnaMolly />} />
+        <Route path="/anomusic" element={<Anna />} />
         <Route path="/linkera" element={<Linkera />} />
         <Route path="/otome" element={<Otome />} />
         <Route path="/game" element={<Game />} />
-        <Route path="/SmartBack" element={<SmartBack />} />
+        {/* <Route path="/SmartBack" element={<SmartBack />} /> */}
 
         {/* Nouvelle route */}
       </Routes>

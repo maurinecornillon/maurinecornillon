@@ -5,13 +5,17 @@ import { useInView } from "react-intersection-observer";
 
 import Header from "../components/Header";
 import Contact from "../components/Contact";
-import LinkeraWeb from "../components/LinkeraWeb";
-import LinkeraMobile from "../components/LinkeraMobile";
+import AnnaWeb from "../components/AnnaWeb";
+import AnnaMobile from "../components/AnnaMobile";
 
-import mockup from "../assets/img/linkera/MockupLinkera.png";
+import mockup from "../assets/img/anna/MockupAnnaMolly.png";
 
 const Linkera = () => {
   const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/projects");
+  };
 
   const controls = useAnimation();
   const [inView] = useInView({
@@ -69,7 +73,8 @@ const Linkera = () => {
                 delay: 0.2,
               }}
             >
-              REVOLUTIONIZING THE WAY BUSINESSES BUY, SELL, AND RAISE FUNDS
+              DISCOVER NEW SOUNDS AND CONNECT WITH INDEPENDENT ARTISTS ON
+              ANOMUSIC
             </motion.h1>
           </div>
         </div>
@@ -79,41 +84,39 @@ const Linkera = () => {
           className="bg-fixed bg-cover bg-center h-[100vh]"
           style={{
             backgroundImage: `url(${mockup})`,
-            backgroundPosition: "center top 40%",
+            backgroundPosition: " center top 40%",
           }}
         >
           <div className="h-full flex items-center justify-center">
             <h2 className="text-black text-[8vw] sm:text-[6vw] lg:text-[4vw] max-w-[100%] font-sporting-regular ">
-              LINKERA
+              ANOMUSIC
             </h2>
           </div>
         </div>
 
-        {/* Premier paragraphe avec padding responsive */}
+        {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            LINKERA SIMPLIFIES BUSINESS SALES, ACQUISITIONS, AND FUNDRAISING. IT
-            PROVIDES TOOLS FOR LISTINGS, CONNECTING BUYERS AND SELLERS, MANAGING
-            CONFIDENTIALITY, AND CONDUCTING VALUATIONS. FOR STARTUPS, IT HELPS
-            RAISE FUNDS BY IDENTIFYING INVESTORS AND PREPARING FOR TRANSACTIONS.
+            ANOMUSIC IS A MUSICAL SOCIAL NETWORKING PLATFORM. INSPIRED BY
+            INSTAGRAM AND BANDCAMP, THE PLATFORM IS DESIGNED FOR INDEPENDENT
+            ARTISTS TO SHARE THEIR TRACKS. SIGN UP, FOLLOW NEW ARTISTS, AND
+            EXPLORE YOUR FEED IN SEARCH OF YOUR NEW FAVORITE SOUND. WITH GENRE
+            FILTERS, DISCOVER WHAT YOU NEVER THOUGHT YOU’D HEAR.
           </p>
         </div>
 
         <div className="hidden md:block">
-          <LinkeraWeb />
+          <AnnaWeb />
         </div>
 
         <div className="block md:hidden">
-          <LinkeraMobile />
+          <AnnaMobile />
         </div>
 
-        {/* Deuxième paragraphe avec padding responsive */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-60 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            AS PART OF A TECH TEAM, I CONTRIBUTED TO BUILDING THE FIRST VERSION
-            OF LINKERA AS A FULL-STACK DEVELOPER. I FOCUSED ON UI/UX DESIGN AND
-            DEVELOPED ALGORITHMS FOR FINANCIAL CALCULATIONS AND AUTOMATED PDF
-            GENERATION.
+            THIS PROJECT IS A SIDE DEVELOPMENT I WORK ON DURING MY FREE TIME,
+            COMBINING MY TWO PASSIONS: CODING AND MUSIC.
           </p>
         </div>
 

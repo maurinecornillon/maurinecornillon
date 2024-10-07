@@ -89,17 +89,17 @@ const Profile = () => {
   ];
 
   return (
-    <div className="flex ">
-      <main className=" max-w-[90%] flex flex-col items-start gap-20 flex-grow leading-none m-0 p-10">
+    <div className="flex">
+      <main className="max-w-[90%] flex flex-col items-start gap-10 sm:gap-20 flex-grow leading-none m-0 p-5 sm:p-10">
         {/* Premier paragraphe */}
-        <div className="paragraph tracking-tightest leading-[4.2]">
+        <div className="paragraph tracking-tightest leading-[2] sm:leading-[4.2]">
           {wordsArray1.map((item, index) => (
             <span
               key={index}
               className={`word ${
                 item.specialFont
-                  ? "font-canela-light-italic text-[50px] tracking-wide"
-                  : "font-sporting-regular tracking-normal text-[40px]"
+                  ? "font-canela-light-italic text-[30px] sm:text-[50px] tracking-wide"
+                  : "font-sporting-regular tracking-normal text-[25px] sm:text-[40px]"
               }`}
             >
               {item.word}&nbsp;
@@ -108,14 +108,14 @@ const Profile = () => {
         </div>
 
         {/* Deuxième paragraphe */}
-        <div className="paragraph tracking-tightest leading-[4.2]">
+        <div className="paragraph tracking-tightest leading-[2] sm:leading-[4.2]">
           {wordsArray2.map((item, index) => (
             <span
               key={index}
               className={`word ${
                 item.specialFont
-                  ? "font-canela-light-italic tracking-wide text-[50px]"
-                  : "font-sporting-regular tracking-normal text-[40px]"
+                  ? "font-canela-light-italic tracking-wide text-[30px] sm:text-[50px]"
+                  : "font-sporting-regular tracking-normal text-[25px] sm:text-[40px]"
               }`}
             >
               {item.word}&nbsp;
@@ -124,14 +124,14 @@ const Profile = () => {
         </div>
 
         {/* Troisième paragraphe */}
-        <div className="paragraph tracking-tightest leading-[4.2]">
+        <div className="paragraph tracking-tightest leading-[2] sm:leading-[4.2]">
           {wordsArray3.map((item, index) => (
             <span
               key={index}
               className={`word ${
                 item.specialFont
-                  ? "font-canela-light-italic tracking-wide text-[50px]"
-                  : "font-sporting-regular tracking-normal text-[40px]"
+                  ? "font-canela-light-italic tracking-wide text-[30px] sm:text-[50px]"
+                  : "font-sporting-regular tracking-normal text-[25px] sm:text-[40px]"
               }`}
             >
               {item.word}&nbsp;

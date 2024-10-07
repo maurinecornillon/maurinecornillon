@@ -153,7 +153,7 @@ const Card = ({ card }) => {
   const handleNavigation = (title) => {
     switch (title) {
       case "ANNAMOLLY":
-        navigate("/anna");
+        navigate("/anomusic");
         break;
       case "ESTIMEO":
         navigate("/estimeo");

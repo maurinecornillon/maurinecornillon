@@ -10,8 +10,12 @@ import LinkeraMobile from "../components/LinkeraMobile";
 
 import mockup from "../assets/img/linkera/MockupLinkera.png";
 
-const Linkera = () => {
+const SmartBack = () => {
   const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/projects");
+  };
 
   const controls = useAnimation();
   const [inView] = useInView({
@@ -59,7 +63,7 @@ const Linkera = () => {
         <div className="h-[100vh] flex items-center justify-center bg-white">
           <div className="w-full flex justify-center">
             <motion.h1
-              className="text-center text-[8vw] sm:text-[6vw] lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
+              className="text-center text-[20px] sm:text-[40px] lg:text-[60px] p-20 font-sporting-regular tracking-normal leading-tight"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{
@@ -79,19 +83,19 @@ const Linkera = () => {
           className="bg-fixed bg-cover bg-center h-[100vh]"
           style={{
             backgroundImage: `url(${mockup})`,
-            backgroundPosition: "center top 40%",
+            backgroundPosition: " center top 40%",
           }}
         >
           <div className="h-full flex items-center justify-center">
-            <h2 className="text-black text-[8vw] sm:text-[6vw] lg:text-[4vw] max-w-[100%] font-sporting-regular ">
+            <h2 className="text-white text-[20px] sm:text-[40px] lg:text-[50px] max-w-[100%] font-sporting-regular ">
               LINKERA
             </h2>
           </div>
         </div>
 
-        {/* Premier paragraphe avec padding responsive */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
-          <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
+        {/* Section suivante */}
+        <div className="h-[100vh] bg-white flex items-center justify-center m-0 p-20 leading-tight mt-2">
+          <p className="font-sporting-regular text-center text-[30px]">
             LINKERA SIMPLIFIES BUSINESS SALES, ACQUISITIONS, AND FUNDRAISING. IT
             PROVIDES TOOLS FOR LISTINGS, CONNECTING BUYERS AND SELLERS, MANAGING
             CONFIDENTIALITY, AND CONDUCTING VALUATIONS. FOR STARTUPS, IT HELPS
@@ -107,9 +111,8 @@ const Linkera = () => {
           <LinkeraMobile />
         </div>
 
-        {/* Deuxième paragraphe avec padding responsive */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-60 leading-tight mt-2">
-          <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
+        <div className="h-[100vh] bg-white flex items-center justify-center m-0 p-20 leading-tight mt-2">
+          <p className="font-sporting-regular text-center text-[30px]">
             AS PART OF A TECH TEAM, I CONTRIBUTED TO BUILDING THE FIRST VERSION
             OF LINKERA AS A FULL-STACK DEVELOPER. I FOCUSED ON UI/UX DESIGN AND
             DEVELOPED ALGORITHMS FOR FINANCIAL CALCULATIONS AND AUTOMATED PDF
@@ -138,4 +141,4 @@ const Linkera = () => {
   );
 };
 
-export default Linkera;
+export default SmartBack;

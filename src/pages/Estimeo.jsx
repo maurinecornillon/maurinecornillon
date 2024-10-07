@@ -5,13 +5,17 @@ import { useInView } from "react-intersection-observer";
 
 import Header from "../components/Header";
 import Contact from "../components/Contact";
-import LinkeraWeb from "../components/LinkeraWeb";
-import LinkeraMobile from "../components/LinkeraMobile";
+// import EstimeoWeb from "../components/EstimeoWeb";
+// import EstimeoMobile from "../components/EstimeoMobile";
 
-import mockup from "../assets/img/linkera/MockupLinkera.png";
+import mockup from "../assets/img/estimeo/MockupEstimeo.png";
 
 const Linkera = () => {
   const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/projects");
+  };
 
   const controls = useAnimation();
   const [inView] = useInView({
@@ -69,7 +73,7 @@ const Linkera = () => {
                 delay: 0.2,
               }}
             >
-              REVOLUTIONIZING THE WAY BUSINESSES BUY, SELL, AND RAISE FUNDS
+              TRANSFORMING HOW STARTUPS ARE VALUED, TRUSTED, AND FUNDED{" "}
             </motion.h1>
           </div>
         </div>
@@ -79,41 +83,37 @@ const Linkera = () => {
           className="bg-fixed bg-cover bg-center h-[100vh]"
           style={{
             backgroundImage: `url(${mockup})`,
-            backgroundPosition: "center top 40%",
+            backgroundPosition: " center top 40%",
           }}
         >
           <div className="h-full flex items-center justify-center">
             <h2 className="text-black text-[8vw] sm:text-[6vw] lg:text-[4vw] max-w-[100%] font-sporting-regular ">
-              LINKERA
+              ESTIMEO
             </h2>
           </div>
         </div>
 
-        {/* Premier paragraphe avec padding responsive */}
+        {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            LINKERA SIMPLIFIES BUSINESS SALES, ACQUISITIONS, AND FUNDRAISING. IT
-            PROVIDES TOOLS FOR LISTINGS, CONNECTING BUYERS AND SELLERS, MANAGING
-            CONFIDENTIALITY, AND CONDUCTING VALUATIONS. FOR STARTUPS, IT HELPS
-            RAISE FUNDS BY IDENTIFYING INVESTORS AND PREPARING FOR TRANSACTIONS.
+            ESTIMEO IS AN AUTOMATED RATING AND VALUATION PLATFORM TAILORED FOR
+            STARTUPS. IT USED PREDICTIVE ALGORITHMS TO EVALUATE BOTH TANGIBLE
+            AND INTANGIBLE ASSETS, PROVIDING DETAILED PRE-ANALYSIS REPORTS. BY
+            LINKING STARTUPS WITH INVESTORS, IT HELPED BUILD TRUST AND SUPPORT
+            GROWTH. ESTIMEO WAS LATER ACQUIRED AND MERGED WITH LINKERA, SO THE
+            PLATFORM NO LONGER EXISTS.
           </p>
         </div>
 
-        <div className="hidden md:block">
-          <LinkeraWeb />
-        </div>
+        <div className="hidden md:block">{/* <LinkeraWeb /> */}</div>
 
-        <div className="block md:hidden">
-          <LinkeraMobile />
-        </div>
+        <div className="block md:hidden">{/* <LinkeraMobile /> */}</div>
 
-        {/* Deuxième paragraphe avec padding responsive */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-60 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            AS PART OF A TECH TEAM, I CONTRIBUTED TO BUILDING THE FIRST VERSION
-            OF LINKERA AS A FULL-STACK DEVELOPER. I FOCUSED ON UI/UX DESIGN AND
-            DEVELOPED ALGORITHMS FOR FINANCIAL CALCULATIONS AND AUTOMATED PDF
-            GENERATION.
+            AS A FULL-STACK DEVELOPER, I WORKED ON THE V2 OF THEIR WEB
+            APPLICATION, UPDATING FINANCIAL CALCULATION ALGORITHMS AND MANAGING
+            MAINTENANCE AND BUG FIXES.
           </p>
         </div>
 

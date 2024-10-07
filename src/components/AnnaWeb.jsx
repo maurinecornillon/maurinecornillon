@@ -4,9 +4,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Liste d'images pour le carrousel
-import accueil from "../assets/img/linkera/Acceuil.png";
-import message from "../assets/img/linkera/Messages.png";
-import dataroom from "../assets/img/linkera/Data Room.png";
+import accueil from "../assets/img/anna/Anna2.png";
+import menu from "../assets/img/anna/Anna1.png";
+import share from "../assets/img/anna/Anna3.png";
 
 const images = [
   {
@@ -15,18 +15,18 @@ const images = [
     id: 1,
   },
   {
-    src: message,
+    src: menu,
     alt: "Description 2",
     id: 2,
   },
   {
-    src: dataroom,
+    src: share,
     alt: "Description 3",
     id: 3,
   },
 ];
 
-const LinkeraWeb = () => {
+const AnnaWeb = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -82,10 +82,11 @@ const LinkeraWeb = () => {
         }}
       >
         <section ref={targetRef} className="relative h-[500vh] w-screen">
-          {" "}
-          {/* Augmenté de 300vh à 500vh */}
           <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex w-[300vw] gap-10">
+            <motion.div
+              style={{ x }}
+              className="flex w-[300vw] gap-10" // Ajuste la largeur pour correspondre aux 3 images (300vw) avec un espacement réduit
+            >
               {images.map((image) => (
                 <ImageCard image={image} key={image.id} />
               ))}
@@ -110,4 +111,4 @@ const ImageCard = ({ image }) => {
   );
 };
 
-export default LinkeraWeb;
+export default AnnaWeb;
