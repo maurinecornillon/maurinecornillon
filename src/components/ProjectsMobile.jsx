@@ -18,7 +18,7 @@ const cards = [
     text5: "NODEJS",
     text6: "MONGODB",
     title: "LINKERA",
-    id: 2,
+    id: 1,
   },
   {
     url: cover1,
@@ -75,7 +75,7 @@ const cards = [
 const ProjectsMobile = () => {
   return (
     <>
-      <section className="flex flex-col gap-4 p-4">
+      <section className="flex flex-col gap-14 p-10 pb-60 ">
         {cards.map((card) => (
           <Card card={card} key={card.id} />
         ))}
@@ -90,7 +90,7 @@ const Card = ({ card }) => {
 
   const handleNavigation = (title) => {
     switch (title) {
-      case "ANNAMOLLY":
+      case "ANOMUSIC":
         navigate("/anomusic");
         break;
       case "ESTIMEO":
@@ -116,20 +116,27 @@ const Card = ({ card }) => {
   return (
     <div
       onClick={() => handleNavigation(card.title)}
-      className="relative h-[350px] w-full border-4 border-black bg-white p-4 group transition-all duration-300 ease-in-out cursor-pointer"
+      className="relative h-[350px] w-full border-4 border-black bg-white p-4 "
     >
       {/* Titre */}
-      <h2 className="text-2xl font-bold group-hover:text-4xl transition-all duration-300 ease-in-out">
-        {card.title}
-      </h2>
+      <div className="absolute bottom-4 left-4">
+        <h2 className="text-2xl font-sporting-bold">{card.title}</h2>
+      </div>
+
+      <div className="absolute top-4 right-4 w-16 h-16  ">
+        <span className="text-[100px] font-sporting-bold">•</span>
+      </div>
 
       {/* Description simplifiée */}
-      <div className="mt-4 text-lg">
+      <div className="mt-14 text-lg">
         <p>{card.text1}</p>
         <p>{card.text2}</p>
         <p>{card.text3}</p>
         {/* Affiche plus de détails si nécessaire */}
       </div>
+      <span className="absolute top-4 left-4 text-[40px] font-sporting-bold ">
+        {card.id}.
+      </span>
     </div>
   );
 };

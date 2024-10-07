@@ -105,7 +105,7 @@ const ImageCard = ({ image }) => {
       <img
         src={image.src}
         alt={image.alt}
-        className="w-full h-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+        className="w-full h-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105 "
       />
     </div>
   );

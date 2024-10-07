@@ -115,9 +115,9 @@ const ProjectsWeb = () => {
           delay: 0.2,
         }}
       >
-        <section ref={targetRef} className="relative h-[300vh]">
+        <section ref={targetRef} className="relative h-[500vh]">
           <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex p-10 gap-4">
+            <motion.div style={{ x }} className="flex p-10 w-[300vw]  gap-4">
               {/* Adjusted the width to 100vw to prevent extra space */}
               {cards.map((card) => (
                 <Card card={card} key={card.id} />
@@ -152,7 +152,7 @@ const Card = ({ card }) => {
 
   const handleNavigation = (title) => {
     switch (title) {
-      case "ANNAMOLLY":
+      case "ANOMUSIC":
         navigate("/anomusic");
         break;
       case "ESTIMEO":
