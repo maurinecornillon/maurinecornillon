@@ -3,7 +3,7 @@ import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 
 // Liste d'images pour le carrousel
-import accueil from "../assets/img/linkera/Test.png";
+import accueil from "../../src/assets/img/linkera/Test.png";
 import message from "../assets/img/linkera/Message.png";
 import dataroom from "../assets/img/linkera/DataRoom.png";
 
