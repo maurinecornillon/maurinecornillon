@@ -4,9 +4,9 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Liste d'images pour le carrousel
-import accueil from "../assets/img/linkera/Acceuil.png";
-import message from "../assets/img/linkera/Messages.png";
-import dataroom from "../assets/img/linkera/Data Room.png";
+import accueil from "../assets/img/linkera/Test.png";
+import message from "../assets/img/linkera/Message.png";
+import dataroom from "../assets/img/linkera/DataRoom.png";
 
 const images = [
   {
@@ -104,7 +104,7 @@ const ImageCard = ({ image }) => {
       <img
         src={image.src}
         alt={image.alt}
-        className="w-full h-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+        className="w-full h-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105 "
       />
     </div>
   );

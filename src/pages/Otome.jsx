@@ -86,7 +86,7 @@ const Otome = () => {
           }}
         >
           <div className="h-full flex items-center justify-center">
-            <h2 className="text-black text-[8vw] sm:text-[6vw] lg:text-[4vw] max-w-[100%] font-sporting-regular ">
+            <h2 className="text-black md:hidden sm:text-[6vw] lg:text-[4vw] max-w-[100%] font-sporting-regular ">
               OTOME GAME
             </h2>
           </div>
