@@ -7,7 +7,7 @@ const BackgroundLinkeraWMobile = () => {
     <>
       {/* Section avec l'effet de parallaxe en dessous du titre */}
       <div
-        className="bg-fixed h-[100vh]"
+        className="bg-fixed h-screen border-2 border-rose-500"
         style={{
           backgroundImage: `url(${mockup})`,
           backgroundPosition: "center top 40%",
