@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import throttle from "lodash.throttle"; // Pour limiter le nombre d'appels de l'événement de scroll
 
 import Header from "../components/Header";
@@ -11,32 +10,57 @@ import BackgroundLinkeraMobile from "../components/BackgroundLinkeraMobile";
 import BackgroundLinkeraWeb from "../components/LinkeraBackground";
 
 const Linkera = () => {
+  // Ref pour le conteneur Contact
+  const contactRef = useRef(null);
+
+  // Animation Framer Motion
+  const controlsContact = useAnimation();
+
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
     window.scrollTo(0, 0);
   }, []);
 
-  const controls = useAnimation();
-  const [inView, ref] = useInView({
-    threshold: window.innerWidth < 640 ? 0.05 : 0.1, // Ajuste le seuil pour les petits écrans
-  });
-
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
+    // Utilisation de l'IntersectionObserver pour gérer les animations sur mobile
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            controlsContact.start("visible");
+          } else {
+            controlsContact.start("hidden");
+          }
+        });
+      },
+      {
+        threshold: window.innerWidth < 640 ? 0.05 : 0.1, // Ajuste le seuil selon l'écran
+      }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
     }
-  }, [controls, inView]);
+
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, [controlsContact]);
 
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
       console.log(position); // Gère ici les animations en fonction du scroll
+
+      // Optionnel : Ajout d'animations en fonction du défilement si nécessaire
     };
 
     // Utilisation d'un throttle pour limiter la fréquence d'appel
-    const throttledScroll = throttle(handleScroll, 200);
+    const throttledScroll = throttle(() => {
+      requestAnimationFrame(handleScroll); // Utilisation de requestAnimationFrame pour améliorer les performances du scroll
+    }, 200);
 
     window.addEventListener("scroll", throttledScroll);
 
@@ -44,19 +68,6 @@ const Linkera = () => {
       window.removeEventListener("scroll", throttledScroll);
     };
   }, []);
-
-  const controlsContact = useAnimation();
-  const [refContact, inViewContact] = useInView({
-    threshold: window.innerWidth < 640 ? 0.05 : 0.1, // Seuil ajusté pour mobile
-  });
-
-  useEffect(() => {
-    if (inViewContact) {
-      controlsContact.start("visible");
-    } else {
-      controlsContact.start("hidden");
-    }
-  }, [controlsContact, inViewContact]);
 
   return (
     <>
@@ -118,8 +129,9 @@ const Linkera = () => {
           </p>
         </div>
 
+        {/* Section Contact */}
         <motion.div
-          ref={refContact}
+          ref={contactRef}
           initial="hidden"
           animate={controlsContact}
           variants={{
