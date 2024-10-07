@@ -81,8 +81,9 @@ const Linkera = () => {
           className="bg-fixed bg-cover bg-center h-[100vh]"
           style={{
             backgroundImage: `url(${mockup})`,
-            backgroundPosition: "center top",
-            backgroundSize: "contain",
+            backgroundSize: "cover", // Par défaut pour les écrans plus grands
+            backgroundRepeat: "no-repeat",
+            ...(window.innerWidth < 640 && { backgroundSize: "contain" }), // Appliquer contain en dessous de 640px
           }}
         ></div>
 

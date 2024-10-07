@@ -79,11 +79,10 @@ const Anna = () => {
 
         {/* Section avec l'effet de parallaxe en dessous du titre */}
         <div
-          className="bg-fixed bg-cover bg-center h-[100vh]"
+          className="bg-fixed bg-cover h-[100vh] "
           style={{
             backgroundImage: `url(${mockup})`,
-            backgroundPosition: "center top",
-            backgroundSize: "contain",
+            backgroundPosition: "center top 40%",
           }}
         ></div>
 

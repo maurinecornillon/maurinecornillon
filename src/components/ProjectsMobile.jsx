@@ -26,7 +26,7 @@ const cards = [
     id: 2,
   },
   {
-    title: "ANNAMOLLY",
+    title: "ANOMUSIC",
     text1: "FRONT-END",
     text2: "BACK-END",
     text6: "UI/UX",
