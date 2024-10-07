@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -10,22 +10,6 @@ import AnnaMobile from "../components/AnnaMobile";
 import mockup from "../assets/img/anna/MockupAnnaMolly.png";
 
 const Anna = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640); // Définir mobile si largeur < 640px
-    };
-
-    handleResize(); // Vérifie la taille lors du premier rendu
-
-    window.addEventListener("resize", handleResize); // Met à jour la taille à chaque redimensionnement
-
-    return () => {
-      window.removeEventListener("resize", handleResize); // Cleanup pour éviter les fuites de mémoire
-    };
-  }, []);
-
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
     window.scrollTo(0, 0);
@@ -99,8 +83,7 @@ const Anna = () => {
           style={{
             backgroundImage: `url(${mockup})`,
             backgroundPosition: "center top 40%",
-            backgroundSize: isMobile ? "contain" : "cover", // Changer la taille de l'image selon l'état
-            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
           }}
         ></div>
         {/* Section suivante */}

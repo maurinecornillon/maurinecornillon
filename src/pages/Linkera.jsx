@@ -6,8 +6,10 @@ import Header from "../components/Header";
 import Contact from "../components/Contact";
 import LinkeraWeb from "../components/LinkeraWeb";
 import LinkeraMobile from "../components/LinkeraMobile";
+import BackgroundLinkeraMobile from "../components/BackgroundLinkeraMobile";
+import BackgroundLinkeraWeb from "../components/LinkeraBackground";
 
-import mockup from "../assets/img/linkera/MockupLinkera.png";
+// import mockup from "../assets/img/linkera/MockupLinkera.png";
 
 const Linkera = () => {
   useEffect(() => {
@@ -76,17 +78,13 @@ const Linkera = () => {
           </div>
         </div>
 
-        {/* Section avec l'effet de parallaxe en dessous du titre */}
-        <div
-          className="bg-fixed bg-cover bg-center h-[100vh]"
-          style={{
-            backgroundImage: `url(${mockup})`,
-            backgroundPosition: "center top 40%",
-            backgroundSize: "cover", // Par défaut pour les écrans plus grands
-            backgroundRepeat: "no-repeat",
-            ...(window.innerWidth < 640 && { backgroundSize: "contain" }), // Appliquer contain en dessous de 640px
-          }}
-        ></div>
+        <div className="hidden md:block">
+          <BackgroundLinkeraWeb />
+        </div>
+
+        <div className="block md:hidden">
+          <BackgroundLinkeraMobile />
+        </div>
 
         {/* Premier paragraphe avec padding responsive */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
