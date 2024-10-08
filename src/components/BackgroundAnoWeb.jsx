@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 
-import mockup from "../assets/img/linkera/MockupLinkera.png";
+import mockup from "../assets/img/anna/MockupAnnaMolly.png";
 
-const BackgroundLinkeraWeb = () => {
+const BackgroundAnoWeb = () => {
   return (
     <>
       {/* Section avec l'effet de parallaxe en dessous du titre */}
@@ -20,4 +18,4 @@ const BackgroundLinkeraWeb = () => {
   );
 };
 
-export default BackgroundLinkeraWeb;
+export default BackgroundAnoWeb;

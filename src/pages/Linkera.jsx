@@ -7,7 +7,7 @@ import Contact from "../components/Contact";
 import LinkeraWeb from "../components/LinkeraWeb";
 import LinkeraMobile from "../components/LinkeraMobile";
 import BackgroundLinkeraMobile from "../components/BackgroundLinkeraMobile";
-import BackgroundLinkeraWeb from "../components/LinkeraBackground";
+import BackgroundLinkeraWeb from "../components/BackgroundLinkeraWeb";
 
 const Linkera = () => {
   // Ref pour le conteneur Contact
@@ -102,7 +102,7 @@ const Linkera = () => {
         </div>
 
         {/* Premier paragraphe avec padding responsive */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
+        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             LINKERA SIMPLIFIES BUSINESS SALES, ACQUISITIONS, AND FUNDRAISING. IT
             PROVIDES TOOLS FOR LISTINGS, CONNECTING BUYERS AND SELLERS, MANAGING
@@ -120,7 +120,7 @@ const Linkera = () => {
         </div>
 
         {/* Deuxième paragraphe avec padding responsive */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-60 leading-tight mt-2">
+        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             AS PART OF A TECH TEAM, I CONTRIBUTED TO BUILDING THE FIRST VERSION
             OF LINKERA AS A FULL-STACK DEVELOPER. I FOCUSED ON UI/UX DESIGN AND

@@ -7,7 +7,8 @@ import Contact from "../components/Contact";
 import AnnaWeb from "../components/AnnaWeb";
 import AnnaMobile from "../components/AnnaMobile";
 
-import mockup from "../assets/img/anna/MockupAnnaMolly.png";
+import BackgroundAnoWeb from "../components/BackgroundAnoWeb";
+import BackgroundAnoMobile from "../components/BackgroundAnoMobile";
 
 const Anna = () => {
   useEffect(() => {
@@ -78,16 +79,16 @@ const Anna = () => {
         </div>
 
         {/* Section avec l'effet de parallaxe en dessous du titre */}
-        <div
-          className="bg-fixed h-[100vh]"
-          style={{
-            backgroundImage: `url(${mockup})`,
-            backgroundPosition: "center top 40%",
-            backgroundSize: "cover",
-          }}
-        ></div>
+        <div className="hidden md:block">
+          <BackgroundAnoWeb />
+        </div>
+
+        <div className="block md:hidden">
+          <BackgroundAnoMobile />
+        </div>
+
         {/* Section suivante */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
+        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             ANOMUSIC IS A MUSICAL SOCIAL NETWORKING PLATFORM. INSPIRED BY
             INSTAGRAM AND BANDCAMP, THE PLATFORM IS DESIGNED FOR INDEPENDENT
@@ -105,7 +106,7 @@ const Anna = () => {
           <AnnaMobile />
         </div>
 
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-60 leading-tight mt-2">
+        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             THIS PROJECT IS A SIDE DEVELOPMENT I WORK ON DURING MY FREE TIME,
             COMBINING MY TWO PASSIONS: CODING AND MUSIC.

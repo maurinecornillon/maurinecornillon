@@ -85,7 +85,7 @@ const Otome = () => {
         ></div>
 
         {/* Section suivante */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
+        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             BEACHDAY IS AN OTOME GAME CURRENTLY IN DEVELOPMENT BY AN INDEPENDENT
             GAME STUDIO. AS THE LEAD DEVELOPER ON THIS PROJECT, I AM EXCITED TO

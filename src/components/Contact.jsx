@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 const Contact = () => {
   return (
     <>
-      <div className="flex flex-column justify-start items-center bg-[#212121] text-white h-[40vw] rounded-tl-[100px] rounded-tr-[100px] px-20 sm:px-20 md:px-20">
+      <div className="flex flex-column justify-start items-center bg-[#212121] text-white h-[40vw] rounded-tl-[50px] rounded-tr-[50px] sm:rounded-tl-[80px] sm:rounded-tr-[80px] lg:rounded-tl-[100px] lg:rounded-tr-[100px]  px-20 sm:px-20 md:px-20">
         <div className="text-left">
           <h2 className=" text-[20px] sm:text-[40px] lg:text-[90px] font-sporting-regular">
             • LET'S <br />

@@ -5,7 +5,8 @@ import { useInView } from "react-intersection-observer";
 import Header from "../components/Header";
 import Contact from "../components/Contact";
 
-import mockup from "../assets/img/estimeo/MockupEstimeo.png";
+import BackgroundEstimeoWeb from "../components/BackgroundEstimeoWeb";
+import BackgroundEstimeoMobile from "../components/BackgroundEstimeoMobile";
 
 const Estimeo = () => {
   useEffect(() => {
@@ -74,16 +75,16 @@ const Estimeo = () => {
         </div>
 
         {/* Section avec l'effet de parallaxe en dessous du titre */}
-        <div
-          className="bg-fixed bg-cover bg-center h-[100vh]"
-          style={{
-            backgroundImage: `url(${mockup})`,
-            backgroundPosition: " center top 40%",
-          }}
-        ></div>
+        <div className="hidden md:block">
+          <BackgroundEstimeoWeb />
+        </div>
+
+        <div className="block md:hidden">
+          <BackgroundEstimeoMobile />
+        </div>
 
         {/* Section suivante */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-40 leading-tight mt-2">
+        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             ESTIMEO IS AN AUTOMATED RATING AND VALUATION PLATFORM TAILORED FOR
             STARTUPS. IT USED PREDICTIVE ALGORITHMS TO EVALUATE BOTH TANGIBLE
@@ -98,7 +99,7 @@ const Estimeo = () => {
 
         <div className="block md:hidden">{/* <LinkeraMobile /> */}</div>
 
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-20 sm:px-20 sm:pt-40 sm:pb-60 leading-tight mt-2">
+        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             AS A FULL-STACK DEVELOPER, I WORKED ON THE V2 OF THEIR WEB
             APPLICATION, UPDATING FINANCIAL CALCULATION ALGORITHMS AND MANAGING
