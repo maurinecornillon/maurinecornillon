@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="font-sporting text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[12px] relative w-full p-10">
+      <header className="font-sporting text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[12px] relative w-full p-10">
         <div className="flex justify-between items-center">
           <Link
             to="home"
@@ -35,7 +35,10 @@ const Header = () => {
             duration={1000}
             className="cursor-pointer"
           >
-            <div onClick={handleNavigationHome} className="w-30px">
+            <div
+              onClick={handleNavigationHome}
+              className="max-w-[90px] min-w-[100px] sm:min-w-[90px] md:min-w-[150px]  lg:min-w-[160px]  xl:min-w-[150px] sm:max-w-[90px] md:max-w-[150px]  lg:max-w-[150px]  xl:max-w-[150px] "
+            >
               <h1 className="tracking-wide">Maurine Cornillon</h1>
               <h2 className="tracking-wide">Web Developer</h2>
             </div>
@@ -61,7 +64,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="text-right">
+          <div className="text-right max-w-[90px] min-w-[90px] sm:min-w-[90px] md:min-w-[150px]  lg:min-w-[150px]  xl:min-w-[150px] sm:max-w-[90px] md:max-w-[150px]  lg:max-w-[150px]  xl:max-w-[150px]  ">
             <p className="tracking-wide">Paris, France</p>
             <span className="ml-4 tracking-wide">{currentTime}</span>
           </div>
