@@ -30,7 +30,8 @@ const Skills = () => {
         <div className="relative pt-20 pb-10 flex items-start mb-16 sm:mb-20">
           <div className="w-full">
             <h2 className="text-[28px] sm:text-[40px] lg:text-[120px] font-sporting-bold mb-2">
-              WEB • DEVELOPMENT
+              <span className="block">WEB •</span>
+              <span className="block -mt-1">DEVELOPMENT</span>
             </h2>
             <p className="w-full text-[14px] sm:text-[16px] lg:text-[18px] font-sporting-regular">
               Skilled in JavaScript (React, Node.js) and MongoDB, I develop
@@ -46,8 +47,8 @@ const Skills = () => {
         <div className="relative pt-20 pb-10 flex items-start mb-16 sm:mb-20">
           <div className="w-full text-right">
             <h2 className="text-[28px] sm:text-[40px] lg:text-[120px] font-sporting-bold mb-2">
-              WEB •<br />
-              UI DESIGN
+              <span className="block">WEB •</span>
+              <span className="block -mt-1">UI DESGIN</span>
             </h2>
             <p className="text-right w-full text-[14px] sm:text-[16px] lg:text-[18px] font-sporting-regular">
               I design user-friendly, aesthetic interfaces, using Figma to
@@ -63,7 +64,8 @@ const Skills = () => {
         <div className="relative pt-20 pb-10 flex items-start sm:mb-20">
           <div className="w-full">
             <h2 className="text-[28px] sm:text-[40px] lg:text-[120px] font-sporting-bold mb-2">
-              WEB •<br /> DEVOPS
+              <span className="block">WEB •</span>
+              <span className="block -mt-1">DEVOPS</span>
             </h2>
             <p className="w-full text-[14px] sm:text-[16px] lg:text-[18px] font-sporting-regular">
               Skilled in Docker, Git, and CI/CD tools, I streamline development

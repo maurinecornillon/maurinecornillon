@@ -122,6 +122,10 @@ const Card = ({ card }) => {
         <p>{card.text1}</p>
         <p>{card.text2}</p>
         <p>{card.text3}</p>
+        <p>{card.text4}</p>
+        <p>{card.text5}</p>
+        <p>{card.text6}</p>
+        <p>{card.text7}</p>
       </div>
       <span className="absolute top-4 left-4 text-[40px] font-sporting-bold ">
         {card.id}.

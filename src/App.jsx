@@ -11,10 +11,12 @@ import Anna from "./pages/Anna";
 import Otome from "./pages/Otome";
 import Game from "./pages/Game";
 // import SmartBack from "./pages/SmartBack";
+import Cursor from "./components/Cursor";
 
 function App() {
   return (
     <Router>
+      <Cursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />

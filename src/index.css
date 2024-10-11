@@ -105,31 +105,38 @@ font-style: normal;
   transition: font-family 0.3s ease-in-out;
 }
 
-.cursor-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.custom-cursor {
-  mix-blend-mode: difference;
-  z-index: 9999;
-
-}
-
-.custom-cursor {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-}
 
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   scroll-behavior: smooth;
+  background-color: white;
+
+
+  
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%; /* Cercle parfait */
+  background-color: #fff;
+  border: 2px solid #000; /* Ajout d'une bordure noire pour un contraste */
+  mix-blend-mode: difference; /* Changement de couleur sur fond blanc/noir */
+  transform: translate(-50%, -50%); /* Pour centrer le cercle par rapport à la souris */
+  z-index: 999999;
+}
+
+.circle {
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%; /* Ajustement pour un cercle parfait */
+  background-color: #fff;
 }
 
 main {

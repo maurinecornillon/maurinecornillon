@@ -1,6 +1,6 @@
 import React from "react";
 
-import mockup from "../assets/img/estimeo/MockupEstimeo.png";
+import mockup from "../assets/img/anna/MockupAnnaMolly.png";
 
 const BackgroundEstimeoWMobile = () => {
   return (

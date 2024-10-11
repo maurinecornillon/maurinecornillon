@@ -90,11 +90,11 @@ const Anna = () => {
         {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            ANOMUSIC IS A MUSICAL SOCIAL NETWORKING PLATFORM. INSPIRED BY
-            INSTAGRAM AND BANDCAMP, THE PLATFORM IS DESIGNED FOR INDEPENDENT
-            ARTISTS TO SHARE THEIR TRACKS. SIGN UP, FOLLOW NEW ARTISTS, AND
-            EXPLORE YOUR FEED IN SEARCH OF YOUR NEW FAVORITE SOUND. WITH GENRE
-            FILTERS, DISCOVER WHAT YOU NEVER THOUGHT YOU’D HEAR.
+            Anomusic is a musical social networking platform. inspired by
+            instagram and bandcamp, the platform is designed for independent
+            artists to share their tracks. sign up, follow new artists, and
+            explore your feed in search of your new favorite sound. with genre
+            filters, discover what you never thought you’d hear.
           </p>
         </div>
 
@@ -108,8 +108,8 @@ const Anna = () => {
 
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            THIS PROJECT IS A SIDE DEVELOPMENT I WORK ON DURING MY FREE TIME,
-            COMBINING MY TWO PASSIONS: CODING AND MUSIC.
+            This project is a side development I work on during my free time,
+            combining my two passions: coding and music.
           </p>
         </div>
 
