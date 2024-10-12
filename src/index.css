@@ -130,14 +130,7 @@ body, html {
   z-index: 999999;
 }
 
-.circle {
-  position: absolute;
-  display: block;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%; /* Ajustement pour un cercle parfait */
-  background-color: #fff;
-}
+
 
 main {
   margin: 0;

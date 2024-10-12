@@ -87,11 +87,11 @@ const Otome = () => {
         {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            BEACHDAY IS AN OTOME GAME CURRENTLY IN DEVELOPMENT BY AN INDEPENDENT
-            GAME STUDIO. AS THE LEAD DEVELOPER ON THIS PROJECT, I AM EXCITED TO
-            EXPAND MY EXPERTISE INTO NEW PROGRAMMING LANGUAGES SUCH AS PYTHON,
-            WHILE CONTRIBUTING TO THE CREATIVE AND TECHNICAL ASPECTS OF THE
-            GAME.
+            Beachday is an otome game currently in development by an independent
+            game studio. As the lead developer on this project, I am excited to
+            expand my expertise into new programming languages such as python,
+            while contributing to the creative and technical aspects of the
+            game.
           </p>
         </div>
 

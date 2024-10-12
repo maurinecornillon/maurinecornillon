@@ -8,9 +8,10 @@ const Cursor = () => {
       const x = e.clientX;
       const y = e.clientY;
 
-      // Utilisation de translate pour positionner le cercle directement sur la souris
+      // Utilisation de backticks pour la chaîne de template dans translate
       cursor.style.transform = `translate(${x - 12}px, ${y - 12}px)`;
     };
+
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {

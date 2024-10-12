@@ -5,6 +5,8 @@ import { useInView } from "react-intersection-observer";
 import Header from "../components/Header";
 import Contact from "../components/Contact";
 
+import EstimeoWeb from "../components/EstimeoWeb";
+import EstimeoMobile from "../components/EstimeoMobile";
 import BackgroundEstimeoWeb from "../components/BackgroundEstimeoWeb";
 import BackgroundEstimeoMobile from "../components/BackgroundEstimeoMobile";
 
@@ -86,24 +88,28 @@ const Estimeo = () => {
         {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            ESTIMEO IS AN AUTOMATED RATING AND VALUATION PLATFORM TAILORED FOR
-            STARTUPS. IT USED PREDICTIVE ALGORITHMS TO EVALUATE BOTH TANGIBLE
-            AND INTANGIBLE ASSETS, PROVIDING DETAILED PRE-ANALYSIS REPORTS. BY
-            LINKING STARTUPS WITH INVESTORS, IT HELPED BUILD TRUST AND SUPPORT
-            GROWTH. ESTIMEO WAS LATER ACQUIRED AND MERGED WITH LINKERA, SO THE
-            PLATFORM NO LONGER EXISTS.
+            Estimeo is an automated rating and valuation platform tailored for
+            startups. it used predictive algorithms to evaluate both tangible
+            and intangible assets, providing detailed pre-analysis reports. By
+            linking startups with investors, it helped build trust and support
+            growth. Estimeo was later acquired and merged with Linkera, so the
+            platform no longer exists.
           </p>
         </div>
 
-        <div className="hidden md:block">{/* <LinkeraWeb /> */}</div>
+        <div className="hidden md:block">
+          <EstimeoWeb />
+        </div>
 
-        <div className="block md:hidden">{/* <LinkeraMobile /> */}</div>
+        <div className="block md:hidden">
+          <EstimeoMobile />
+        </div>
 
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            AS A FULL-STACK DEVELOPER, I WORKED ON THE V2 OF THEIR WEB
-            APPLICATION, UPDATING FINANCIAL CALCULATION ALGORITHMS AND MANAGING
-            MAINTENANCE AND BUG FIXES.
+            As a Full-Stack developer, I worked on the v2 of their web
+            application, updating financial calculation algorithms and managing
+            maintenance and bug fixes.
           </p>
         </div>
 

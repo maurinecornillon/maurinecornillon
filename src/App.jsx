@@ -10,7 +10,7 @@ import Estimeo from "./pages/Estimeo";
 import Anna from "./pages/Anna";
 import Otome from "./pages/Otome";
 import Game from "./pages/Game";
-// import SmartBack from "./pages/SmartBack";
+import SmartBack from "./pages/SmartBack";
 import Cursor from "./components/Cursor";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
         <Route path="/linkera" element={<Linkera />} />
         <Route path="/otome" element={<Otome />} />
         <Route path="/game" element={<Game />} />
-        {/* <Route path="/SmartBack" element={<SmartBack />} /> */}
+        <Route path="/SmartBack" element={<SmartBack />} />
 
         {/* Nouvelle route */}
       </Routes>

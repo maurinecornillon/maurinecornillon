@@ -30,6 +30,7 @@ const LinkeraWeb = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
+    smooth: true, // Ajout de l'option "smooth" pour un défilement plus fluide
   });
 
   // Transformation du défilement sur l'axe X, ajustée pour inclure toutes les images sans dépasser
@@ -82,10 +83,11 @@ const LinkeraWeb = () => {
         }}
       >
         <section ref={targetRef} className="relative h-[500vh] w-screen">
-          {" "}
-          {/* Augmenté de 300vh à 500vh */}
           <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-            <motion.div style={{ x }} className="flex w-[300vw] gap-10">
+            <motion.div
+              style={{ x }}
+              className="flex w-[300vw] gap-10 will-change-transform" // Ajout de "will-change" pour améliorer les performances
+            >
               {images.map((image) => (
                 <ImageCard image={image} key={image.id} />
               ))}
@@ -104,7 +106,7 @@ const ImageCard = ({ image }) => {
       <img
         src={image.src}
         alt={image.alt}
-        className="w-full h-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105 "
+        className="w-full h-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105 will-change-transform" // Ajout de "will-change"
       />
     </div>
   );

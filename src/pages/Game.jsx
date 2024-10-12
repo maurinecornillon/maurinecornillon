@@ -93,11 +93,11 @@ const Game = () => {
         {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            THIS IS MY FIRST DEVELOPMENT PROJECT, A RETRO 1V1 FIGHTING GAME
-            INSPIRED BY THE ONE PIECE UNIVERSE. IT WAS AN EXCITING EXPERIENCE TO
-            CREATE DURING MY DEVELOPER TRAINING, AND I’M ALWAYS HAPPY TO
-            SHOWCASE IT, AS IT WAS A REAL PLEASURE TO BRING IT TO LIFE AND LEARN
-            HOW TO MAKE IT.
+            This is my first development project, a retro 1v1 fighting game
+            inspired by the one piece universe. It was an exciting experience to
+            create during my developer training, and I’m always happy to
+            showcase it, as it was a real pleasure to bring it to life and learn
+            how to make it.
           </p>
         </div>
 

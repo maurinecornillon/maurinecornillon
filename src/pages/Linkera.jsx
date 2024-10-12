@@ -104,10 +104,10 @@ const Linkera = () => {
         {/* Premier paragraphe avec padding responsive */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            LINKERA SIMPLIFIES BUSINESS SALES, ACQUISITIONS, AND FUNDRAISING. IT
-            PROVIDES TOOLS FOR LISTINGS, CONNECTING BUYERS AND SELLERS, MANAGING
-            CONFIDENTIALITY, AND CONDUCTING VALUATIONS. FOR STARTUPS, IT HELPS
-            RAISE FUNDS BY IDENTIFYING INVESTORS AND PREPARING FOR TRANSACTIONS.
+            Linkera simplifies business sales, acquisitions, and fundraising. It
+            provides tools for listings, connecting buyers and sellers, managing
+            confidentiality, and conducting valuations. for startups, it helps
+            raise funds by identifying investors and preparing for transactions.
           </p>
         </div>
 
@@ -122,10 +122,10 @@ const Linkera = () => {
         {/* Deuxième paragraphe avec padding responsive */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            AS PART OF A TECH TEAM, I CONTRIBUTED TO BUILDING THE FIRST VERSION
-            OF LINKERA AS A FULL-STACK DEVELOPER. I FOCUSED ON UI/UX DESIGN AND
-            DEVELOPED ALGORITHMS FOR FINANCIAL CALCULATIONS AND AUTOMATED PDF
-            GENERATION.
+            As part of a tech team, I contributed to building the first version
+            of Linkera as a Full-Stack developer. I focused on UI/UX design and
+            developed algorithms for financial calculations and automated pdf
+            generation.
           </p>
         </div>
 
