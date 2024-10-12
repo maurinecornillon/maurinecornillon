@@ -53,7 +53,7 @@ const Menu = () => {
             <h2 className="text-white text-2xl font-light text-right pr-4 transform -translate-y-2">
               01.
             </h2>
-            <h1 className="cursor-pointer text-white  text-[50px] sm:text-[90px] lg:text-[120px] md:text-[120px] xl:text-[120px]">
+            <h1 className="cursor-pointer text-white text-[3.125rem] sm:text-[5.625rem] md:text-[7.5rem] lg:text-[6rem]  xl:text-[7.5rem]  2xl:text-[7.5rem]">
               projects
             </h1>
           </motion.div>
@@ -69,7 +69,7 @@ const Menu = () => {
             <h2 className="text-white text-2xl font-light text-right pr-4 transform -translate-y-2">
               02.
             </h2>
-            <h1 className="cursor-pointer text-white  text-[50px] sm:text-[90px] lg:text-[120px] md:text-[120px] xl:text-[120px]">
+            <h1 className="cursor-pointer text-white text-[3.125rem] sm:text-[5.625rem]  md:text-[7.5rem] lg:text-[6rem]  xl:text-[7.5rem]  2xl:text-[7.5rem]">
               about
             </h1>
           </motion.div>
@@ -85,7 +85,7 @@ const Menu = () => {
             <h2 className="text-white text-2xl font-light text-right pr-4 transform -translate-y-2">
               03.
             </h2>
-            <h1 className="cursor-pointer text-white text-[50px] sm:text-[90px] lg:text-[120px] md:text-[120px] xl:text-[120px] ">
+            <h1 className="cursor-pointer text-white text-[3.125rem] sm:text-[5.625rem] md:text-[7.5rem] lg:text-[6rem]  xl:text-[7.5rem]  2xl:text-[7.5rem]">
               contact
             </h1>
           </motion.div>

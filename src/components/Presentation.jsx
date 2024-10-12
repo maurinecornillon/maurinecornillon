@@ -38,7 +38,7 @@ const Presentation = () => {
     <div className="flex h-screen justify-center items-center ">
       <main className="flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8">
         <motion.p
-          className="text-[10px] sm:text-[20px] md:text-[20px] lg:text-[30px] xl:text-[30px] max-w-[100%] font-sporting-regular tracking-widest m-0 p-0 leading-tight mt-2"
+          className=" max-w-[100%] font-sporting-regular tracking-widest m-0 p-0 leading-tight mt-2"
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
           transition={{
@@ -53,8 +53,8 @@ const Presentation = () => {
               key={index}
               className={`word1 ${
                 item.specialFont
-                  ? "font-canela-light-italic text-[20px] sm:text-[40px] lg:text-[60px]  tracking-wide"
-                  : "font-sporting-regular text-[20px] sm:text-[40px] lg:text-[50px]  tracking-normal"
+                  ? "font-canela-light-italic text-[1.25rem] sm:text-[2.5rem] lg:text-[2.7rem]  xl:text-[3.75rem] 2xl:text-[3.75rem] tracking-wide"
+                  : "font-sporting-regular text-[1.25rem] sm:text-[2.5rem] lg:text-[2.4rem] xl:text-[3.125rem] 2xl:text-[3.125rem]  tracking-normal"
               }`}
             >
               {item.word}&nbsp;
@@ -64,6 +64,6 @@ const Presentation = () => {
       </main>
     </div>
   );
-};
+}  
 
 export default Presentation;

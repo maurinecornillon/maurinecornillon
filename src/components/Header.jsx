@@ -37,7 +37,7 @@ const Header = () => {
           >
             <div
               onClick={handleNavigationHome}
-              className="max-w-[90px] min-w-[100px] sm:min-w-[90px] md:min-w-[150px]  lg:min-w-[160px]  xl:min-w-[150px] sm:max-w-[90px] md:max-w-[150px]  lg:max-w-[150px]  xl:max-w-[150px] "
+              className="max-w-[90px] min-w-[100px] sm:min-w-[90px] md:min-w-[150px]  lg:min-w-[160px]  xl:min-w-[100px] sm:max-w-[90px] md:max-w-[150px]  lg:max-w-[150px]  xl:max-w-[150px] "
             >
               <h1 className="tracking-wide">Maurine Cornillon</h1>
               <h2 className="tracking-wide">Web Developer</h2>
