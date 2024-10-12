@@ -31,7 +31,7 @@ const Presentation = () => {
     { word: "WEBSITES", specialFont: false },
     { word: "FOR", specialFont: false },
     { word: "clients", specialFont: true },
-    { word: "WORLDWIDE.", specialFont: false },
+    { word: "WORLDWIDE", specialFont: false },
   ];
 
   return (

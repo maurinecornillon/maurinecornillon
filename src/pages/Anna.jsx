@@ -91,7 +91,7 @@ const Anna = () => {
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             Anomusic is a musical social networking platform. Inspired by
-            instagram and bandcamp, the platform is designed for independent
+            Instagram and Bandcamp, the platform is designed for independent
             artists to share their tracks. Sign up, follow new artists, and
             explore your feed in search of your new favorite sound. With genre
             filters, discover what you never thought you’d hear.

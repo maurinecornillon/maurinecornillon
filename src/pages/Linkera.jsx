@@ -106,7 +106,7 @@ const Linkera = () => {
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             Linkera simplifies business sales, acquisitions, and fundraising. It
             provides tools for listings, connecting buyers and sellers, managing
-            confidentiality, and conducting valuations. for startups, it helps
+            confidentiality, and conducting valuations. For startups, it helps
             raise funds by identifying investors and preparing for transactions.
           </p>
         </div>

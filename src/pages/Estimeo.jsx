@@ -89,7 +89,7 @@ const Estimeo = () => {
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             Estimeo is an automated rating and valuation platform tailored for
-            startups. it used predictive algorithms to evaluate both tangible
+            startups. It used predictive algorithms to evaluate both tangible
             and intangible assets, providing detailed pre-analysis reports. By
             linking startups with investors, it helped build trust and support
             growth. Estimeo was later acquired and merged with Linkera, so the

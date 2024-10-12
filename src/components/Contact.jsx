@@ -34,7 +34,7 @@ const Contact = () => {
 
           {/* GitHub */}
           <a
-            href="https://github.com/ton-profil"
+            href="https://github.com/maurinecornillon"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer"
