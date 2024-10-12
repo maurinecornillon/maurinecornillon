@@ -77,7 +77,7 @@ const SmartBack = () => {
         <div className="h-[100vh] flex items-center justify-center bg-white">
           <div className="w-full flex justify-center">
             <motion.h1
-              className="text-center text-[6vw] sm:text-[6vw] lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
+              className="text-center text-[6vw] sm:text-[6vw] md:text-[4vw]  lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
               style={{ willChange: "transform" }} // Ajoute will-change pour optimiser les transformations
               initial={{ y: "100%" }}
               animate={{ y: 0 }}

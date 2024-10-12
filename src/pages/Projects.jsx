@@ -50,7 +50,7 @@ const Projects = () => {
         <main className="flex justify-center items-center flex-grow px-10 leading-none m-0 p-0">
           <div>
             <motion.h1
-              className="text-[60px] sm:text-[80px] md:text-[180px] lg:text-[190px] xl:text-[280px] font-respira tracking-widest m-0 p-0 leading-none"
+              className="text-[60px] sm:text-[60px] md:text-[180px] lg:text-[190px] xl:text-[250px] font-respira tracking-widest m-0 p-0 leading-none"
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ type: "spring", stiffness: 60, damping: 20 }}

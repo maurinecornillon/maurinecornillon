@@ -102,7 +102,7 @@ const EstimeoWeb = () => {
 // Nouveau composant pour les images du carrousel
 const ImageCard = ({ image }) => {
   return (
-    <div className="relative flex justify-center items-center h-[600px] w-screen p-4 group transition-all duration-300 ease-in-out cursor-pointer">
+    <div className="relative flex justify-center items-center h-[600px] md:h-[400px] lg:h-[600px] xl:h-[600px]  w-screen p-4 group transition-all duration-300 ease-in-out cursor-pointer">
       <img
         src={image.src}
         alt={image.alt}

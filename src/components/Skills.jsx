@@ -29,9 +29,9 @@ const Skills = () => {
       <div className="skills-section opacity-0 transition-opacity duration-700 ease-out transform translate-y-10">
         <div className="relative pt-20 pb-10 flex items-start mb-16 sm:mb-20">
           <div className="w-full">
-            <h2 className="text-[1.75rem] sm:text-[2.5rem] md:text-[6.25rem] lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[7.5rem] font-sporting-bold mb-2">
+            <h2 className="text-[1.75rem] sm:text-[4.5rem]  lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[7.5rem] font-sporting-bold mb-2">
               <span className="block">WEB •</span>
-              <span className="block -mt-1">DEVELOPMENT</span>
+              <span className="block mt-0">DEVELOPMENT</span>
             </h2>
             <p className="w-full text-[0.875rem] sm:text-[1rem] lg:text-[1.125rem] font-sporting-regular">
               Skilled in JavaScript (React, Node.js) and MongoDB, I develop
@@ -46,7 +46,7 @@ const Skills = () => {
       <div className="skills-section opacity-0 transition-opacity duration-700 ease-out transform translate-y-10">
         <div className="relative pt-20 pb-10 flex items-start mb-16 sm:mb-20">
           <div className="w-full text-right">
-            <h2 className="text-[1.75rem] sm:text-[2.5rem] lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[7.5rem] font-sporting-bold mb-2 responsive">
+            <h2 className="text-[1.75rem] sm:text-[4.5rem] lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[7.5rem] font-sporting-bold mb-2 responsive">
               <span className="block">WEB •</span>
               <span className="block -mt-1">UI DESIGN</span>
             </h2>
@@ -63,7 +63,7 @@ const Skills = () => {
       <div className="skills-section opacity-0 transition-opacity duration-700 ease-out transform translate-y-10">
         <div className="relative pt-20 pb-10 flex items-start sm:mb-20">
           <div className="w-full">
-            <h2 className="text-[1.75rem] sm:text-[2.5rem] lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[7.5rem] font-sporting-bold mb-2">
+            <h2 className="text-[1.75rem] sm:text-[4.5rem]  lg:text-[6rem] xl:text-[7.5rem] 2xl:text-[7.5rem] font-sporting-bold mb-2">
               <span className="block">WEB •</span>
               <span className="block -mt-1">DEVOPS</span>
             </h2>
