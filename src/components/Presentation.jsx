@@ -38,7 +38,7 @@ const Presentation = () => {
     <div className="flex h-screen justify-center items-center ">
       <main className="flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8">
         <motion.p
-          className=" max-w-[100%] font-sporting-regular tracking-widest m-0 p-0 leading-tight mt-2"
+          className=" max-w-[100%] font-sporting-regular tracking-widest m-0 p-0 xl:leading-tight md:leading-tight lg:leading-tight xl:leading-tight 2xl:leading-tight mt-2"
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
           transition={{

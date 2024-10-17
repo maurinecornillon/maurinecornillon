@@ -1,4 +1,5 @@
 import React from "react";
+
 import HeaderBlack from "../components/HeaderBlack";
 
 const Contact = () => {
@@ -11,7 +12,6 @@ const Contact = () => {
             • LET'S <br />
             COLLABORATE
           </h2>
-          {/* Ajout du lien mailto */}
           <a
             href="mailto:maurinecornillon@gmail.com"
             className="text-[20px] sm:text-[22px] lg:text-[44px]  mt-4 tracking-wide font-canela-light-italic "

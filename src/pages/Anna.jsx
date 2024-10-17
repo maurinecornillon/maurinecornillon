@@ -58,7 +58,6 @@ const Anna = () => {
     <>
       <Header />
       <div className="relative h-[200vh]">
-        {/* Section avec le titre */}
         <div className="h-[100vh] flex items-center justify-center bg-white">
           <div className="w-full flex justify-center">
             <motion.h1
@@ -78,7 +77,6 @@ const Anna = () => {
           </div>
         </div>
 
-        {/* Section avec l'effet de parallaxe en dessous du titre */}
         <div className="hidden md:block">
           <BackgroundAnoWeb />
         </div>
@@ -87,7 +85,6 @@ const Anna = () => {
           <BackgroundAnoMobile />
         </div>
 
-        {/* Section suivante */}
         <div className="bg-white flex items-center justify-center m-0 px-10 pt-20  sm:px-20 sm:pt-40  leading-tight mt-2">
           <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
             Anomusic is a musical social networking platform. Inspired by

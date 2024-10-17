@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Presentation from "../components/Presentation";
-import Contact from "../components/Contact";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+import Header from "../components/Header";
+import Presentation from "../components/Presentation";
+import Contact from "../components/Contact";
+
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [loading, setLoading] = useState(true); // État pour gérer le chargement
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const video = document.querySelector("video");
 
     const handleVideoLoaded = () => {
       setTimeout(() => {
-        setLoading(false); // Fin du chargement après au moins 3 secondes
+        setLoading(false);
       }, 3000);
     };
 
@@ -159,9 +160,9 @@ const Home = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{
-              duration: 1.2,
+              duration: 0.5,
               ease: "easeInOut",
-              delay: 0.2,
+              delay: 0.1,
             }}
           >
             <Contact />

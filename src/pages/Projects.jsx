@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { useTransform, useScroll } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import Header from "../components/Header";
 import ProjectsWeb from "../components/ProjectsWeb";
 import ProjectsMobile from "../components/ProjectsMobile";
-
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
   const targetRefWeb = useRef(null);
@@ -14,7 +14,6 @@ const Projects = () => {
     target: targetRefWeb,
   });
 
-  // Adjusted x transformation to avoid the extra space at the end
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   const controlsWeb = useAnimation();
