@@ -19,7 +19,6 @@
     "react-scroll": "^1.9.0",
     "react-scroll-parallax": "^3.4.5",
     "smooth-scrollbar": "^8.8.4",
-    "typescript": "^5.6.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
