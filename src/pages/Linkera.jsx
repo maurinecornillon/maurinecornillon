@@ -52,7 +52,6 @@ const Linkera = () => {
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
-      console.log(position); // Gère ici les animations en fonction du scroll
 
       // Optionnel : Ajout d'animations en fonction du défilement si nécessaire
     };
