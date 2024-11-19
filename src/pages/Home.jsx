@@ -9,7 +9,9 @@ import Contact from "../components/Contact";
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [fontLoaded, setFontLoaded] = useState(false); // Nouvelle gestion pour la police
 
+  // Gestion du chargement de la vidéo
   useEffect(() => {
     const video = document.querySelector("video");
 
@@ -30,6 +32,7 @@ const Home = () => {
     };
   }, []);
 
+  // Gestion du défilement
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -44,20 +47,15 @@ const Home = () => {
 
   const translateY = scrollY * 0.2;
 
+  // Gestion des animations avec Intersection Observer
   const controlsHeader = useAnimation();
-  const [refHeader, inViewHeader] = useInView({
-    threshold: 0.1,
-  });
+  const [refHeader, inViewHeader] = useInView({ threshold: 0.1 });
 
   const controlsPresentation = useAnimation();
-  const [refPresentation, inViewPresentation] = useInView({
-    threshold: 0.1,
-  });
+  const [refPresentation, inViewPresentation] = useInView({ threshold: 0.1 });
 
   const controlsContact = useAnimation();
-  const [refContact, inViewContact] = useInView({
-    threshold: 0.1,
-  });
+  const [refContact, inViewContact] = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     if (inViewHeader) {
@@ -82,6 +80,13 @@ const Home = () => {
       controlsContact.start("hidden");
     }
   }, [controlsContact, inViewContact]);
+
+  // Détecter le chargement des polices
+  useEffect(() => {
+    document.fonts.load("1em 'Respira Black'").then(() => {
+      setFontLoaded(true);
+    });
+  }, []);
 
   return (
     <>
@@ -119,7 +124,9 @@ const Home = () => {
             </motion.div>
             <main className="relative h-screen overflow-hidden flex items-end justify-end">
               <motion.h1
-                className=" text-[24vw] sm:text-[24vw] md:text-[24vw] lg:text-[24vw] xl:text-[24vw]  font-respira tracking-widest m-0 p-0 leading-none"
+                className={`text-[24vw] sm:text-[24vw] md:text-[24vw] lg:text-[24vw] xl:text-[24vw] font-respira tracking-widest m-0 p-0 leading-none ${
+                  fontLoaded ? "" : "text-hidden"
+                }`} // Masquer si police non chargée
                 style={{
                   position: "fixed",
                   transform: `translateY(${translateY}px)`,
