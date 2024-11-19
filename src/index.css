@@ -4,7 +4,8 @@
 
 @font-face {
   font-family: 'Respira Black';
-  src: url('./assets/fonts/Respira\ Black.ttf') format('opentype');;
+  src: url('./assets/fonts/Respira\ Black.ttf') format('opentype');
+  font-display: optional;
 }
 
 @font-face {
