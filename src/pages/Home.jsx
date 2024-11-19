@@ -6,87 +6,77 @@ import Header from "../components/Header";
 import Presentation from "../components/Presentation";
 import Contact from "../components/Contact";
 
+// Custom hook pour gérer les animations avec Intersection Observer
+const useAnimatedSection = (threshold = 0.1) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold });
+
+  useEffect(() => {
+    controls.start(inView ? "visible" : "hidden");
+  }, [controls, inView]);
+
+  return { controls, ref };
+};
+
+// Composant réutilisable pour les sections animées
+const AnimatedSection = ({ children, controls, refSection, delay = 0.2 }) => (
+  <motion.div
+    ref={refSection}
+    initial="hidden"
+    animate={controls}
+    variants={{
+      hidden: { opacity: 0, y: 100 },
+      visible: { opacity: 1, y: 0 },
+    }}
+    transition={{
+      duration: 1.2,
+      ease: "easeInOut",
+      delay,
+    }}
+  >
+    {children}
+  </motion.div>
+);
+
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [fontLoaded, setFontLoaded] = useState(false); // Nouvelle gestion pour la police
+  const [fontLoaded, setFontLoaded] = useState(false);
 
   // Gestion du chargement de la vidéo
   useEffect(() => {
     const video = document.querySelector("video");
 
     const handleVideoLoaded = () => {
-      setTimeout(() => {
-        setLoading(false);
-      }, 3000);
+      setTimeout(() => setLoading(false), 3000);
     };
 
-    if (video) {
-      video.addEventListener("canplaythrough", handleVideoLoaded);
-    }
+    if (video) video.addEventListener("canplaythrough", handleVideoLoaded);
 
     return () => {
-      if (video) {
-        video.removeEventListener("canplaythrough", handleVideoLoaded);
-      }
+      if (video) video.removeEventListener("canplaythrough", handleVideoLoaded);
     };
   }, []);
 
   // Gestion du défilement
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const translateY = scrollY * 0.2;
-
-  // Gestion des animations avec Intersection Observer
-  const controlsHeader = useAnimation();
-  const [refHeader, inViewHeader] = useInView({ threshold: 0.1 });
-
-  const controlsPresentation = useAnimation();
-  const [refPresentation, inViewPresentation] = useInView({ threshold: 0.1 });
-
-  const controlsContact = useAnimation();
-  const [refContact, inViewContact] = useInView({ threshold: 0.1 });
-
-  useEffect(() => {
-    if (inViewHeader) {
-      controlsHeader.start("visible");
-    } else {
-      controlsHeader.start("hidden");
-    }
-  }, [controlsHeader, inViewHeader]);
-
-  useEffect(() => {
-    if (inViewPresentation) {
-      controlsPresentation.start("visible");
-    } else {
-      controlsPresentation.start("hidden");
-    }
-  }, [controlsPresentation, inViewPresentation]);
-
-  useEffect(() => {
-    if (inViewContact) {
-      controlsContact.start("visible");
-    } else {
-      controlsContact.start("hidden");
-    }
-  }, [controlsContact, inViewContact]);
+  // Gestion des animations
+  const header = useAnimatedSection();
+  const presentation = useAnimatedSection();
+  const contact = useAnimatedSection();
 
   // Détecter le chargement des polices
   useEffect(() => {
-    document.fonts.load("1em 'Respira Black'").then(() => {
-      setFontLoaded(true);
-    });
+    document.fonts.load("1em 'Respira Black'").then(() => setFontLoaded(true));
   }, []);
+
+  const translateY = scrollY * 0.2;
 
   return (
     <>
@@ -106,27 +96,15 @@ const Home = () => {
       ) : (
         <>
           <div className="flex flex-col h-screen justify-between">
-            <motion.div
-              ref={refHeader}
-              initial="hidden"
-              animate={controlsHeader}
-              variants={{
-                hidden: { opacity: 0, y: 100 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{
-                duration: 1.2,
-                ease: "easeInOut",
-                delay: 0.2,
-              }}
-            >
+            <AnimatedSection controls={header.controls} refSection={header.ref}>
               <Header />
-            </motion.div>
+            </AnimatedSection>
+
             <main className="relative h-screen overflow-hidden flex items-end justify-end">
               <motion.h1
                 className={`text-[24vw] sm:text-[24vw] md:text-[24vw] lg:text-[24vw] xl:text-[24vw] font-respira tracking-widest m-0 p-0 leading-none ${
                   fontLoaded ? "" : "text-hidden"
-                }`} // Masquer si police non chargée
+                }`}
                 style={{
                   position: "fixed",
                   transform: `translateY(${translateY}px)`,
@@ -141,39 +119,16 @@ const Home = () => {
             </main>
           </div>
 
-          <motion.div
-            ref={refPresentation}
-            initial="hidden"
-            animate={controlsPresentation}
-            variants={{
-              hidden: { opacity: 0, y: 100 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{
-              duration: 1.2,
-              ease: "easeInOut",
-              delay: 0.2,
-            }}
+          <AnimatedSection
+            controls={presentation.controls}
+            refSection={presentation.ref}
           >
             <Presentation />
-          </motion.div>
+          </AnimatedSection>
 
-          <motion.div
-            ref={refContact}
-            initial="hidden"
-            animate={controlsContact}
-            variants={{
-              hidden: { opacity: 0, y: 100 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{
-              duration: 0.5,
-              ease: "easeInOut",
-              delay: 0.1,
-            }}
-          >
+          <AnimatedSection controls={contact.controls} refSection={contact.ref}>
             <Contact />
-          </motion.div>
+          </AnimatedSection>
         </>
       )}
     </>

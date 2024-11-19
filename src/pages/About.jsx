@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -7,48 +7,42 @@ import Profile from "../components/Profile";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 
+// Hook interne pour gérer les animations d'une section
+const useAnimatedSection = (threshold = 0.1) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold });
+
+  React.useEffect(() => {
+    controls.start(inView ? "visible" : "hidden");
+  }, [controls, inView]);
+
+  return { controls, ref };
+};
+
+// Composant réutilisable pour les sections animées
+const AnimatedSection = ({ children, controls, refSection, delay = 0.2 }) => (
+  <motion.div
+    ref={refSection}
+    initial="hidden"
+    animate={controls}
+    variants={{
+      hidden: { opacity: 0, y: 100 },
+      visible: { opacity: 1, y: 0 },
+    }}
+    transition={{
+      duration: 1.2,
+      ease: "easeInOut",
+      delay,
+    }}
+  >
+    {children}
+  </motion.div>
+);
+
 const About = () => {
-  // Controls and ref for Profile
-  const controlsProfile = useAnimation();
-  const [refProfile, inViewProfile] = useInView({
-    threshold: 0.1,
-  });
-
-  // Controls and ref for Skills
-  const controlsSkills = useAnimation();
-  const [refSkills, inViewSkills] = useInView({
-    threshold: 0.1,
-  });
-
-  // Controls and ref for Contact
-  const controlsContact = useAnimation();
-  const [refContact, inViewContact] = useInView({
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inViewProfile) {
-      controlsProfile.start("visible");
-    } else {
-      controlsProfile.start("hidden");
-    }
-  }, [controlsProfile, inViewProfile]);
-
-  useEffect(() => {
-    if (inViewSkills) {
-      controlsSkills.start("visible");
-    } else {
-      controlsSkills.start("hidden");
-    }
-  }, [controlsSkills, inViewSkills]);
-
-  useEffect(() => {
-    if (inViewContact) {
-      controlsContact.start("visible");
-    } else {
-      controlsContact.start("hidden");
-    }
-  }, [controlsContact, inViewContact]);
+  const profile = useAnimatedSection(); // Gestion des animations pour Profile
+  const skills = useAnimatedSection(); // Gestion des animations pour Skills
+  const contact = useAnimatedSection(); // Gestion des animations pour Contact
 
   return (
     <>
@@ -68,57 +62,32 @@ const About = () => {
         </main>
       </div>
 
-      {/* Profile component */}
-      <motion.div
-        ref={refProfile}
-        initial="hidden"
-        animate={controlsProfile}
-        variants={{
-          hidden: { opacity: 0, y: 100 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        transition={{
-          duration: 1.2,
-          ease: "easeInOut",
-          delay: 0.2,
-        }}
+      {/* Profile Section */}
+      <AnimatedSection
+        controls={profile.controls}
+        refSection={profile.ref}
+        delay={0.2}
       >
         <Profile />
-      </motion.div>
+      </AnimatedSection>
 
-      <motion.div
-        ref={refSkills}
-        initial="hidden"
-        animate={controlsSkills}
-        variants={{
-          hidden: { opacity: 0, y: 100 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        transition={{
-          duration: 1.2,
-          ease: "easeInOut",
-          delay: 0.2,
-        }}
+      {/* Skills Section */}
+      <AnimatedSection
+        controls={skills.controls}
+        refSection={skills.ref}
+        delay={0.3}
       >
         <Skills />
-      </motion.div>
+      </AnimatedSection>
 
-      <motion.div
-        ref={refContact}
-        initial="hidden"
-        animate={controlsContact}
-        variants={{
-          hidden: { opacity: 0, y: 100 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        transition={{
-          duration: 1.2,
-          ease: "easeInOut",
-          delay: 0.2,
-        }}
+      {/* Contact Section */}
+      <AnimatedSection
+        controls={contact.controls}
+        refSection={contact.ref}
+        delay={0.4}
       >
         <Contact />
-      </motion.div>
+      </AnimatedSection>
     </>
   );
 };
