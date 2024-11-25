@@ -50,7 +50,7 @@ const Estimeo = () => {
             src={mockup}
             alt="Large Project View"
             className="rounded-lg w-full"
-          ></LazyLoadImage>{" "}
+          ></LazyLoadImage>
         </div>
 
         {/* Right Column */}
