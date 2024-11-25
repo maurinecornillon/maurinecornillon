@@ -37,7 +37,7 @@ const Tab = ({ children, setPosition, isActive, onClick }) => {
     <li
       ref={ref}
       onClick={onClick}
-      className={`relative z-10 flex-1 cursor-pointer text-[0.5rem] sm:text-[0.5rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] uppercase ${
+      className={`relative z-10 flex-1 cursor-pointer text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] uppercase ${
         isActive ? "font-bold text-secondary" : "text-secondary"
       }`}
     >
@@ -144,7 +144,7 @@ const Services = () => {
           <Glider position={position} />
 
           {/* Tabs */}
-          <ul className="relative flex items-center justify-between w-full h-[40px] sm:h-[48px] md:h-[60px] px-2 sm:px-4">
+          <ul className="relative flex items-center justify-between w-full h-[40px] sm:h-[48px] md:h-[60px] px-2 sm:px-4 ">
             <Tab
               setPosition={setPosition}
               isActive={activeSection === "creation"}

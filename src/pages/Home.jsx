@@ -56,13 +56,14 @@ const Home = () => {
           variants={zoomVariants}
           transition={zoomTransition}
         >
-          <AnimatedTitle title={"vos ambitions"} />
-          <AnimatedTitle title={"mes solutions"} />
+          <AnimatedTitle title="vos ambitions" />
+          <AnimatedTitle title="mes solutions" />
         </div>
         {/* Bouton d'action */}
         <a
           href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
           target="_blank"
+          rel="noreferrer"
           className="custom-button bg-purple rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
           ref={buttonRef}
           style={{

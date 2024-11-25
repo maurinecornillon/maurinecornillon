@@ -49,18 +49,20 @@ const Optimisation = () => {
                   }}
                 ></span>
                 <h2 className="text-xl font-bold mb-4">Forfait Refonte</h2>
-                <p className="mb-4 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                   Modernisation complète de votre plateforme.
                 </p>
                 <div className="mb-16">
                   <a
                     href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
-                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
                   >
                     Prendre rendez-vous
                   </a>
                 </div>
-                <ul className="list-none space-y-4 mb-16 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                   <li>✓ Audit UX/UI et technique.</li>
                   <li>
                     ✓ Création de nouvelles maquettes et optimisation de
@@ -100,18 +102,20 @@ const Optimisation = () => {
                   }}
                 ></span>
                 <h2 className="text-xl font-bold mb-4">Forfait Performance</h2>
-                <p className="mb-4 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                   Optimisation technique et amélioration des performances.
                 </p>
                 <div className="mb-16">
                   <a
                     href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
-                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
                   >
                     Prendre rendez-vous
                   </a>
                 </div>
-                <ul className="list-none space-y-4 mb-16 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                   <li>✓ Suivi technique.</li>
                   <li>✓ Optimisation du code.</li>
                   <li>✓ Amélioration des performances générales.</li>
@@ -142,8 +146,9 @@ const Optimisation = () => {
           <ZoomText delay={0.5}>
             <a
               href="https://linktr.ee/maurinemona"
+              rel="noreferrer"
               target="_blank"
-              className="rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+              className="bg-purple rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
               style={{
                 boxShadow: "8px 8px 0px 0px #212121",
               }}

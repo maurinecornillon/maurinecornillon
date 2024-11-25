@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useTransform, useScroll } from "framer-motion";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+
 import { useNavigate } from "react-router-dom";
 
-import flowers from "../assets/img/logo/el2.png";
 import flowers1 from "../assets/img/logo/logo.png";
 
 const cards = [
@@ -80,7 +79,7 @@ const ProjectsWeb = () => {
       <div>
         <section
           ref={targetRef}
-          className="relative h-[500vh] lg:h-[400vh] md:h-[400vh]"
+          className="relative h-[500vh] lg:h-[600vh] md:h-[400vh]"
         >
           <div className="sticky top-0 flex items-center overflow-hidden">
             <motion.div
@@ -142,7 +141,7 @@ const Card = ({ card }) => {
       >
         {/* Image en haut à droite */}
         <div className="absolute  top-[-10px] right-[-10px] w-24 h-24 transition-all duration-300 ease-in-out group-hover:opacity-0">
-          <img src={flowers1} />
+          <img src={flowers1} alt="logo" />
         </div>
 
         {/* Texte de remplacement lors du hover */}

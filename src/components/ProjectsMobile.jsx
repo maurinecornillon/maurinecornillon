@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import ZoomText from "../components/ZoomText";
+
 import flowers1 from "../assets/img/logo/logo.png";
 
 const cards = [
@@ -65,7 +67,7 @@ const cards = [
 const ProjectsMobile = () => {
   return (
     <>
-      <section className="flex flex-col gap-14 p-10 pb-60 ">
+      <section className="flex flex-col gap-14 p-10 ">
         {cards.map((card) => (
           <Card card={card} key={card.id} />
         ))}
@@ -103,33 +105,37 @@ const Card = ({ card }) => {
   };
 
   return (
-    <div
-      onClick={() => handleNavigation(card.title)}
-      className="relative border-dashed border-2 border rounded-lg h-[350px] bg-[#eae6f3] w-full border-black p-4 "
-    >
-      {/* Titre */}
-      <div className="absolute bottom-4 left-4">
-        <h2 className="text-2xl font-sporting-bold">{card.title}</h2>
-      </div>
+    <>
+      <ZoomText delay={0.2}>
+        <div
+          onClick={() => handleNavigation(card.title)}
+          className="relative border-dashed border-2 border rounded-lg h-[350px] bg-[#eae6f3] w-full border-black p-4 "
+        >
+          {/* Titre */}
+          <div className="absolute bottom-4 left-4">
+            <h2 className="text-2xl font-sporting-bold">{card.title}</h2>
+          </div>
 
-      <div className="absolute top-[-10px] right-[-10px] w-24 h-24  ">
-        <img src={flowers1} />
-      </div>
+          <div className="absolute top-[-10px] right-[-10px] w-24 h-24  ">
+            <img src={flowers1} at="logo" />
+          </div>
 
-      {/* Description simplifiée */}
-      <div className="mt-14 text-lg">
-        <p>{card.text1}</p>
-        <p>{card.text2}</p>
-        <p>{card.text3}</p>
-        <p>{card.text4}</p>
-        <p>{card.text5}</p>
-        <p>{card.text6}</p>
-        <p>{card.text7}</p>
-      </div>
-      <span className="absolute top-4 left-4 text-[40px] font-sporting-bold ">
-        {card.id}.
-      </span>
-    </div>
+          {/* Description simplifiée */}
+          <div className="mt-14 text-lg">
+            <p>{card.text1}</p>
+            <p>{card.text2}</p>
+            <p>{card.text3}</p>
+            <p>{card.text4}</p>
+            <p>{card.text5}</p>
+            <p>{card.text6}</p>
+            <p>{card.text7}</p>
+          </div>
+          <span className="absolute top-4 left-4 text-[40px] font-sporting-bold ">
+            {card.id}.
+          </span>
+        </div>
+      </ZoomText>
+    </>
   );
 };
 

@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import accueil from "../assets/img/anna/5.png";
 import menu from "../assets/img/anna/6.png";
 import share from "../assets/img/anna/4.png";
-import mockup from "../assets/img/anna/MockupAnnaMolly.png";
+import mockup from "../assets/img/anna/MockupAnnaMolly-min.png";
 
 const Anna = () => {
   const navigate = useNavigate();
@@ -43,7 +45,12 @@ const Anna = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {/* Left Column */}
         <div className="md:col-span-2">
-          <img src={mockup} alt="Large Project View" className="rounded-lg" />
+          <LazyLoadImage
+            effect="blur"
+            src={mockup}
+            alt="Large Project View"
+            className="rounded-lg w-full"
+          ></LazyLoadImage>{" "}
         </div>
 
         {/* Right Column */}

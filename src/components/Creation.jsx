@@ -3,16 +3,6 @@ import React from "react";
 import ZoomText from "../components/ZoomText";
 
 const Creation = () => {
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 100 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const transitionProps = {
-    duration: 1.2,
-    ease: "easeInOut",
-  };
-
   return (
     <>
       <section className="w-[90%] mx-auto pb-[8rem] text-secondary font-sporting-regular">
@@ -59,18 +49,20 @@ const Creation = () => {
                     }}
                   ></span>
                   <h2 className="text-xl font-bold mb-4">Pack Start</h2>
-                  <p className="mb-4 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                     Création d’un MVP rapide en <br />4 semaines
                   </p>
                   <div className="mb-16">
                     <a
                       href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
-                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
                     >
                       Prendre rendez-vous
                     </a>
                   </div>
-                  <ul className="list-none space-y-4 mb-16 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                     <li>
                       ✓ Création d’une maquette UX/UI simple et intuitive.
                     </li>
@@ -111,18 +103,20 @@ const Creation = () => {
                     }}
                   ></span>
                   <h2 className="text-xl font-bold mb-4">Pack Avancée</h2>
-                  <p className="mb-4 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                     Développement d’une plateforme web complète, sur-mesure.
                   </p>
                   <div className="mb-16">
                     <a
                       href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
-                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
                     >
                       Prendre rendez-vous
                     </a>
                   </div>
-                  <ul className="list-none space-y-4 mb-16 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                     <li>✓ Design UX/UI détaillé et optimisé.</li>
                     <li>✓ Développement full-stack complet.</li>
                     <li>✓ Intégration de fonctionnalités avancées.</li>
@@ -155,7 +149,8 @@ const Creation = () => {
               <a
                 href="https://linktr.ee/maurinemona"
                 target="_blank"
-                className="rounded-2xl bg-purple border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+                rel="noreferrer"
+                className="rounded-2xl bg-purple border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
                 style={{
                   boxShadow: "8px 8px 0px 0px #212121",
                 }}

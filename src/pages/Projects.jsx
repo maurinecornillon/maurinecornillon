@@ -22,19 +22,16 @@ const Projects = () => {
           </div>
         </ZoomText>
       </section>
-      <section className="w-[100%] mx-auto py-16 flex flex-col space-y-16 text-secondary font-sporting-regular">
+      <section className="w-[100%] mx-auto  flex flex-col space-y-16 text-secondary font-sporting-regular">
         {/* Section Projets Web */}
-
         <div className="hidden md:block">
           <ProjectsWeb />
         </div>
 
         {/* Section Projets Mobile */}
-        <ZoomText delay={0.2}>
-          <div className="block md:hidden">
-            <ProjectsMobile />
-          </div>
-        </ZoomText>
+        <div className="block md:hidden">
+          <ProjectsMobile />
+        </div>
       </section>
     </>
   );

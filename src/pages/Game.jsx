@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-import mockup from "../assets/img/game/MockUpOnePiece.png";
+import mockup from "../assets/img/game/MockUpOnePiece-min.png";
 
 const Game = () => {
   const navigate = useNavigate();
@@ -40,7 +42,12 @@ const Game = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {/* Left Column */}
         <div className="md:col-span-2">
-          <img src={mockup} alt="Large Project View" className="rounded-lg" />
+          <LazyLoadImage
+            effect="blur"
+            src={mockup}
+            alt="Large Project View"
+            className="rounded-lg w-full"
+          ></LazyLoadImage>{" "}
         </div>
 
         {/* Right Column */}
