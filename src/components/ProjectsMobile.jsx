@@ -70,7 +70,6 @@ const ProjectsMobile = () => {
           <Card card={card} key={card.id} />
         ))}
       </section>
-      <Contact />
     </>
   );
 };

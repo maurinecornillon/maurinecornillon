@@ -1,72 +1,114 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import { useNavigate } from "react-router-dom"; // Hook pour naviguer
+import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/img/logo/logotypo.png";
 
 const Header = () => {
-  const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("up");
+  const location = useLocation();
 
-  const handleCrossClick = () => {
-    navigate("/menu");
-  };
-
-  const handleNavigationHome = () => {
-    navigate("/");
-  };
-
-  const [currentTime, setCurrentTime] = useState(
-    new Date().toLocaleTimeString()
-  );
+  const isProjectPage = [
+    "/anomusic",
+    "/estimeo",
+    "/linkera",
+    "/otome",
+    "/smartback",
+    "/game",
+  ].includes(location.pathname);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString());
-    }, 1000); // Met à jour l'heure chaque seconde
+    let lastScrollY = window.scrollY;
 
-    return () => clearInterval(intervalId); // Nettoie l'intervalle quand le composant est démonté
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Déterminer la direction du scroll
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+
+      setIsScrolled(currentScrollY > 50);
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
-      <header className="font-sporting text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[12px] relative w-full p-10">
-        <div className="flex justify-between items-center">
-          <Link
-            to="home"
-            smooth={true}
-            duration={1000}
-            className="cursor-pointer"
-          >
-            <div
-              onClick={handleNavigationHome}
-              className="max-w-[90px] min-w-[100px] sm:min-w-[90px] md:min-w-[150px]  lg:min-w-[160px]  xl:min-w-[100px] sm:max-w-[90px] md:max-w-[150px]  lg:max-w-[150px]  xl:max-w-[150px] "
-            >
-              <h1 className="tracking-wide">Maurine Cornillon</h1>
-              <h2 className="tracking-wide">Web Developer</h2>
-            </div>
-          </Link>
+      <header
+        className={`fixed top-0 left-0 w-full transition-transform duration-700 ease-in-out font-sporting-regular ${
+          scrollDirection === "down"
+            ? "-translate-y-full z-0"
+            : "translate-y-0 z-999"
+        } ${isScrolled ? "opacity-75" : "opacity-100"}`}
+      >
+        <div className="w-full border-b border-secondary">
+          {/* Conteneur principal */}
+          <div className="w-[90%] flex justify-between items-center mx-auto">
+            {/* Section gauche (Logo) */}
+            <div className="flex-1 flex justify-start h-[100px]"></div>
 
-          {/* Ici on change la structure pour centrer correctement */}
-          <div className="flex-grow flex justify-center">
-            <Link
-              to="menu"
-              smooth={true}
-              duration={1000}
-              className="cursor-pointer"
-            >
-              <div
-                onClick={handleCrossClick}
-                className="flex justify-center items-center h-full relative"
+            {/* Section centrale (Navigation) */}
+            <nav className="flex-1 flex justify-center">
+              <ul className="flex space-x-6 text-secondary border border-secondary px-28 py-2 rounded-full text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <li>
+                  {location.pathname === "/" ? (
+                    <button onClick={() => scrollToSection("accueil")}>
+                      ACCUEIL
+                    </button>
+                  ) : (
+                    <Link to="/">ACCUEIL</Link>
+                  )}
+                </li>
+                {!isProjectPage && (
+                  <>
+                    <li>
+                      {location.pathname === "/" ? (
+                        <button onClick={() => scrollToSection("services")}>
+                          SERVICES
+                        </button>
+                      ) : (
+                        <Link to="/">SERVICES</Link>
+                      )}
+                    </li>
+                    <li>
+                      {location.pathname === "/" ? (
+                        <button onClick={() => scrollToSection("projets")}>
+                          PROJETS
+                        </button>
+                      ) : (
+                        <Link to="/">PROJETS</Link>
+                      )}
+                    </li>
+                  </>
+                )}
+              </ul>
+            </nav>
+
+            {/* Section droite (CTA) */}
+            <div className="flex-1 flex justify-end">
+              <a
+                href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl bg-purple border-2 border-dashed border-black px-6 py-3 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
               >
-                <div className="group cursor-pointer relative w-8 h-8">
-                  <div className="absolute top-1/2 left-0 w-full h-[0.5px] bg-black transform -translate-y-1/2 transition-transform duration-300 group-hover:rotate-90"></div>
-                  <div className="absolute top-0 left-1/2 h-full w-[0.5px] bg-black transform -translate-x-1/2 transition-transform duration-300 group-hover:rotate-90"></div>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="text-right max-w-[90px] min-w-[90px] sm:min-w-[90px] md:min-w-[150px]  lg:min-w-[150px]  xl:min-w-[150px] sm:max-w-[90px] md:max-w-[150px]  lg:max-w-[150px]  xl:max-w-[150px]  ">
-            <p className="tracking-wide">Paris, France</p>
-            <span className="ml-4 tracking-wide">{currentTime}</span>
+                ME CONTACTER
+              </a>
+            </div>
           </div>
         </div>
       </header>

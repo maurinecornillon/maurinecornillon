@@ -1,118 +1,83 @@
 import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-
-import Header from "../components/Header";
-import Contact from "../components/Contact";
+import { useNavigate } from "react-router-dom";
 
 import mockup from "../assets/img/otome/MockUpOtome.png";
 
 const Otome = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
     window.scrollTo(0, 0);
   }, []);
 
-  const controls = useAnimation();
-  const [inView] = useInView({
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.scrollY;
-      console.log(position);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const controlsContact = useAnimation();
-  const [refContact, inViewContact] = useInView({
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inViewContact) {
-      controlsContact.start("visible");
-    } else {
-      controlsContact.start("hidden");
-    }
-  }, [controlsContact, inViewContact]);
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   return (
-    <>
-      <Header />
-      <div className="relative h-[200vh]">
-        {/* Section avec le titre */}
-        <div className="h-[100vh] flex items-center justify-center bg-white">
-          <div className="w-full flex justify-center">
-            <motion.h1
-              className="text-center text-[6vw] sm:text-[6vw] md:text-[4vw] lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 60,
-                damping: 20,
-                delay: 0.2,
-              }}
-            >
-              STAY TUNED FOR UPDATES AS WE CONTINUE TO BUILD THIS EXCITING
-              EXPERIENCE
-            </motion.h1>
+    <div className="w-[90%] mx-auto py-16 font-sporting-regular text-secondary min-h-screen">
+      {/* Header Section */}
+      <div className="relative flex items-center border border-secondary px-28 py-6 rounded-full justify-between w-full mb-16">
+        {/* Left Arrow */}
+        <div
+          onClick={() => handleNavigation("/anomusic")}
+          className="absolute left-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
+        >
+          <span className="text-[1.5rem] font-bold">&#8592;</span>
+        </div>
+
+        {/* Right Arrow */}
+        <div
+          onClick={() => handleNavigation("/game")}
+          className="absolute right-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
+        >
+          <span className="text-[1.5rem] font-bold">&#8594;</span>
+        </div>
+      </div>
+
+      {/* Two-Column Section */}
+      <div className="grid grid-cols-3 gap-8 mb-16">
+        {/* Left Column */}
+        <div className="col-span-2">
+          <img src={mockup} alt="Large Project View" className="rounded-lg" />
+        </div>
+
+        {/* Right Column */}
+        <div className="col-span-1 border-l p-6 border-secondary flex flex-col justify-between">
+          {/* Title and Subtitle at the Top */}
+          <div>
+            <h1 className="text-[3rem] lg:text-[4rem] font-bold leading-none">
+              OTOME <b></b>GAME
+            </h1>
+          </div>
+          {/* "Mon Rôle" Section at the Bottom */}
+          <div>
+            <h2 className="text-[1rem] lg:text-[1.2rem] font-bold uppercase mb-4">
+              Mon Rôle
+            </h2>
+            <p className="text-[0.8rem] lg:text-[1rem] leading-relaxed">
+              Beachday est un otome game actuellement en développement par notre
+              studio de jeux indépendant. En tant que lead dev sur ce projet, je
+              suis ravie d’élargir mon expertise à de nouveaux langages de
+              programmation, comme Python, tout en contribuant aux aspects
+              créatifs et techniques du jeu.
+            </p>
           </div>
         </div>
-
-        {/* Section avec l'effet de parallaxe en dessous du titre */}
-        <div
-          className="bg-fixed bg-cover bg-center h-[100vh]"
-          style={{
-            backgroundImage: `url(${mockup})`,
-            backgroundPosition: " center top 40%",
-          }}
-        ></div>
-
-        {/* Section suivante */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
-          <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            Beachday is an otome game currently in development by an independent
-            game studio. As the lead developer on this project, I am excited to
-            expand my expertise into new programming languages such as python,
-            while contributing to the creative and technical aspects of the
-            game.
-          </p>
-        </div>
-
-        <motion.div
-          ref={refContact}
-          initial="hidden"
-          animate={controlsContact}
-          variants={{
-            hidden: { opacity: 0, y: 100 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{
-            duration: 1.2,
-            ease: "easeInOut",
-            delay: 0.2,
-          }}
-        >
-          <Contact />
-        </motion.div>
       </div>
-    </>
+
+      {/* Separator */}
+      <hr className="border-secondary mb-16" />
+
+      {/* Bottom Section */}
+      <div className="text-center">
+        <p className=" relative z-10 text-center w-[90%] mx-auto text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1.5rem] 2xl:text-[1rem] text-secondary leading-relaxed">
+          Beachday est un otome game actuellement en développement par notre
+          studio de jeux indépendant.
+        </p>
+      </div>
+    </div>
   );
 };
 

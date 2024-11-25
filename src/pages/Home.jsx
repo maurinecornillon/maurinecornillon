@@ -1,136 +1,77 @@
-import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
-import Header from "../components/Header";
-import Presentation from "../components/Presentation";
-import Contact from "../components/Contact";
+import AnimatedTitle from "../components/AnimatedTitle";
 
-// Custom hook pour gérer les animations avec Intersection Observer
-const useAnimatedSection = (threshold = 0.1) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold });
-
-  useEffect(() => {
-    controls.start(inView ? "visible" : "hidden");
-  }, [controls, inView]);
-
-  return { controls, ref };
-};
-
-// Composant réutilisable pour les sections animées
-const AnimatedSection = ({ children, controls, refSection, delay = 0.2 }) => (
-  <motion.div
-    ref={refSection}
-    initial="hidden"
-    animate={controls}
-    variants={{
-      hidden: { opacity: 0, y: 100 },
-      visible: { opacity: 1, y: 0 },
-    }}
-    transition={{
-      duration: 1.2,
-      ease: "easeInOut",
-      delay,
-    }}
-  >
-    {children}
-  </motion.div>
-);
-
+// Composant principal
 const Home = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [fontLoaded, setFontLoaded] = useState(false);
+  const buttonRef = useRef(null);
 
-  // Gestion du chargement de la vidéo
+  // Animation de gravité pour le bouton
   useEffect(() => {
-    const video = document.querySelector("video");
-
-    const handleVideoLoaded = () => {
-      setTimeout(() => setLoading(false), 3000);
-    };
-
-    if (video) video.addEventListener("canplaythrough", handleVideoLoaded);
-
-    return () => {
-      if (video) video.removeEventListener("canplaythrough", handleVideoLoaded);
-    };
+    const timeline = gsap.timeline();
+    timeline
+      .fromTo(
+        buttonRef.current,
+        { y: "-200vh", rotation: -15, opacity: 0 },
+        { y: 100, rotation: 10, opacity: 1, duration: 1.5, ease: "power1.out" }
+      )
+      .to(buttonRef.current, {
+        y: -30,
+        rotation: 0,
+        duration: 1.2,
+        ease: "power2.out",
+      })
+      .to(buttonRef.current, {
+        y: 0,
+        rotation: 0,
+        duration: 2,
+        ease: "elastic.out(1.4, 0.5)",
+      });
   }, []);
 
-  // Gestion du défilement
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
+  // Variants pour l'effet de zoom
+  const zoomVariants = {
+    hidden: { opacity: 0, scale: 0.8 }, // État initial (invisible et réduit)
+    visible: { opacity: 1, scale: 1 }, // État final (visible et normal)
+  };
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Gestion des animations
-  const header = useAnimatedSection();
-  const presentation = useAnimatedSection();
-  const contact = useAnimatedSection();
-
-  // Détecter le chargement des polices
-  useEffect(() => {
-    document.fonts.load("1em 'Respira Black'").then(() => setFontLoaded(true));
-  }, []);
-
-  const translateY = scrollY * 0.2;
+  // Transition personnalisée
+  const zoomTransition = {
+    duration: 1, // Durée totale
+    ease: "easeOut", // Type d'animation
+  };
 
   return (
     <>
-      {loading ? (
-        <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src={require("../assets/img/video.mp4")} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+      <section
+        id="accueil"
+        className="mt-20 w-[100%] z-50 mx-auto h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center space-y-8 font-sporting-regular relative overflow-hidden"
+      >
+        {/* Titre principal avec effet de zoom */}
+        <div
+          className="relative w-[90%]"
+          initial="hidden"
+          animate="visible"
+          variants={zoomVariants}
+          transition={zoomTransition}
+        >
+          <AnimatedTitle title={"vos ambitions"} />
+          <AnimatedTitle title={"mes solutions"} />
         </div>
-      ) : (
-        <>
-          <div className="flex flex-col h-screen justify-between">
-            <AnimatedSection controls={header.controls} refSection={header.ref}>
-              <Header />
-            </AnimatedSection>
-
-            <main className="relative h-screen overflow-hidden flex items-end justify-end">
-              <motion.h1
-                className={`text-[24vw] sm:text-[24vw] md:text-[24vw] lg:text-[24vw] xl:text-[24vw] font-respira tracking-widest m-0 p-0 leading-none ${
-                  fontLoaded ? "" : "text-hidden"
-                }`}
-                style={{
-                  position: "fixed",
-                  transform: `translateY(${translateY}px)`,
-                  opacity: 1 - scrollY / 1000,
-                }}
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ type: "spring", stiffness: 60, damping: 20 }}
-              >
-                MONA
-              </motion.h1>
-            </main>
-          </div>
-
-          <AnimatedSection
-            controls={presentation.controls}
-            refSection={presentation.ref}
-          >
-            <Presentation />
-          </AnimatedSection>
-
-          <AnimatedSection controls={contact.controls} refSection={contact.ref}>
-            <Contact />
-          </AnimatedSection>
-        </>
-      )}
+        {/* Bouton d'action */}
+        <a
+          href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
+          target="_blank"
+          className="custom-button bg-purple rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+          ref={buttonRef}
+          style={{
+            boxShadow: "8px 8px 0px 0px #212121",
+          }}
+        >
+          Prendre rendez-vous
+        </a>
+      </section>
     </>
   );
 };

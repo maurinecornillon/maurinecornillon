@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/****** FONTS ******/
+* {
+  z-index: 9999;
+}
+
 @font-face {
   font-family: 'Respira Black';
   src: url('./assets/fonts/Respira\ Black.ttf') format('opentype');
@@ -17,23 +23,6 @@
 @font-face {
   font-family: 'Sporting Grotesque';
   src: url('./assets/fonts/SportingGrotesque-Bold.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-.font-respira {
-  font-family: 'Respira Black';
-
-}
-
-.font-sporting-regular {
-  font-family: 'Sporting Grotesque';
-  font-weight: normal;
-  font-style: normal;
-}
-
-.font-sporting-bold {
-  font-family: 'Sporting Grotesque';
   font-weight: bold;
   font-style: normal;
 }
@@ -67,6 +56,24 @@
 }
 
 
+.font-respira {
+  font-family: 'Respira Black';
+
+}
+
+.font-sporting-regular {
+  font-family: 'Sporting Grotesque';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-sporting-bold {
+  font-family: 'Sporting Grotesque';
+  font-weight: bold;
+  font-style: normal;
+}
+
+
 .font-canela-regular {
   font-family: 'Canela Trial', serif;
   font-weight: normal;
@@ -80,7 +87,6 @@
   font-style: italic;
   
 }
-
 
 .font-canela-bold {
 font-family: 'Canela Trial', serif;
@@ -105,32 +111,26 @@ font-style: normal;
   transition: font-family 0.3s ease-in-out;
 }
 
+/****** BODY ******/
+
+header {
+  z-index: 9999 !important;
+}
 
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   scroll-behavior: smooth;
-  background-color: white;
+  background-color: #f2f0e9;
+  background-image: 
+    radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 3px 3px, 2px 2px;
+  background-blend-mode: multiply;
+  position: static; /* Pas de position relative/globale sur le body */
 
-
-  
 }
-
-.cursor {
-  pointer-events: none;
-  position: fixed;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%; /* Cercle parfait */
-  background-color: #fff;
-  border: 2px solid #000; /* Ajout d'une bordure noire pour un contraste */
-  mix-blend-mode: difference; /* Changement de couleur sur fond blanc/noir */
-  transform: translate(-50%, -50%); /* Pour centrer le cercle par rapport à la souris */
-  z-index: 999999;
-}
-
-
 
 main {
   margin: 0;
@@ -141,19 +141,44 @@ h1, span {
   line-height: 1;
 }
 
-.scrollbar-none {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+h2 {
+  line-height: 1.1;
 }
 
-.scrollbar-none::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
+/****** BUTTON ******/
+.custom-button {
+  display: inline-block;
+  transition: all 0.2s ease; /* Transition pour un effet fluide */
+  position: relative;
+  opacity: 0; /* Masquer avant l'animation */
 }
 
-.scroll-smooth {
-  scroll-behavior: smooth;
+
+
+/****** CURSOR & BG  ******/
+
+img {
+  pointer-events: none;
+  user-select: none;
 }
 
+
+ svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index:0;
+}
+
+line {
+  stroke: url(#cursor-gradient); 
+  stroke-width: 20;
+  stroke-linecap: round;
+} 
+
+/****** TEXT ******/
 
 .text-hidden {
   visibility: hidden; 
@@ -187,6 +212,26 @@ h1, span {
   background-position: 0 0; /* Le dégradé bouge pour remplir progressivement le mot de noir */
 }
 
+
+/****** SCROLL ******/
+
+
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/****** SKILLS SECTION ******/
+
+
 .skills-section {
   opacity: 0;
   transform: translateY(10px);
@@ -198,3 +243,57 @@ h1, span {
   transform: translateY(0);
 }
 
+
+/****** BANDEAU DEFILANT ******/
+
+
+.defileParent {
+  display: block;
+  top: 100px;
+  overflow: hidden;
+  position: relative;
+  width:100%;
+  max-width: 100%;
+  height: 2em; /* Ajustez en fonction de la taille de la police */
+}
+
+.defile {
+  display: flex;
+  animation: marqueelike 10s linear infinite;
+  white-space: nowrap;
+}
+
+.defile span {
+  padding-right: 2em; /* Ajoute un espace entre les répétitions si nécessaire */
+}
+
+@keyframes marqueelike {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.tab {
+  transition: color 0.15s ease-in;
+}
+
+.glider {
+  z-index: 1;
+  transition: transform 0.25s ease-out;
+  box-shadow: 0 5px 13px rgba(255, 165, 0, 0.5);
+}
+
+.paint-effect-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.paint-effect-container svg {
+  max-width: 100%;
+  height: auto;
+}

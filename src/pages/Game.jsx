@@ -1,124 +1,72 @@
 import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 
-import Header from "../components/Header";
-import Contact from "../components/Contact";
-
-import BackgroundGameWeb from "../components/BackgroundGameWeb";
-import BackgroundGameMobile from "../components/BackgroundGameMobile";
+import mockup from "../assets/img/game/MockUpOnePiece.png";
 
 const Game = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
     window.scrollTo(0, 0);
   }, []);
 
-  const controls = useAnimation();
-  const [inView] = useInView({
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.scrollY;
-      console.log(position);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const controlsContact = useAnimation();
-  const [refContact, inViewContact] = useInView({
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inViewContact) {
-      controlsContact.start("visible");
-    } else {
-      controlsContact.start("hidden");
-    }
-  }, [controlsContact, inViewContact]);
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   return (
-    <>
-      <Header />
-      <div className="relative h-[200vh]">
-        {/* Section avec le titre */}
-        <div className="h-[100vh] flex items-center justify-center bg-white">
-          <div className="w-full flex justify-center">
-            <motion.h1
-              className="text-center text-[6vw] sm:text-[6vw] md:text-[4vw]  lg:text-[4vw] p-20 font-sporting-regular tracking-normal leading-tight"
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 60,
-                damping: 20,
-                delay: 0.2,
-              }}
-            >
-              BRINGING RETRO FIGHTS TO LIFE WITH A ONE PIECE-INSPIRED 1V1 GAME
-            </motion.h1>
+    <div className="w-[90%] mx-auto py-16 font-sporting-regular text-secondary min-h-screen">
+      {/* Header Section */}
+      <div className="relative flex items-center border border-secondary px-28 py-6 rounded-full justify-between w-full mb-16">
+        {/* Left Arrow */}
+        <div
+          onClick={() => handleNavigation("/otome")}
+          className="absolute left-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
+        >
+          <span className="text-[1.5rem] font-bold">&#8592;</span>
+        </div>
+
+        {/* Right Arrow */}
+        <div
+          onClick={() => handleNavigation("/linkera")}
+          className="absolute right-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
+        >
+          <span className="text-[1.5rem] font-bold">&#8594;</span>
+        </div>
+      </div>
+
+      {/* Two-Column Section */}
+      <div className="grid grid-cols-3 gap-8 mb-16">
+        {/* Left Column */}
+        <div className="col-span-2">
+          <img src={mockup} alt="Large Project View" className="rounded-lg" />
+        </div>
+
+        {/* Right Column */}
+        <div className="col-span-1 border-l p-6 border-secondary flex flex-col justify-between">
+          {/* Title and Subtitle at the Top */}
+          <div>
+            <h1 className="text-[3rem] lg:text-[4rem] font-bold leading-none">
+              FIGHT <b></b> GAME
+            </h1>
+          </div>
+          {/* "Mon Rôle" Section at the Bottom */}
+          <div>
+            <h2 className="text-[1rem] lg:text-[1.2rem] font-bold uppercase mb-4">
+              Mon Rôle
+            </h2>
+            <p className="text-[0.8rem] lg:text-[1rem] leading-relaxed">
+              Il s'agit de mon tout premier projet : un jeu de combat rétro en
+              1v1 inspiré de l'univers de One Piece. Ce fut une expérience
+              passionnante à réaliser durant ma formation de développeuse, et je
+              suis toujours ravie de le présenter. C'était un véritable plaisir
+              de lui donner vie tout en apprenant à le concevoir.
+            </p>
           </div>
         </div>
-
-        {/* Section avec l'effet de parallaxe en dessous du titre */}
-        <div className="hidden md:block">
-          <BackgroundGameWeb />
-        </div>
-
-        <div className="block md:hidden">
-          <BackgroundGameMobile />
-        </div>
-
-        {/* <div className="h-full flex items-center justify-center">
-            <h2 className="text-black md:hidden sm:text-[6vw] lg:text-[4vw] max-w-[100%] font-sporting-regular ">
-              FIGHT GAME
-            </h2>
-          </div> */}
-
-        {/* Section suivante */}
-        <div className="bg-white flex items-center justify-center m-0 px-10 pt-20 pb-40 sm:px-20 sm:pt-40 sm:pb-80 leading-tight mt-2">
-          <p className="font-sporting-regular text-center text-[4vw] sm:text-[2.5vw] lg:text-[30px]">
-            This is my first development project, a retro 1v1 fighting game
-            inspired by the one piece universe. It was an exciting experience to
-            create during my developer training, and I’m always happy to
-            showcase it, as it was a real pleasure to bring it to life and learn
-            how to make it.
-          </p>
-        </div>
-
-        <motion.div
-          ref={refContact}
-          initial="hidden"
-          animate={controlsContact}
-          variants={{
-            hidden: { opacity: 0, y: 100 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{
-            duration: 1.2,
-            ease: "easeInOut",
-            delay: 0.2,
-          }}
-        >
-          <Contact />
-        </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

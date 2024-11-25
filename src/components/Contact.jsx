@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaCalendar } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -7,8 +7,8 @@ const Contact = () => {
       <div className="flex flex-column justify-start items-center bg-[#212121] text-white h-[40vw] rounded-tl-[50px] rounded-tr-[50px] sm:rounded-tl-[80px] sm:rounded-tr-[80px] lg:rounded-tl-[100px] lg:rounded-tr-[100px]  px-20 sm:px-20 md:px-20">
         <div className="text-left">
           <h2 className=" text-[20px] sm:text-[40px] lg:text-[90px] font-sporting-regular">
-            • LET'S <br />
-            COLLABORATE
+            • ON <br />
+            COLLABORE ?
           </h2>
           {/* Ajout du lien mailto */}
           <a
@@ -40,6 +40,14 @@ const Contact = () => {
             className="cursor-pointer"
           >
             <FaGithub className="text-[20px] sm:text-[15px] md:text-[20px] lg:text-[20px] xl:text-[30px] text-white cursor-pointer" />
+          </a>
+          <a
+            href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer"
+          >
+            <FaCalendar className="text-[20px] sm:text-[15px] md:text-[20px] lg:text-[20px] xl:text-[30px] text-white cursor-pointer" />
           </a>
         </div>
 
