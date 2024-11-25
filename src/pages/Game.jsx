@@ -37,23 +37,23 @@ const Game = () => {
       </div>
 
       {/* Two-Column Section */}
-      <div className="grid grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {/* Left Column */}
-        <div className="col-span-2">
+        <div className="md:col-span-2">
           <img src={mockup} alt="Large Project View" className="rounded-lg" />
         </div>
 
         {/* Right Column */}
-        <div className="col-span-1 border-l p-6 border-secondary flex flex-col justify-between">
+        <div className="border-t md:border-t-0 md:border-l p-6 border-secondary flex flex-col justify-between">
           {/* Title and Subtitle at the Top */}
           <div>
-            <h1 className="text-[3rem] lg:text-[4rem] font-bold leading-none">
+            <h1 className="text-[1rem] sm:text-[2rem] md:text-[2rem] lg:text-[4rem] font-bold leading-none">
               FIGHT <b></b> GAME
             </h1>
           </div>
           {/* "Mon Rôle" Section at the Bottom */}
-          <div>
-            <h2 className="text-[1rem] lg:text-[1.2rem] font-bold uppercase mb-4">
+          <div className="mt-4 sm:mt-8">
+            <h2 className="text-[0.5rem] sm:text-[0.5rem] md:text-[0.8rem] lg:text-[1.2rem] font-bold uppercase mb-4">
               Mon Rôle
             </h2>
             <p className="text-[0.8rem] lg:text-[1rem] leading-relaxed">

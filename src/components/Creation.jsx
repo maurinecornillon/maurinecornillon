@@ -22,7 +22,7 @@ const Creation = () => {
             <h1 className="font-bold text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] mb-4">
               <ZoomText delay={0.2}>Création</ZoomText>
             </h1>
-            <p className="text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1.5rem] 2xl:text-[1rem]">
+            <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
               <ZoomText delay={0.2}>
                 Créez des plateformes performantes et intuitives, <br />
                 sur-mesure pour vos ambitions.
@@ -33,10 +33,7 @@ const Creation = () => {
           {/* Packs */}
           <div className="flex flex-col md:flex-row justify-center gap-24 mb-16">
             {/* Pack Start */}
-            <div
-              className="relative"
-              style={{ width: "380px", height: "400px" }}
-            >
+            <div className="relative md:w-[380px] h-[400px]">
               <ZoomText delay={0.2}>
                 <div
                   className="absolute rounded-lg inset-0 translate-x-2 translate-y-2 bg-secondary"
@@ -46,12 +43,10 @@ const Creation = () => {
                   }}
                 ></div>
                 <div
-                  className="relative rounded-lg border  border-secondary p-6 bg-[#eae6f3]"
+                  className="relative rounded-lg border   md:w-[380px] h-[400px] border-secondary p-6 bg-[#eae6f3]"
                   style={{
                     clipPath:
                       "polygon(72px 0%, calc(100% - 72px) 0%, 100% 72px, 100% 100%, calc(100% - 72px) 100%, 72px 100%, 0px 100%, 0px 0px)",
-                    width: "380px",
-                    height: "400px",
                   }}
                 >
                   <span
@@ -90,10 +85,7 @@ const Creation = () => {
             </div>
 
             {/* Pack Avancée */}
-            <div
-              className="relative"
-              style={{ width: "380px", height: "400px" }}
-            >
+            <div className="relative md:w-[380px] h-[400px]">
               <ZoomText delay={0.2}>
                 <div
                   className="absolute rounded-lg inset-0 translate-x-2 translate-y-2 bg-secondary"
@@ -103,12 +95,10 @@ const Creation = () => {
                   }}
                 ></div>
                 <div
-                  className="relative rounded-lg border  border-secondary p-6 bg-[#C4D3EF]"
+                  className="relative rounded-lg border md:w-[380px] h-[400px]  border-secondary p-6 bg-[#C4D3EF]"
                   style={{
                     clipPath:
                       "polygon(72px 0%, calc(100% - 72px) 0%, 100% 72px, 100% 100%, calc(100% - 72px) 100%, 72px 100%, 0px 100%, 0px 0px)",
-                    width: "380px",
-                    height: "400px",
                   }}
                 >
                   <span
@@ -145,7 +135,7 @@ const Creation = () => {
           </div>
 
           {/* Description */}
-          <div className="w-[90%] mx-auto text-center mb-16 text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1.5rem] 2xl:text-[1rem]">
+          <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
             <ZoomText delay={0.2}>
               <p className="mb-4">
                 Mes services sont conçus pour répondre aux besoins variés de mes
@@ -163,7 +153,7 @@ const Creation = () => {
           <div className="text-center">
             <ZoomText delay={0.2}>
               <a
-                href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
+                href="https://linktr.ee/maurinemona"
                 target="_blank"
                 className="rounded-2xl bg-purple border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
                 style={{

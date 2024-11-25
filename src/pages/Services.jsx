@@ -13,7 +13,7 @@ const Glider = ({ position }) => {
     <motion.div
       animate={position}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="absolute bg-gradient rounded-full z-0 h-[80%] top-[10%]" // Ajuster ici
+      className="absolute bg-gradient rounded-full z-0 h-[70%] top-[15%] sm:h-[80%] sm:top-[10%]"
     />
   );
 };
@@ -37,11 +37,11 @@ const Tab = ({ children, setPosition, isActive, onClick }) => {
     <li
       ref={ref}
       onClick={onClick}
-      className={`relative z-10 flex-1 cursor-pointer text-xs uppercase md:text-base ${
+      className={`relative z-10 flex-1 cursor-pointer text-[0.5rem] sm:text-[0.5rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] uppercase ${
         isActive ? "font-bold text-secondary" : "text-secondary"
       }`}
     >
-      <div className="h-full px-6 py-3 md:px-8 md:py-4 flex items-center justify-center">
+      <div className="h-full px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 flex items-center justify-center">
         {children}
       </div>
     </li>
@@ -73,13 +73,11 @@ const Services = () => {
     >
       {/* TITRE */}
       <ZoomText delay={0.2}>
-        <h2 className="text-left text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold leading-none">
+        <h2 className="text-left text-[2rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-bold leading-none">
           Mes
           <br /> Services
         </h2>
       </ZoomText>
-
-      {/* SERVICES LIST */}
 
       <div className="space-y-8 flex flex-col w-[60%] ml-auto mt-8">
         {/* Service 1 */}
@@ -130,7 +128,7 @@ const Services = () => {
 
       {/* TEXTE ENTRE LISTE ET NAVIGATION */}
       <ZoomText delay={0.2}>
-        <p className="text-center w-[90%] mx-auto text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1.5rem] 2xl:text-[1rem] text-secondary leading-relaxed">
+        <p className="text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] leading-relaxed">
           Vous avez une idée, un site existant ou un projet en cours ? <br />
           <br />
           Mes services sont conçus pour répondre à vos besoins, avec des
@@ -141,12 +139,12 @@ const Services = () => {
 
       {/* NAVIGATION */}
       <ZoomText delay={0.2}>
-        <div className="relative border border-secondary rounded-full p-1 md:p-2 overflow-hidden mt-8 w-100%">
+        <div className="relative border border-secondary rounded-full p-1 sm:p-2 overflow-hidden mt-8 w-full">
           {/* Glider */}
           <Glider position={position} />
 
           {/* Tabs */}
-          <ul className="relative flex items-center justify-between w-full h-[48px] md:h-[60px] px-4">
+          <ul className="relative flex items-center justify-between w-full h-[40px] sm:h-[48px] md:h-[60px] px-2 sm:px-4">
             <Tab
               setPosition={setPosition}
               isActive={activeSection === "creation"}

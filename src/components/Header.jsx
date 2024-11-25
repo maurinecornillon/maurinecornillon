@@ -22,7 +22,6 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Déterminer la direction du scroll
       if (currentScrollY > lastScrollY) {
         setScrollDirection("down");
       } else {
@@ -52,18 +51,18 @@ const Header = () => {
         className={`fixed top-0 left-0 w-full transition-transform duration-700 ease-in-out font-sporting-regular ${
           scrollDirection === "down"
             ? "-translate-y-full z-0"
-            : "translate-y-0 z-999"
+            : "translate-y-0 z-50"
         } ${isScrolled ? "opacity-75" : "opacity-100"}`}
       >
         <div className="w-full border-b border-secondary">
           {/* Conteneur principal */}
           <div className="w-[90%] flex justify-between items-center mx-auto">
             {/* Section gauche (Logo) */}
-            <div className="flex-1 flex justify-start h-[100px]"></div>
+            <div className="flex-1 flex justify-start h-[80px] sm:h-[100px]"></div>
 
             {/* Section centrale (Navigation) */}
             <nav className="flex-1 flex justify-center">
-              <ul className="flex space-x-6 text-secondary border border-secondary px-28 py-2 rounded-full text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+              <ul className="flex space-x-4 sm:space-x-6 text-secondary border border-secondary px-6 sm:px-12 md:px-16 lg:px-20 py-2 rounded-full text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]">
                 <li>
                   {location.pathname === "/" ? (
                     <button onClick={() => scrollToSection("accueil")}>
@@ -101,10 +100,10 @@ const Header = () => {
             {/* Section droite (CTA) */}
             <div className="flex-1 flex justify-end">
               <a
-                href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
+                href="https://linktr.ee/maurinemona"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl bg-purple border-2 border-dashed border-black px-6 py-3 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                className="hidden sm:block rounded-2xl bg-purple border-2 border-dashed border-black px-6 py-3 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] md:text-[0.5rem] lg:text-[0.8rem]"
               >
                 ME CONTACTER
               </a>

@@ -287,13 +287,16 @@ line {
   box-shadow: 0 5px 13px rgba(255, 165, 0, 0.5);
 }
 
-.paint-effect-container {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
 
-.paint-effect-container svg {
-  max-width: 100%;
-  height: auto;
+
+@media (max-width: 768px) {
+ 
+
+  svg {
+    display: none;
+  }
+
+  line {
+    display: none;
+  }
 }

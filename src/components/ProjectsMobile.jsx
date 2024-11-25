@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import Contact from "../components/Contact";
+import flowers1 from "../assets/img/logo/logo.png";
 
 const cards = [
   {
@@ -105,15 +105,15 @@ const Card = ({ card }) => {
   return (
     <div
       onClick={() => handleNavigation(card.title)}
-      className="relative h-[350px] w-full border-4 border-black bg-white p-4 "
+      className="relative border-dashed border-2 border rounded-lg h-[350px] bg-[#eae6f3] w-full border-black p-4 "
     >
       {/* Titre */}
       <div className="absolute bottom-4 left-4">
         <h2 className="text-2xl font-sporting-bold">{card.title}</h2>
       </div>
 
-      <div className="absolute top-4 right-4 w-16 h-16  ">
-        <span className="text-[100px] font-sporting-bold">•</span>
+      <div className="absolute top-[-10px] right-[-10px] w-24 h-24  ">
+        <img src={flowers1} />
       </div>
 
       {/* Description simplifiée */}
