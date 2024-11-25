@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/img/logo/logotypo.png";
+
+import logo from "../assets/img/logo/9.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,20 +49,22 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full transition-transform duration-700 ease-in-out font-sporting-regular ${
+        className={`fixed top-0 left-0 w-full h-[100px] sm:h-[100px]  transition-transform duration-700 ease-in-out font-sporting-regular ${
           scrollDirection === "down"
             ? "-translate-y-full z-0"
             : "translate-y-0 z-50"
         } ${isScrolled ? "opacity-75" : "opacity-100"}`}
       >
-        <div className="w-full border-b border-secondary">
+        <div className="w-full h-full  border-b border-secondary">
           {/* Conteneur principal */}
-          <div className="w-[90%] flex justify-between items-center mx-auto">
+          <div className="w-[90%] h-full  flex justify-between items-center mx-auto">
             {/* Section gauche (Logo) */}
-            <div className="flex-1 flex justify-start h-[80px] sm:h-[100px]"></div>
+            <div className=" h-full flex-1 flex justify-start items-center">
+              <img src={logo} className="max-h-[60px]  object-contain" />
+            </div>
 
             {/* Section centrale (Navigation) */}
-            <nav className="flex-1 flex justify-center">
+            <nav className=" flex-1 flex justify-center">
               <ul className="flex space-x-4 sm:space-x-6 text-secondary border border-secondary px-6 sm:px-12 md:px-16 lg:px-20 py-2 rounded-full text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]">
                 <li>
                   {location.pathname === "/" ? (
@@ -98,7 +101,7 @@ const Header = () => {
             </nav>
 
             {/* Section droite (CTA) */}
-            <div className="flex-1 flex justify-end">
+            <div className=" flex-1 flex justify-end">
               <a
                 href="https://linktr.ee/maurinemona"
                 target="_blank"
