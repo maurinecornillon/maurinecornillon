@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
+import ZoomText from "../components/ZoomText";
+
 import accueil from "../assets/img/anna/5.png";
 import menu from "../assets/img/anna/6.png";
 import share from "../assets/img/anna/4.png";
@@ -21,94 +23,104 @@ const Anna = () => {
   };
 
   return (
-    <div className="w-[90%] mx-auto py-16 font-sporting-regular text-secondary min-h-screen">
-      {/* Header Section */}
-      <div className="relative flex items-center border border-secondary px-28 py-6 rounded-full justify-between w-full mb-16">
-        {/* Left Arrow */}
-        <div
-          onClick={() => handleNavigation("/estimeo")}
-          className="absolute left-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
-        >
-          <span className="text-[1.5rem] font-bold">&#8592;</span>
-        </div>
+    <>
+      <div className="relative z-10">
+        <div className="w-[90%] mx-auto py-16 font-sporting-regular text-secondary min-h-screen">
+          {/* Header Section */}
+          <ZoomText delay={0.2}>
+            <div className="relative flex items-center border border-secondary px-28 py-6 rounded-full justify-between w-full mb-16">
+              {/* Left Arrow */}
+              <div
+                onClick={() => handleNavigation("/estimeo")}
+                className="absolute left-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
+              >
+                <span className="text-[1.5rem] font-bold">&#8592;</span>
+              </div>
 
-        {/* Right Arrow */}
-        <div
-          onClick={() => handleNavigation("/otome")}
-          className="absolute right-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
-        >
-          <span className="text-[1.5rem] font-bold">&#8594;</span>
+              {/* Right Arrow */}
+              <div
+                onClick={() => handleNavigation("/otome")}
+                className="absolute right-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
+              >
+                <span className="text-[1.5rem] font-bold">&#8594;</span>
+              </div>
+            </div>
+          </ZoomText>
+          <ZoomText delay={0.2}>
+            {/* Two-Column Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {/* Left Column */}
+              <div className="md:col-span-2">
+                <LazyLoadImage
+                  effect="blur"
+                  src={mockup}
+                  alt="Large Project View"
+                  className="rounded-lg w-full"
+                ></LazyLoadImage>{" "}
+              </div>
+
+              {/* Right Column */}
+              <div className="border-t md:border-t-0 md:border-l p-6 border-secondary flex flex-col justify-between">
+                {/* Title and Subtitle at the Top */}
+                <div>
+                  <h1 className="text-[1rem] sm:text-[2rem] md:text-[2rem] lg:text-[4rem] font-bold leading-none">
+                    ANO <b></b>MUSIC
+                  </h1>
+                </div>
+                {/* "Mon Rôle" Section at the Bottom */}
+                <div className="mt-4 sm:mt-8">
+                  <h2 className="text-[0.5rem] sm:text-[0.5rem] md:text-[0.8rem] lg:text-[1.2rem] font-bold uppercase mb-4">
+                    Mon Rôle
+                  </h2>
+                  <p className="text-[0.8rem] lg:text-[1rem] leading-relaxed">
+                    Ce projet est un side project sur lequel je travaille durant
+                    mon temps libre, combinant mes deux passions : le code et la
+                    musique.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ZoomText>
+          <ZoomText delay={0.2}>
+            {/* Images Section */}
+            <div className="grid grid-cols-3 gap-4 mb-16">
+              <img
+                src={accueil}
+                alt="Project Thumbnail"
+                className="rounded-lg shadow-lg"
+              />
+              <img
+                src={menu}
+                alt="Project Thumbnail"
+                className="rounded-lg shadow-lg"
+              />
+              <img
+                src={share}
+                alt="Project Thumbnail"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+
+            {/* Separator */}
+            <hr className="border-secondary mb-16" />
+          </ZoomText>
+          <ZoomText delay={0.2}>
+            {/* Bottom Section */}
+            <div className="text-center">
+              <p className=" relative z-10 text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] text-secondary leading-relaxed">
+                Anomusic est une plateforme de réseau social dédiée à la
+                musique. Inspirée d’Instagram et de Bandcamp, elle permet aux
+                artistes indépendants de partager leurs morceaux.
+                Inscrivez-vous, suivez de nouveaux artistes et explorez votre
+                fil d’actualité pour découvrir votre prochain son préféré. Grâce
+                à des filtres par genre, laissez-vous surprendre par des sons
+                que vous n’auriez jamais imaginés.
+              </p>
+            </div>
+          </ZoomText>
         </div>
       </div>
-
-      {/* Two-Column Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {/* Left Column */}
-        <div className="md:col-span-2">
-          <LazyLoadImage
-            effect="blur"
-            src={mockup}
-            alt="Large Project View"
-            className="rounded-lg w-full"
-          ></LazyLoadImage>{" "}
-        </div>
-
-        {/* Right Column */}
-        <div className="border-t md:border-t-0 md:border-l p-6 border-secondary flex flex-col justify-between">
-          {/* Title and Subtitle at the Top */}
-          <div>
-            <h1 className="text-[1rem] sm:text-[2rem] md:text-[2rem] lg:text-[4rem] font-bold leading-none">
-              ANO <b></b>MUSIC
-            </h1>
-          </div>
-          {/* "Mon Rôle" Section at the Bottom */}
-          <div className="mt-4 sm:mt-8">
-            <h2 className="text-[0.5rem] sm:text-[0.5rem] md:text-[0.8rem] lg:text-[1.2rem] font-bold uppercase mb-4">
-              Mon Rôle
-            </h2>
-            <p className="text-[0.8rem] lg:text-[1rem] leading-relaxed">
-              Ce projet est un side project sur lequel je travaille durant mon
-              temps libre, combinant mes deux passions : le code et la musique.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Images Section */}
-      <div className="grid grid-cols-3 gap-4 mb-16">
-        <img
-          src={accueil}
-          alt="Project Thumbnail"
-          className="rounded-lg shadow-lg"
-        />
-        <img
-          src={menu}
-          alt="Project Thumbnail"
-          className="rounded-lg shadow-lg"
-        />
-        <img
-          src={share}
-          alt="Project Thumbnail"
-          className="rounded-lg shadow-lg"
-        />
-      </div>
-
-      {/* Separator */}
-      <hr className="border-secondary mb-16" />
-
-      {/* Bottom Section */}
-      <div className="text-center">
-        <p className=" relative z-10 text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] text-secondary leading-relaxed">
-          Anomusic est une plateforme de réseau social dédiée à la musique.
-          Inspirée d’Instagram et de Bandcamp, elle permet aux artistes
-          indépendants de partager leurs morceaux. Inscrivez-vous, suivez de
-          nouveaux artistes et explorez votre fil d’actualité pour découvrir
-          votre prochain son préféré. Grâce à des filtres par genre,
-          laissez-vous surprendre par des sons que vous n’auriez jamais
-          imaginés.
-        </p>
-      </div>
-    </div>
+    </>
   );
 };
 

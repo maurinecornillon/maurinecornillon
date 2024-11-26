@@ -4,8 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/img/logo/9.png";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState("up");
+  const [isHidden, setIsHidden] = useState(false);
   const location = useLocation();
 
   const isProjectPage = [
@@ -23,13 +22,9 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY) {
-        setScrollDirection("down");
-      } else {
-        setScrollDirection("up");
-      }
+      // Si l'utilisateur scroll vers le bas, cacher le header
+      setIsHidden(currentScrollY > lastScrollY && currentScrollY > 50);
 
-      setIsScrolled(currentScrollY > 50);
       lastScrollY = currentScrollY;
     };
 
@@ -49,18 +44,19 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full h-[100px] sm:h-[100px]  transition-transform duration-700 ease-in-out font-sporting-regular ${
-          scrollDirection === "down"
-            ? "-translate-y-full z-0"
-            : "translate-y-0 z-50"
-        } ${isScrolled ? "opacity-75" : "opacity-100"}`}
+        className={`fixed top-0 left-0 w-full h-[100px] sm:h-[100px] transition-transform duration-700 ease-in-out font-sporting-regular ${
+          isHidden ? "-translate-y-full" : "translate-y-0"
+        }`}
       >
         <div className="w-full h-full  border-b border-secondary">
           {/* Conteneur principal */}
           <div className="w-[90%] h-full  flex justify-between items-center mx-auto">
             {/* Section gauche (Logo) */}
             <div className=" h-full flex-1 flex justify-start items-center">
-              <img src={logo} className="max-h-[60px]  object-contain" />
+              <img
+                src={logo}
+                className="max-h-[60px] hidden sm:block  object-contain"
+              />
             </div>
 
             {/* Section centrale (Navigation) */}

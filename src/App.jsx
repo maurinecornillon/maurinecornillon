@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Cursor from "./components/Cursor";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Background from "./components/Background";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -55,6 +56,7 @@ const App = () => {
           <Route path="/game" element={<Game />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 };

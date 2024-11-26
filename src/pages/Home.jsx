@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
+
 import AnimatedTitle from "../components/AnimatedTitle";
 
 // Composant principal

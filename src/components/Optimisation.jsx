@@ -48,7 +48,7 @@ const Optimisation = () => {
                     height: "2px",
                   }}
                 ></span>
-                <h2 className="text-xl font-bold mb-4">Forfait Refonte</h2>
+                <h2 className="text-xl font-bold mb-4">Pack Refonte</h2>
                 <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                   Modernisation complète de votre plateforme.
                 </p>
@@ -101,7 +101,7 @@ const Optimisation = () => {
                     height: "2px",
                   }}
                 ></span>
-                <h2 className="text-xl font-bold mb-4">Forfait Performance</h2>
+                <h2 className="text-xl font-bold mb-4">Pack Performance</h2>
                 <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                   Optimisation technique et amélioration des performances.
                 </p>
