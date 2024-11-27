@@ -172,14 +172,12 @@ h2 {
     transform: scale(1.1); 
   }
 
-
+  .flowers {
+    pointer-events: auto !important;
+  }
 
 /****** CURSOR & BG  ******/
 
-.flowers {
-  pointer-events: none;
-  user-select: none;
-}
 
 
  svg {
