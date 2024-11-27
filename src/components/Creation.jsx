@@ -9,7 +9,7 @@ const Creation = () => {
         <ZoomText delay={0.2}>
           {/* Titre et description */}
           <div className="text-center mb-16">
-            <h1 className="font-bold text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] mb-4">
+            <h1 className="font-bold text-[2rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] mb-4">
               <ZoomText delay={0.2}>Création</ZoomText>
             </h1>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
@@ -102,7 +102,7 @@ const Creation = () => {
                       height: "2px",
                     }}
                   ></span>
-                  <h2 className="text-xl font-bold mb-4">Pack Avancée</h2>
+                  <h2 className="text-xl font-bold mb-4">Pack Avancé</h2>
                   <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
                     Développement d’une plateforme web complète, sur-mesure.
                   </p>

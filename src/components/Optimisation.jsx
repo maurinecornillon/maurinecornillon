@@ -8,7 +8,7 @@ const Optimisation = () => {
       <ZoomText delay={0.2}>
         <div className="text-center mb-16">
           <ZoomText delay={0.2}>
-            <h1 className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold mb-4">
+            <h1 className="text-[2rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold mb-4">
               Optimisation
             </h1>
           </ZoomText>
