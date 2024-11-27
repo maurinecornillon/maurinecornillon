@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -12,6 +12,8 @@ import mockup from "../assets/img/anna/MockupAnnaMolly-min.png";
 
 const Anna = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
@@ -20,6 +22,16 @@ const Anna = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
+  };
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
   };
 
   return (
@@ -83,22 +95,16 @@ const Anna = () => {
           </ZoomText>
           <ZoomText delay={0.2}>
             {/* Images Section */}
-            <div className="grid grid-cols-3 gap-4 mb-16">
-              <img
-                src={accueil}
-                alt="Project Thumbnail"
-                className="rounded-lg shadow-lg"
-              />
-              <img
-                src={menu}
-                alt="Project Thumbnail"
-                className="rounded-lg shadow-lg"
-              />
-              <img
-                src={share}
-                alt="Project Thumbnail"
-                className="rounded-lg shadow-lg"
-              />
+            <div className="grid grid-cols-3 gap-6 mb-16 img-wrap">
+              {[accueil, menu, share].map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Project Thumbnail ${index}`}
+                  className="rounded-lg shadow-lg cursor-pointer "
+                  onClick={() => openModal(image)}
+                />
+              ))}
             </div>
 
             {/* Separator */}
@@ -120,6 +126,27 @@ const Anna = () => {
           </ZoomText>
         </div>
       </div>
+      {/* Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div className="relative max-w-4xl max-h-[90%] w-auto h-auto">
+            <img
+              src={selectedImage}
+              alt="Zoomed"
+              className="rounded-lg w-full h-auto object-cover"
+            />
+            <button
+              className="absolute top-4 right-4 text-white text-2xl"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

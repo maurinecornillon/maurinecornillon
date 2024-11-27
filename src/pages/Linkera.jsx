@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 import ZoomText from "../components/ZoomText";
 
-// // Liste d'images pour le carrousel
+// Liste d'images pour le carrousel
 import accueil from "../../src/assets/img/linkera/Accueil.png";
 import message from "../assets/img/linkera/Messages.png";
 import dataroom from "../assets/img/linkera/DataRoom.png";
@@ -13,6 +13,8 @@ import mockup from "../assets/img/linkera/MockupLinkera.png";
 
 const Linkera = () => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     // Force le défilement en haut lors du chargement du composant
@@ -21,6 +23,16 @@ const Linkera = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
+  };
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
   };
 
   return (
@@ -58,7 +70,7 @@ const Linkera = () => {
                   src={mockup}
                   alt="Large Project View"
                   className="rounded-lg w-full"
-                ></LazyLoadImage>
+                />
               </div>
 
               {/* Right Column */}
@@ -85,33 +97,29 @@ const Linkera = () => {
               </div>
             </div>
           </ZoomText>
+
           <ZoomText delay={0.2}>
             {/* Images Section */}
-            <div className="grid grid-cols-3 gap-4 mb-16">
-              <img
-                src={accueil}
-                alt="Project Thumbnail"
-                className="rounded-lg shadow-lg"
-              />
-              <img
-                src={message}
-                alt="Project Thumbnail"
-                className="rounded-lg shadow-lg"
-              />
-              <img
-                src={dataroom}
-                alt="Project Thumbnail"
-                className="rounded-lg shadow-lg"
-              />
+            <div className="grid grid-cols-3 gap-6 mb-16 img-wrap">
+              {[accueil, message, dataroom].map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Project Thumbnail ${index}`}
+                  className="rounded-lg shadow-lg cursor-pointer "
+                  onClick={() => openModal(image)}
+                />
+              ))}
             </div>
 
             {/* Separator */}
             <hr className="border-secondary mb-16" />
           </ZoomText>
+
           <ZoomText delay={0.2}>
             {/* Bottom Section */}
             <div className="text-center">
-              <p className=" relative z-10 text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] text-secondary leading-relaxed">
+              <p className="relative z-10 text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] text-secondary leading-relaxed">
                 Linkera simplifie les ventes d'entreprises, les acquisitions et
                 les levées de fonds. Elle offre des outils pour publier des
                 annonces, mettre en relation acheteurs et vendeurs, gérer la
@@ -123,6 +131,28 @@ const Linkera = () => {
           </ZoomText>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div className="relative max-w-4xl max-h-[90%] w-auto h-auto">
+            <img
+              src={selectedImage}
+              alt="Zoomed"
+              className="rounded-lg w-full h-auto object-cover"
+            />
+            <button
+              className="absolute top-4 right-4 text-white text-2xl"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

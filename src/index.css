@@ -153,11 +153,30 @@ h2 {
   opacity: 0; /* Masquer avant l'animation */
 }
 
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+
+
+.img-wrap img {
+  transition: transform 0.5s;  
+}
+
+.img-wrap img:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+
 
 
 /****** CURSOR & BG  ******/
 
-img {
+.flowers {
   pointer-events: none;
   user-select: none;
 }

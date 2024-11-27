@@ -67,21 +67,21 @@ const BackgroundFlowers = () => {
           src={Flower1}
           alt="Fleur 1"
           ref={(el) => (flowerRefs.current[0] = el)}
-          className="absolute w-[600px] bottom-[-10%] left-[5%]"
+          className="absolute w-[600px] bottom-[-10%] left-[5%] flowers"
         />
         {/* Fleur 2 */}
         <img
           src={Flower2}
           alt="Fleur 2"
           ref={(el) => (flowerRefs.current[1] = el)}
-          className="absolute w-[600px] top-[-15%] right-[10%]"
+          className="absolute w-[600px] top-[-15%] right-[10%] flowers"
         />
         {/* Fleur 3 */}
         <img
           src={Flower1}
           alt="Fleur 3"
           ref={(el) => (flowerRefs.current[2] = el)}
-          className="absolute w-[950px] bottom-[-60%] right-[-25%]"
+          className="absolute w-[950px] bottom-[-60%] right-[-25%] flowers"
         />
 
         {/* Fleur 4 */}
@@ -89,21 +89,21 @@ const BackgroundFlowers = () => {
           src={Flower2}
           alt="Fleur 4"
           ref={(el) => (flowerRefs.current[3] = el)}
-          className="absolute w-[980px] top-[-40%] left-[-35%]"
+          className="absolute w-[980px] top-[-40%] left-[-35%] flowers"
         />
         {/* Fleur 5 */}
         <img
           src={Flower1}
           alt="Fleur 5"
           ref={(el) => (flowerRefs.current[4] = el)}
-          className="absolute w-[250px] bottom-[50%] right-[5%]"
+          className="absolute w-[250px] bottom-[50%] right-[5%] flowers"
         />
         {/* Fleur 6 */}
         <img
           src={Flower2}
           alt="Fleur 6"
           ref={(el) => (flowerRefs.current[5] = el)}
-          className="absolute w-[280px] top-[40%] left-[10%]"
+          className="absolute w-[280px] top-[40%] left-[10%] flowers"
         />
       </>
     </div>
