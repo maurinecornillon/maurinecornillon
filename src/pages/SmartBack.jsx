@@ -37,7 +37,7 @@ const SmartBack = () => {
       {/* Bottom Section */}
       <div className="text-center">
         <p className=" relative z-10 text-center w-[90%] mx-auto text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1.5rem] 2xl:text-[1rem] text-secondary leading-relaxed">
-          A venir
+          À VENIR
         </p>
       </div>
     </div>
