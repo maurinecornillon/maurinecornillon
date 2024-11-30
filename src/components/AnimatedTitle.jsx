@@ -58,7 +58,7 @@ const AnimatedTitle = ({ title }) => {
   return (
     <h1
       ref={titleRef}
-      className=" leading-tight space-x-4 z-10 text-[0.8rem] sm:text-[1.8rem] lg:text-[1.8rem] xl:text-[4rem] 2xl:text-[2.5rem] font-bold text-secondary"
+      className=" leading-tight space-x-4 z-10 text-[0.8rem] sm:text-[1.8rem] lg:text-[1.8rem] xl:text-[4rem] 2xl:text-[4rem] font-bold text-secondary"
     >
       {title.split("").map((char, index) => (
         <span key={index} className="letter inline-block">
