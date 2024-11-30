@@ -49,7 +49,7 @@ const Optimisation = () => {
                   }}
                 ></span>
                 <h2 className="text-xl font-bold mb-4">Pack Refonte</h2>
-                <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   Modernisation complète de votre plateforme.
                 </p>
                 <div className="mb-16">
@@ -57,12 +57,12 @@ const Optimisation = () => {
                     href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]"
                   >
                     Prendre rendez-vous
                   </a>
                 </div>
-                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   <li>✓ Audit UX/UI et technique.</li>
                   <li>
                     ✓ Création de nouvelles maquettes et optimisation de
@@ -102,7 +102,7 @@ const Optimisation = () => {
                   }}
                 ></span>
                 <h2 className="text-xl font-bold mb-4">Pack Performance</h2>
-                <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   Optimisation technique et amélioration des performances.
                 </p>
                 <div className="mb-16">
@@ -110,12 +110,12 @@ const Optimisation = () => {
                     href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                    className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]"
                   >
                     Prendre rendez-vous
                   </a>
                 </div>
-                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   <li>✓ Suivi technique.</li>
                   <li>✓ Optimisation du code.</li>
                   <li>✓ Amélioration des performances générales.</li>

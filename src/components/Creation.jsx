@@ -49,7 +49,7 @@ const Creation = () => {
                     }}
                   ></span>
                   <h2 className="text-xl font-bold mb-4">Pack Start</h2>
-                  <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                     Création d’un MVP rapide en <br />4 semaines
                   </p>
                   <div className="mb-16">
@@ -57,12 +57,12 @@ const Creation = () => {
                       href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]"
                     >
                       Prendre rendez-vous
                     </a>
                   </div>
-                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                     <li>
                       ✓ Création d’une maquette UX/UI simple et intuitive.
                     </li>
@@ -103,7 +103,7 @@ const Creation = () => {
                     }}
                   ></span>
                   <h2 className="text-xl font-bold mb-4">Pack Avancé</h2>
-                  <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                     Développement d’une plateforme web complète, sur-mesure.
                   </p>
                   <div className="mb-16">
@@ -111,12 +111,12 @@ const Creation = () => {
                       href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]"
+                      className="rounded-lg border-2 border-dashed border-black px-6 py-1 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]"
                     >
                       Prendre rendez-vous
                     </a>
                   </div>
-                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[1rem]">
+                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                     <li>✓ Design UX/UI détaillé et optimisé.</li>
                     <li>✓ Développement full-stack complet.</li>
                     <li>✓ Intégration de fonctionnalités avancées.</li>
