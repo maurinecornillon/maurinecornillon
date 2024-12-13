@@ -129,11 +129,10 @@ const Services = () => {
       {/* TEXTE ENTRE LISTE ET NAVIGATION */}
       <ZoomText delay={0.2}>
         <p className="text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] leading-relaxed">
-          Vous avez une idée, un site existant ou un projet en cours ? <br />
+          Créer des plateformes qui marquent les esprits. <br />
           <br />
-          Mes services sont conçus pour répondre à vos besoins, avec des
-          solutions flexibles et adaptées, qu’il s’agisse de créer, d’optimiser
-          ou d’intervenir en renfort technique.
+          Du design au développement, <br /> transformez vos idées en une
+          plateforme qui fait la différence.
         </p>
       </ZoomText>
 

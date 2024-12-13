@@ -143,7 +143,7 @@ const Collaboration = () => {
                 boxShadow: "8px 8px 0px 0px #212121",
               }}
             >
-              Discutons ensemble
+              Parlons-en
             </a>
           </ZoomText>
         </div>

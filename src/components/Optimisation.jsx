@@ -14,8 +14,8 @@ const Optimisation = () => {
           </ZoomText>
           <ZoomText delay={0.2}>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
-              Améliorez votre site existant pour maximiser <br /> son impact et
-              ses performances.
+              Réinventez ou améliorez votre plateforme pour maximiser son
+              impact.
             </p>
           </ZoomText>
         </div>
@@ -48,9 +48,9 @@ const Optimisation = () => {
                     height: "2px",
                   }}
                 ></span>
-                <h2 className="text-xl font-bold mb-4">Pack Refonte</h2>
+                <h2 className="text-xl font-bold mb-4">Pack Refresh</h2>
                 <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                  Modernisation complète de votre plateforme.
+                  Une refonte complète, <br /> prête à l'emploi.
                 </p>
                 <div className="mb-16">
                   <a
@@ -68,8 +68,9 @@ const Optimisation = () => {
                     ✓ Création de nouvelles maquettes et optimisation de
                     l’expérience utilisateur.
                   </li>
-                  <li>✓ Mise à jour du front-end et intégration.</li>
-                  <li>✓ Livraison rapide.</li>
+                  <li>
+                    ✓ Développement front-end intégré pour un site clé en main.
+                  </li>
                 </ul>
               </div>
             </ZoomText>
@@ -101,9 +102,9 @@ const Optimisation = () => {
                     height: "2px",
                   }}
                 ></span>
-                <h2 className="text-xl font-bold mb-4">Pack Performance</h2>
+                <h2 className="text-xl font-bold mb-4">Pack Revamp</h2>
                 <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                  Optimisation technique et amélioration des performances.
+                  Un nouveau design <br /> pour votre plateforme.
                 </p>
                 <div className="mb-16">
                   <a
@@ -116,10 +117,11 @@ const Optimisation = () => {
                   </a>
                 </div>
                 <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                  <li>✓ Suivi technique.</li>
-                  <li>✓ Optimisation du code.</li>
-                  <li>✓ Amélioration des performances générales.</li>
-                  <li>✓ Tests pour garantir fiabilité et efficacité.</li>
+                  <li>✓ Audit UX/UI de votre interface existante.</li>
+                  <li>
+                    ✓ Création de maquettes UX/UI modernes et impactantes.
+                  </li>
+                  <li>✓ Livrables prêts pour une intégration technique.</li>
                 </ul>
               </div>
             </ZoomText>
@@ -130,8 +132,7 @@ const Optimisation = () => {
         <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
           <ZoomText delay={0.2}>
             <p className="mb-4">
-              Mes services sont conçus pour répondre aux besoins variés de mes
-              clients. Les packs sont des points de départ pour faciliter la
+              Les packs sont des points de départ pour faciliter la
               collaboration, mais chaque projet est unique.
             </p>
             <p>

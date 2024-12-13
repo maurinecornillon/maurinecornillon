@@ -14,8 +14,8 @@ const Creation = () => {
             </h1>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
               <ZoomText delay={0.2}>
-                Créez des plateformes performantes et intuitives, <br />
-                sur-mesure pour vos ambitions.
+                Transformez vos idées en plateformes uniques qui marquent les
+                esprits.
               </ZoomText>
             </p>
           </div>
@@ -102,9 +102,9 @@ const Creation = () => {
                       height: "2px",
                     }}
                   ></span>
-                  <h2 className="text-xl font-bold mb-4">Pack Avancé</h2>
+                  <h2 className="text-xl font-bold mb-4">Pack Build</h2>
                   <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                    Développement d’une plateforme web complète, sur-mesure.
+                    Une solution complète et personnalisée, pensée pour durer.
                   </p>
                   <div className="mb-16">
                     <a
@@ -132,8 +132,7 @@ const Creation = () => {
           <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
             <ZoomText delay={0.2}>
               <p className="mb-4">
-                Mes services sont conçus pour répondre aux besoins variés de mes
-                clients. Les packs sont des points de départ pour faciliter la
+                Les packs sont des points de départ pour faciliter la
                 collaboration, mais chaque projet est unique.
               </p>
               <p>
