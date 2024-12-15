@@ -6,6 +6,7 @@ import ProjectsWeb from "../components/ProjectsWeb";
 import ProjectsMobile from "../components/ProjectsMobile";
 
 const Projects = () => {
+  
   return (
     <>
       {/* PROJETS */}

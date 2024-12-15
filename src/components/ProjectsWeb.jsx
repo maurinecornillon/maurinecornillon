@@ -169,6 +169,7 @@ const Card = ({ card }) => {
 
         {/* Overlay sur hover */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+        {/* Bouton d'action */}
       </div>
     </>
   );

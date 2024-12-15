@@ -14,8 +14,10 @@ const Creation = () => {
             </h1>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
               <ZoomText delay={0.2}>
-                Transformez vos idées en plateformes uniques qui marquent les
-                esprits.
+                Idéal pour : <br />
+                les startups ou entrepreneurs en phase de lancement qui
+                souhaitent concrétiser rapidement leur vision avec une solution
+                impactante.
               </ZoomText>
             </p>
           </div>
@@ -48,7 +50,7 @@ const Creation = () => {
                       height: "2px",
                     }}
                   ></span>
-                  <h2 className="text-xl font-bold mb-4">Pack Start</h2>
+                  <h2 className="text-xl font-bold mb-4">Pack MVP</h2>
                   <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                     Création d’un MVP rapide en <br />4 semaines
                   </p>
@@ -102,9 +104,10 @@ const Creation = () => {
                       height: "2px",
                     }}
                   ></span>
-                  <h2 className="text-xl font-bold mb-4">Pack Build</h2>
+                  <h2 className="text-xl font-bold mb-4">Pack Design</h2>
                   <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                    Une solution complète et personnalisée, pensée pour durer.
+                    Des maquettes impactantes, <br />
+                    prêtes pour le développement.
                   </p>
                   <div className="mb-16">
                     <a
@@ -117,11 +120,12 @@ const Creation = () => {
                     </a>
                   </div>
                   <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                    <li>✓ Design UX/UI détaillé et optimisé.</li>
-                    <li>✓ Développement full-stack complet.</li>
-                    <li>✓ Intégration de fonctionnalités avancées.</li>
-                    <li>✓ Tests approfondis.</li>
-                    <li>✓ Suivi technique.</li>
+                    <li>✓ Analyse des besoins et objectifs.</li>
+                    <li>
+                      ✓ Création de maquettes UX/UI modernes et impactantes.
+                    </li>
+                    <li>✓ Prototypage adapté à vos cibles et objectifs.</li>
+                    <li>✓ Livrables prêts pour une intégration.</li>
                   </ul>
                 </div>
               </ZoomText>

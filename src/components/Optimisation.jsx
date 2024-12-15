@@ -14,8 +14,8 @@ const Optimisation = () => {
           </ZoomText>
           <ZoomText delay={0.2}>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
-              Réinventez ou améliorez votre plateforme pour maximiser son
-              impact.
+              Idéal pour : <br /> les startups en croissance qui cherchent à se
+              démarquer.
             </p>
           </ZoomText>
         </div>
@@ -48,7 +48,7 @@ const Optimisation = () => {
                     height: "2px",
                   }}
                 ></span>
-                <h2 className="text-xl font-bold mb-4">Pack Refresh</h2>
+                <h2 className="text-xl font-bold mb-4">Pack Refonte</h2>
                 <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   Une refonte complète, <br /> prête à l'emploi.
                 </p>
@@ -102,7 +102,7 @@ const Optimisation = () => {
                     height: "2px",
                   }}
                 ></span>
-                <h2 className="text-xl font-bold mb-4">Pack Revamp</h2>
+                <h2 className="text-xl font-bold mb-4">Pack Refresh</h2>
                 <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   Un nouveau design <br /> pour votre plateforme.
                 </p>
@@ -117,7 +117,7 @@ const Optimisation = () => {
                   </a>
                 </div>
                 <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                  <li>✓ Audit UX/UI de votre interface existante.</li>
+                  <li>✓ Audit UX/UI.</li>
                   <li>
                     ✓ Création de maquettes UX/UI modernes et impactantes.
                   </li>

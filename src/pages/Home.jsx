@@ -71,7 +71,7 @@ const Home = () => {
             boxShadow: "8px 8px 0px 0px #212121",
           }}
         >
-          Prendre rendez-vous
+          Audit Gratuit
         </a>
       </section>
     </>
