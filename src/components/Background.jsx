@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useLocation } from "react-router-dom";
 
-import Flower1 from "../assets/img/logo/el1.png";
-import Flower2 from "../assets/img/logo/el2.png";
+import Flower1 from "../assets/img/logo/M.B (4).png";
+import Flower2 from "../assets/img/logo/M.B (3).png";
 
 const BackgroundFlowers = () => {
   const flowerRefs = useRef([]);
@@ -89,7 +89,7 @@ const BackgroundFlowers = () => {
           src={Flower2}
           alt="Fleur 4"
           ref={(el) => (flowerRefs.current[3] = el)}
-          className="absolute w-[980px] top-[-40%] left-[-35%]"
+          className="absolute w-[950px] top-[-30%] left-[-30%]"
         />
         {/* Fleur 5 */}
         <img
