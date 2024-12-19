@@ -14,8 +14,8 @@ const Optimisation = () => {
           </ZoomText>
           <ZoomText delay={0.2}>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
-              Idéal pour : <br /> les startups en croissance qui cherchent à se
-              démarquer.
+              Idéal si : <br /> Vous êtes en pleine croissance et vous cherchez
+              à vous démarquer.
             </p>
           </ZoomText>
         </div>
@@ -65,8 +65,7 @@ const Optimisation = () => {
                 <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   <li>✓ Audit UX/UI et technique.</li>
                   <li>
-                    ✓ Création de nouvelles maquettes et optimisation de
-                    l’expérience utilisateur.
+                    ✓ Création de maquettes UX/UI modernes et impactantes.
                   </li>
                   <li>
                     ✓ Développement front-end intégré pour un site clé en main.
@@ -132,12 +131,9 @@ const Optimisation = () => {
         <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
           <ZoomText delay={0.2}>
             <p className="mb-4">
-              Les packs sont des points de départ pour faciliter la
-              collaboration, mais chaque projet est unique.
-            </p>
-            <p>
-              Nous discuterons ensemble de la meilleure solution pour vos
-              objectifs.
+              Pour découvrir le pack qui correspond le mieux à vos besoin et
+              obtenir une première estimation, utiliser le simulateur de projet
+              !
             </p>
           </ZoomText>
         </div>
@@ -154,7 +150,7 @@ const Optimisation = () => {
                 boxShadow: "8px 8px 0px 0px #212121",
               }}
             >
-              Parlons-en
+              🌼 Simuler mon projet 🌼
             </a>
           </ZoomText>
         </div>

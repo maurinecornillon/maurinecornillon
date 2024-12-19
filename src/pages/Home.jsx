@@ -7,6 +7,7 @@ import AnimatedTitle from "../components/AnimatedTitle";
 // Composant principal
 const Home = () => {
   const buttonRef = useRef(null);
+  const buttonRef1 = useRef(null);
 
   // Animation de gravité pour le bouton
   useEffect(() => {
@@ -28,6 +29,28 @@ const Home = () => {
         rotation: 0,
         duration: 2,
         ease: "elastic.out(1.4, 0.5)",
+      });
+  }, []);
+
+  useEffect(() => {
+    const timeline = gsap.timeline();
+    timeline
+      .fromTo(
+        buttonRef1.current,
+        { y: "-200vh", rotation: -20, opacity: 0 }, // Départ incliné et hors écran
+        { y: 150, rotation: -25, opacity: 1, duration: 1.8, ease: "power1.out" } // Inclinaison pendant la chute
+      )
+      .to(buttonRef1.current, {
+        y: -20, // Descend légèrement sous sa position finale
+        rotation: -10, // Angle intermédiaire
+        duration: 1.2,
+        ease: "power2.out",
+      })
+      .to(buttonRef1.current, {
+        y: 0, // Retour à la position finale
+        rotation: 0, // Retour à l'angle final
+        duration: 2.5, // Durée légèrement plus longue
+        ease: "power3.out", // Transition très douce sans élasticité
       });
   }, []);
 
@@ -61,18 +84,26 @@ const Home = () => {
           <AnimatedTitle title="mes solutions" />
         </div>
         {/* Bouton d'action */}
-        <a
-          href="https://calendly.com/maurinecornillon/discutons-de-ton-projet"
-          target="_blank"
-          rel="noreferrer"
-          className="custom-button bg-purple rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
-          ref={buttonRef}
-          style={{
-            boxShadow: "8px 8px 0px 0px #212121",
-          }}
-        >
-          Audit Gratuit
-        </a>
+        <div className="flex justify-between space-x-8">
+          <a
+            href="https://tidycal.com/maurinecornillon/projet"
+            target="_blank"
+            rel="noreferrer"
+            className="custom-button bg-purple rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+            ref={buttonRef1}
+          >
+            Parlons de votre projet
+          </a>
+          <a
+            href="https://tidycal.com/maurinecornillon/audit"
+            target="_blank"
+            rel="noreferrer"
+            className="custom-button bg-blue rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient_blue hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+            ref={buttonRef}
+          >
+            Audit Gratuit
+          </a>
+        </div>
       </section>
     </>
   );

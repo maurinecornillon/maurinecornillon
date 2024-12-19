@@ -14,9 +14,9 @@ const Collaboration = () => {
           </ZoomText>
           <ZoomText delay={0.3}>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
-              Idéal pour : <br /> les startups qui cherchent un accompagnement
-              plus long, flexible et stratégique, pour faire évoluer leurs idées
-              en solutions performantes ou maximiser l'impact de leurs projets.
+              Idéal si : <br /> Vous cherchez un accompagnement plus long,
+              flexible et stratégique, pour faire évoluer vos idées en solutions
+              performantes ou maximiser l'impact de vos projets.
             </p>
           </ZoomText>
         </div>
@@ -82,12 +82,9 @@ const Collaboration = () => {
         <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
           <ZoomText delay={0.2}>
             <p className="mb-4">
-              Les packs sont des points de départ pour faciliter la
-              collaboration, mais chaque projet est unique.
-            </p>
-            <p>
-              Nous discuterons ensemble de la meilleure solution pour vos
-              objectifs.
+              Pour découvrir le pack qui correspond le mieux à vos besoin et
+              obtenir une première estimation, utiliser le simulateur de projet
+              !
             </p>
           </ZoomText>
         </div>
@@ -104,7 +101,7 @@ const Collaboration = () => {
                 boxShadow: "8px 8px 0px 0px #212121",
               }}
             >
-              Parlons-en
+              🌼 Simuler mon projet 🌼
             </a>
           </ZoomText>
         </div>

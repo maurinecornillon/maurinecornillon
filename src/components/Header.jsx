@@ -58,7 +58,7 @@ const Header = () => {
         isHidden && !isTop ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="w-full h-full border-b border-secondary">
+      <div className="w-full h-full ">
         {/* Conteneur principal */}
         <div className="w-[90%] h-full flex justify-between items-center mx-auto">
           {/* Section gauche (Logo) */}

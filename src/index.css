@@ -153,6 +153,25 @@ h2 {
   opacity: 0; /* Masquer avant l'animation */
 }
 
+.custom-button::after {
+  content: "➔"; /* Flèche */
+  position: absolute;
+  bottom: 10%; /* Position parfaite conservée */
+  right: 5%; /* Toujours à droite */
+  font-size: 1.5rem; /* Taille de la flèche */
+  color: #212121; /* Couleur de la flèche */
+  opacity: 0; /* Invisible par défaut */
+  transform: translate(10px, 10px) rotate(-45deg); /* Pointe vers le haut à droite */
+  transition: all 0.3s ease-in-out; /* Animation fluide */
+}
+.custom-button:hover::after {
+  opacity: 1; /* Rend la flèche visible */
+  transform: translate(-10px, -10px) rotate(-45deg); /* Conserve l'orientation */
+}
+
+
+
+
 .modal {
   display: flex;
   justify-content: center;

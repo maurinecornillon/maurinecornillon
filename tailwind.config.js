@@ -10,9 +10,11 @@ module.exports = {
         primary: "#F2F0E9",
         secondary: "#212121",
         purple: "#D9C5FF",
+        blue: "#C4D3EF",
       },
       backgroundImage: {
-        gradient: "linear-gradient(90deg, #C4D3EF, #D9C5FF, #CAD0FF)",
+        gradient_blue: "linear-gradient(90deg,#D9C5FF, #C4D3EF, #CAD0FF)",
+        gradient: "linear-gradient(90deg, #D9C5FF, #C4D3EF, #CAD0FF)",
         purple: "#D9C5FF",
       },
     },

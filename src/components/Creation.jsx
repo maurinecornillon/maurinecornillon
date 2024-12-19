@@ -14,10 +14,9 @@ const Creation = () => {
             </h1>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
               <ZoomText delay={0.2}>
-                Idéal pour : <br />
-                les startups ou entrepreneurs en phase de lancement qui
-                souhaitent concrétiser rapidement leur vision avec une solution
-                impactante.
+                Idéal si : <br />
+                Vous êtes en phase de lancement et souhaitez concrétiser
+                rapidement votre vision avec une solution impactante.
               </ZoomText>
             </p>
           </div>
@@ -50,9 +49,10 @@ const Creation = () => {
                       height: "2px",
                     }}
                   ></span>
-                  <h2 className="text-xl font-bold mb-4">Pack MVP</h2>
+                  <h2 className="text-xl font-bold mb-4">Pack Start</h2>
                   <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                    Création d’un MVP rapide en <br />4 semaines
+                    Création rapide et impactante <br /> Mvp, landing page, site
+                    vitrine
                   </p>
                   <div className="mb-16">
                     <a
@@ -66,11 +66,11 @@ const Creation = () => {
                   </div>
                   <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                     <li>
-                      ✓ Création d’une maquette UX/UI simple et intuitive.
+                      ✓ Création de maquettes UX/UI modernes et impactantes.
                     </li>
-                    <li>✓ Développement full-stack basique.</li>
+                    <li>✓ Développement full-stack basique. </li>
                     <li>
-                      ✓ Tests de base pour assurer la fonctionnalité du MVP.
+                      ✓ Tests de base pour assurer les fonctionnalités du site.
                     </li>
                     <li>✓ Livraison rapide.</li>
                   </ul>
@@ -136,12 +136,9 @@ const Creation = () => {
           <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
             <ZoomText delay={0.2}>
               <p className="mb-4">
-                Les packs sont des points de départ pour faciliter la
-                collaboration, mais chaque projet est unique.
-              </p>
-              <p>
-                Nous discuterons ensemble de la meilleure solution pour vos
-                objectifs.
+                Pour découvrir le pack qui correspond le mieux à vos besoin et
+                obtenir une première estimation, utiliser le simulateur de
+                projet !
               </p>
             </ZoomText>
           </div>
@@ -153,12 +150,12 @@ const Creation = () => {
                 href="https://linktr.ee/maurinemona"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-2xl bg-purple border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+                className="arrow rounded-2xl bg-purple border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
                 style={{
                   boxShadow: "8px 8px 0px 0px #212121",
                 }}
               >
-                Parlons-en
+                🌼 Simuler mon projet 🌼
               </a>
             </ZoomText>
           </div>

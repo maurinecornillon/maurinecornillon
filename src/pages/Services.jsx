@@ -129,15 +129,12 @@ const Services = () => {
         </div>
 
         {/* TEXTE ENTRE LISTE ET NAVIGATION */}
-        <ZoomText delay={0.2}>
+        {/* <ZoomText delay={0.2}>
           <p className="text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] leading-relaxed">
             Ensemble, transformons vos aspirations en expériences visuelles
-            uniques. <br />
-            <br />
-            Du design au développement, <br /> transformez vos idées en une
-            plateforme qui fait la différence.
+            uniques.
           </p>
-        </ZoomText>
+        </ZoomText> */}
 
         {/* NAVIGATION */}
         <ZoomText delay={0.2}>
