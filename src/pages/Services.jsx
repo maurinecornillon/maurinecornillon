@@ -9,6 +9,8 @@ import Collaboration from "./../components/Collaboration";
 
 import ZoomText from "../components/ZoomText";
 
+import clouds from "../assets/img/logo/12.png";
+
 // Composant pour l'effet "glider"
 const Glider = ({ position }) => {
   return (
@@ -105,23 +107,28 @@ const Services = () => {
 
   return (
     <>
-      <main className=" bg-violet w-[100%]">
-        <Marquee speed={50}>
-          <div className=" font-sporting-regular text-secondary text-[100px]">
-            <p>
-              SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
-              SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
-              SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
-              SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
-              SERVICES ❊
-            </p>
-          </div>
-        </Marquee>
+      <main className="  w-[100%]">
+        <div className="bg-violet">
+          <Marquee speed={50}>
+            <div className=" font-sporting-regular text-secondary text-[100px]">
+              <p>
+                SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES
+                ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
+                SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES
+                ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
+                SERVICES ❊ SERVICES ❊ SERVICES ❊
+              </p>
+            </div>
+          </Marquee>
+        </div>
+        <div className="">
+          <img src={clouds} alt="Flower" className="w-full h-full" />
+        </div>
         <section
           id="services"
           className=" w-[90%] z-50 mx-auto flex flex-col space-y-16 text-secondary font-sporting-regular"
         >
-          <div className="space-y-8 flex flex-col w-[60%] ml-auto mt-28 relative">
+          <div className="space-y-8 flex flex-col w-[60%] ml-auto relative">
             {/* Service 1 */}
             <ZoomText delay={0.2}>
               <div
@@ -189,72 +196,74 @@ const Services = () => {
               </div>
             </ZoomText>
           </div>
-
-          {/* NAVIGATION */}
-          <ZoomText delay={0.2}>
-            <div className="relative border border-secondary rounded-full p-1 sm:p-2 overflow-hidden mt-8 w-full">
-              {/* Glider */}
-              <Glider position={position} />
-
-              {/* Tabs */}
-              <ul className="relative flex items-center justify-between w-full h-[40px] sm:h-[48px] md:h-[60px] px-2 sm:px-4 ">
-                <Tab
-                  setPosition={setPosition}
-                  isActive={activeSection === "creation"}
-                  onClick={() => setActiveSection("creation")}
-                >
-                  CRÉATION
-                </Tab>
-                <Tab
-                  setPosition={setPosition}
-                  isActive={activeSection === "optimisation"}
-                  onClick={() => setActiveSection("optimisation")}
-                >
-                  OPTIMISATION
-                </Tab>
-                <Tab
-                  setPosition={setPosition}
-                  isActive={activeSection === "collaboration"}
-                  onClick={() => setActiveSection("collaboration")}
-                >
-                  COLLABORATION
-                </Tab>
-              </ul>
-            </div>
-          </ZoomText>
-
-          {/* CONTENU DYNAMIQUE */}
-          <ZoomText delay={0.2}>
-            <div className="mt-8">{renderContent()}</div>
-          </ZoomText>
-          {/* Description */}
-          <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
-            <ZoomText delay={0.2}>
-              <p className="">
-                Pour découvrir le pack qui correspond le mieux à vos besoin et
-                obtenir une première estimation, utiliser le simulateur de
-                projet !
-              </p>
-            </ZoomText>
-          </div>
-          {/* Call to Action */}
-          <div className="text-center flex justify-center w-full">
-            <ZoomText delay={0.2}>
-              <a
-                href="https://linktr.ee/maurinemona"
-                target="_blank"
-                rel="noreferrer"
-                className=" w-full bg-primary block rounded-full border-2 border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue  text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
-                style={{
-                  boxShadow: "4px 4px 0px 0px #212121",
-                }}
-              >
-                Simuler mon projet
-              </a>
-            </ZoomText>
-          </div>
         </section>
       </main>
+
+      <section className=" w-[90%] z-50 mx-auto flex flex-col space-y-16 text-secondary font-sporting-regular">
+        {/* NAVIGATION */}
+        <ZoomText delay={0.2}>
+          <div className="relative border border-secondary rounded-full p-1 sm:p-2 overflow-hidden mt-16 w-full">
+            {/* Glider */}
+            <Glider position={position} />
+
+            {/* Tabs */}
+            <ul className="relative flex items-center justify-between w-full h-[40px] sm:h-[48px] md:h-[60px] px-2 sm:px-4 ">
+              <Tab
+                setPosition={setPosition}
+                isActive={activeSection === "creation"}
+                onClick={() => setActiveSection("creation")}
+              >
+                CRÉATION
+              </Tab>
+              <Tab
+                setPosition={setPosition}
+                isActive={activeSection === "optimisation"}
+                onClick={() => setActiveSection("optimisation")}
+              >
+                OPTIMISATION
+              </Tab>
+              <Tab
+                setPosition={setPosition}
+                isActive={activeSection === "collaboration"}
+                onClick={() => setActiveSection("collaboration")}
+              >
+                COLLABORATION
+              </Tab>
+            </ul>
+          </div>
+        </ZoomText>
+
+        {/* CONTENU DYNAMIQUE */}
+        <ZoomText delay={0.2}>
+          <div className="mt-8">{renderContent()}</div>
+        </ZoomText>
+        {/* Description */}
+        <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
+          <ZoomText delay={0.2}>
+            <p className="">
+              Pour découvrir le pack qui correspond le mieux à vos besoin et
+              obtenir une première estimation, utiliser le simulateur de projet
+              !
+            </p>
+          </ZoomText>
+        </div>
+        {/* Call to Action */}
+        <div className="text-center flex justify-center w-full">
+          <ZoomText delay={0.2}>
+            <a
+              href="https://linktr.ee/maurinemona"
+              target="_blank"
+              rel="noreferrer"
+              className=" w-full bg-violet block rounded-full border-2 border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue  text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+              style={{
+                boxShadow: "4px 4px 0px 0px #212121",
+              }}
+            >
+              Simuler mon projet
+            </a>
+          </ZoomText>
+        </div>
+      </section>
     </>
   );
 };

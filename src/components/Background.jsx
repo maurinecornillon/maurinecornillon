@@ -79,13 +79,6 @@ const BackgroundFlowers = () => {
           ref={(el) => (flowerRefs.current[1] = el)}
           className="absolute w-[300px] top-[15%] right-[10%]"
         />
-        {/* Fleur 3 */}
-        <img
-          src={cloud}
-          alt="Fleur 3"
-          ref={(el) => (flowerRefs.current[2] = el)}
-          className="absolute w-[350px] bottom-[-fev0%] right-[-25%]"
-        />
 
         {/* Fleur 4 */}
         <img

@@ -125,7 +125,7 @@ const Projects = () => {
   return (
     <>
       {/* Section du titre */}
-      <div className="bg-violet">
+      <div className="">
         <img src={clouds} alt="Flower" className="w-full h-full" />
       </div>
 
