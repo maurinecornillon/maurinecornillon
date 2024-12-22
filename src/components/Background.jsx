@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 
 import Flower1 from "../assets/img/logo/M.B (4).png";
 import Flower2 from "../assets/img/logo/M.B (3).png";
+import cloud from "../assets/img/logo/13.png";
+import cloud2 from "../assets/img/logo/11.png";
 
 const BackgroundFlowers = () => {
   const flowerRefs = useRef([]);
@@ -32,6 +34,7 @@ const BackgroundFlowers = () => {
     // Effet de flottement (léger mouvement vertical et rotation)
     flowerRefs.current.forEach((flower, index) => {
       gsap.to(flower, {
+        x: "+=20", // Déplace légèrement vers le haut et le bas
         y: "+=20", // Déplace légèrement vers le haut et le bas
         rotation: "+=5", // Ajoute une rotation
         duration: 3 + index * 0.5, // Différentes durées pour chaque fleur
@@ -60,50 +63,50 @@ const BackgroundFlowers = () => {
       : "-z-10 pointer-events-none";
 
   return (
-    <div className={`fixed inset-0 -z-10 ${zIndexClass}`}>
+    <div className={`fixed inset-0 -z-20 ${zIndexClass}`}>
       <>
-        {/* Fleur 1  GOOD */}
-        <img
-          src={Flower1}
+        {/* Fleur 1 */}
+        {/* <img
+          src={cloud}
           alt="Fleur 1"
           ref={(el) => (flowerRefs.current[0] = el)}
-          className="absolute w-[600px] bottom-[-10%] left-[5%]"
-        />
+          className="absolute w-[200px] bottom-[20%] left-[5%]"
+        /> */}
         {/* Fleur 2 */}
         <img
-          src={Flower2}
+          src={cloud2}
           alt="Fleur 2"
           ref={(el) => (flowerRefs.current[1] = el)}
-          className="absolute w-[600px] top-[-15%] right-[10%]"
+          className="absolute w-[300px] top-[15%] right-[10%]"
         />
         {/* Fleur 3 */}
         <img
-          src={Flower1}
+          src={cloud}
           alt="Fleur 3"
           ref={(el) => (flowerRefs.current[2] = el)}
-          className="absolute w-[950px] bottom-[-60%] right-[-25%]"
+          className="absolute w-[350px] bottom-[-fev0%] right-[-25%]"
         />
 
         {/* Fleur 4 */}
         <img
-          src={Flower2}
+          src={cloud2}
           alt="Fleur 4"
           ref={(el) => (flowerRefs.current[3] = el)}
-          className="absolute w-[950px] top-[-30%] left-[-30%]"
+          className="absolute w-[350px] top-[60%] left-[-0%]"
         />
-        {/* Fleur 5 */}
+        {/* Fleur 5 ok */}
         <img
-          src={Flower1}
+          src={cloud2}
           alt="Fleur 5"
           ref={(el) => (flowerRefs.current[4] = el)}
-          className="absolute w-[250px] bottom-[50%] right-[5%]"
+          className="absolute w-[150px] bottom-[50%] right-[5%]"
         />
         {/* Fleur 6 */}
         <img
-          src={Flower2}
+          src={cloud}
           alt="Fleur 6"
           ref={(el) => (flowerRefs.current[5] = el)}
-          className="absolute w-[280px] top-[40%] left-[10%]"
+          className="absolute w-[180px] top-[20%] left-[10%]"
         />
       </>
     </div>

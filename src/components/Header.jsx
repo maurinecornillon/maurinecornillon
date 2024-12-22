@@ -72,7 +72,7 @@ const Header = () => {
 
           {/* Section centrale (Navigation) */}
           <nav className="flex-1 flex justify-center">
-            <ul className="flex space-x-4 sm:space-x-6 text-secondary border border-secondary px-6 sm:px-12 md:px-16 lg:px-20 py-2 rounded-full text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]">
+            <ul className="flex justify-around space-x-4 sm:space-x-6 text-secondary border border-secondary px-6 sm:px-12 md:px-16 lg:px-20 py-2 rounded-full text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]">
               <li>
                 {location.pathname === "/" ? (
                   <button onClick={() => scrollToSection("accueil")}>
@@ -113,9 +113,12 @@ const Header = () => {
               href="https://linktr.ee/maurinemona"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:block rounded-2xl bg-purple border-2 border-dashed border-black px-6 py-3 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] md:text-[0.5rem] lg:text-[0.8rem]"
+              style={{
+                boxShadow: "4px 4px 0px 0px #212121",
+              }}
+              className=" flex items-center justify-center text-center hidden sm:block rounded-full bg-violet border-2 border-black px-6 py-2 t hover:bg-gradient  text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]"
             >
-              ME CONTACTER
+              CONTACT
             </a>
           </div>
         </div>

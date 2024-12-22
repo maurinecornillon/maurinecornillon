@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-
+import Marquee from "react-fast-marquee";
 
 import AnimatedTitle from "../components/AnimatedTitle";
+import clouds from "../assets/img/logo/14.png";
 
 // Composant principal
 const Home = () => {
@@ -70,11 +71,11 @@ const Home = () => {
     <>
       <section
         id="accueil"
-        className="mt-20 w-[100%] z-50 mx-auto h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center space-y-8 font-sporting-regular relative overflow-hidden"
+        className="mt-20 w-[90%] z-10 mx-auto h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center space-y-8 font-sporting-regular relative overflow-hidden"
       >
         {/* Titre principal avec effet de zoom */}
         <div
-          className="relative w-[90%]"
+          className="relative w-[100%]"
           initial="hidden"
           animate="visible"
           variants={zoomVariants}
@@ -84,13 +85,16 @@ const Home = () => {
           <AnimatedTitle title="mes solutions" />
         </div>
         {/* Bouton d'action */}
-        <div className="flex justify-between space-x-8">
+        <div className="flex justify-center space-x-6 w-[100%]">
           <a
             href="https://tidycal.com/maurinecornillon/projet"
             target="_blank"
             rel="noreferrer"
-            className="custom-button bg-purple rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+            className="w-[35%] custom-button rounded-full border-2  border-black px-16 py-2  transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-full hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-full active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
             ref={buttonRef1}
+            style={{
+              boxShadow: "4px 4px 0px 0px #212121",
+            }}
           >
             Parlons de votre projet
           </a>
@@ -98,13 +102,19 @@ const Home = () => {
             href="https://tidycal.com/maurinecornillon/audit"
             target="_blank"
             rel="noreferrer"
-            className="custom-button bg-blue rounded-2xl border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient_blue hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+            className="custom-button bg-violet rounded-full border-2  border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-full hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-full active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
             ref={buttonRef}
+            style={{
+              boxShadow: "4px 4px 0px 0px #212121",
+            }}
           >
             Audit Gratuit
           </a>
         </div>
       </section>
+      <div className="">
+        <img src={clouds} alt="Flower" className="w-full h-full" />
+      </div>
     </>
   );
 };

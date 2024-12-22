@@ -5,7 +5,7 @@ import ZoomText from "../components/ZoomText";
 const Creation = () => {
   return (
     <>
-      <section className="w-[90%] mx-auto pb-[8rem] text-secondary font-sporting-regular">
+      <section className="w-[90%] mx-auto text-secondary font-sporting-regular">
         <ZoomText delay={0.2}>
           {/* Titre et description */}
           <div className="text-center mb-16">
@@ -14,9 +14,8 @@ const Creation = () => {
             </h1>
             <p className="text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
               <ZoomText delay={0.2}>
-                Idéal si : <br />
-                Vous êtes en phase de lancement et souhaitez concrétiser
-                rapidement votre vision avec une solution impactante.
+                Vous êtes en phase de lancement et souhaitez vous démarquer avec
+                une solution impactante qui reflète votre vision.
               </ZoomText>
             </p>
           </div>
@@ -130,34 +129,6 @@ const Creation = () => {
                 </div>
               </ZoomText>
             </div>
-          </div>
-
-          {/* Description */}
-          <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
-            <ZoomText delay={0.2}>
-              <p className="mb-4">
-                Pour découvrir le pack qui correspond le mieux à vos besoin et
-                obtenir une première estimation, utiliser le simulateur de
-                projet !
-              </p>
-            </ZoomText>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center">
-            <ZoomText delay={0.2}>
-              <a
-                href="https://linktr.ee/maurinemona"
-                target="_blank"
-                rel="noreferrer"
-                className="arrow rounded-2xl bg-purple border-2 border-dashed border-black px-16 py-6 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
-                style={{
-                  boxShadow: "8px 8px 0px 0px #212121",
-                }}
-              >
-                🌼 Simuler mon projet 🌼
-              </a>
-            </ZoomText>
           </div>
         </ZoomText>
       </section>
