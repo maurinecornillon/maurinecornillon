@@ -15,7 +15,7 @@ const FAQ = ({ data }) => {
   };
 
   return (
-    <div className="flex w-full min-h-screen">
+    <div className="flex w-full ">
       {/* FAQ content */}
       <div className="w-[100%] space-y-6 flex flex-col mx-auto">
         {faqs.map((faq, index) => (

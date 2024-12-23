@@ -73,16 +73,13 @@ const Header = () => {
           {/* Section centrale (Navigation) */}
           <nav className="flex-1 flex justify-center">
             <ul className="flex justify-around space-x-4 sm:space-x-6 text-secondary border border-secondary px-6 sm:px-12 md:px-16 lg:px-20 py-2 rounded-full text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]">
-              <li>
-                {location.pathname === "/" ? (
-                  <button onClick={() => scrollToSection("accueil")}>
-                    ACCUEIL
-                  </button>
-                ) : (
+              {isProjectPage ? (
+                // Afficher ACCUEIL uniquement sur les pages de projets
+                <li>
                   <Link to="/">ACCUEIL</Link>
-                )}
-              </li>
-              {!isProjectPage && (
+                </li>
+              ) : (
+                // Afficher SERVICES, FAQ, PROJETS sur les autres pages
                 <>
                   <li>
                     {location.pathname === "/" ? (
@@ -91,6 +88,15 @@ const Header = () => {
                       </button>
                     ) : (
                       <Link to="/">SERVICES</Link>
+                    )}
+                  </li>
+                  <li>
+                    {location.pathname === "/" ? (
+                      <button onClick={() => scrollToSection("faq")}>
+                        FAQ
+                      </button>
+                    ) : (
+                      <Link to="/">FAQ</Link>
                     )}
                   </li>
                   <li>

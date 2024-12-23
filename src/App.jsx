@@ -12,6 +12,8 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Faq from "./pages/Faq";
+import Contact from "./pages/Contact";
+
 import Anna from "./pages/Anna";
 import Estimeo from "./pages/Estimeo";
 import Linkera from "./pages/Linkera";
@@ -45,8 +47,11 @@ const App = () => {
                 <section id="projets">
                   <Projects />
                 </section>
-                <section>
+                <section id="faq">
                   <Faq />
+                </section>
+                <section>
+                  <Contact />
                 </section>
               </main>
             }

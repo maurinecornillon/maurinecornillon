@@ -72,34 +72,38 @@ const Services = () => {
     Object.entries(showCard).forEach(([key, isShown]) => {
       const cardRef = cardRefs[key].current;
 
-      if (isShown) {
-        // Animation d'apparition et flottement
-        gsap.to(cardRef, {
-          opacity: 1,
-          x: 0,
-          rotationX: -5,
-          rotationY: 40,
-          rotationZ: -2,
-          duration: 0.5,
-          ease: "power2.out",
-          transformPerspective: 1000,
-        });
+      if (cardRef) {
+        if (isShown) {
+          // Animation d'apparition et flottement
+          gsap.killTweensOf(cardRef); // Arrête les animations en cours
+          gsap.to(cardRef, {
+            opacity: 1,
+            x: 0,
+            rotationX: -5,
+            rotationY: 40,
+            rotationZ: -2,
+            duration: 0.5,
+            ease: "power2.out",
+            transformPerspective: 1000,
+          });
 
-        gsap.to(cardRef, {
-          y: "-=10",
-          repeat: -1,
-          yoyo: true,
-          duration: 1.5,
-          ease: "sine.inOut",
-        });
-      } else {
-        // Animation de disparition
-        gsap.to(cardRef, {
-          opacity: 0,
-          x: -50,
-          duration: 0.3,
-          ease: "power2.in",
-        });
+          gsap.to(cardRef, {
+            y: "-=10",
+            repeat: -1,
+            yoyo: true,
+            duration: 1.5,
+            ease: "sine.inOut",
+          });
+        } else {
+          // Animation de disparition
+          gsap.killTweensOf(cardRef); // Arrête les animations en cours
+          gsap.to(cardRef, {
+            opacity: 0,
+            x: -50,
+            duration: 0.3,
+            ease: "power2.in",
+          });
+        }
       }
     });
   }, [showCard]);
@@ -120,7 +124,7 @@ const Services = () => {
 
   return (
     <>
-      <main className="  w-[100%]">
+      <main id="services" className="  w-[100%]">
         <div className="bg-violet">
           <Marquee speed={50}>
             <div className=" font-sporting-regular text-secondary text-[100px]">
@@ -134,13 +138,10 @@ const Services = () => {
             </div>
           </Marquee>
         </div>
-        <div className="">
-          <img src={clouds} alt="Flower" className="w-full h-full" />
+        <div className="overflow-hidden">
+          <img src={clouds} alt="Flower" className="w-full max-w-full h-full" />
         </div>
-        <section
-          id="services"
-          className=" w-[90%] z-50 mx-auto flex flex-col space-y-16 text-secondary font-sporting-regular"
-        >
+        <section className=" w-[90%] z-50 mx-auto flex flex-col space-y-16 text-secondary font-sporting-regular">
           <div className="space-y-8 flex flex-col w-[60%] ml-auto relative">
             {/* Service 1 */}
             <ZoomText delay={0.2}>
@@ -167,7 +168,7 @@ const Services = () => {
                 {/* Carte flottante: Création */}
                 <div
                   ref={cardRefs.creation}
-                  className="absolute left-[-400px] top-[50px] bg-purple shadow-lg rounded-lg p-4 border border-black opacity-0"
+                  className="absolute flex flex-col items-center justify-center pointer-events-none left-[-400px] top-[50px] text-primary bg-secondary shadow-lg rounded-lg p-4 border border-black opacity-0"
                   style={{
                     transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
                     transformOrigin: "center center",
@@ -175,10 +176,15 @@ const Services = () => {
                     height: "300px",
                   }}
                 >
-                  <h4 className="text-lg font-bold">Création</h4>
-                  <p className="text-sm">
-                    Explorez des solutions innovantes et impactantes.
-                  </p>
+                  <h3 className="text-xl font-bold text-center mb-2">
+                    IMAGINER
+                  </h3>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <p className="text-[30px]">❊</p>
+                  </div>
+                  <h3 className="text-xl font-bold text-center mt-2">
+                    IMAGINER
+                  </h3>
                 </div>
               </div>
             </ZoomText>
@@ -206,7 +212,7 @@ const Services = () => {
                 {/* Carte flottante: Optimisation */}
                 <div
                   ref={cardRefs.optimisation}
-                  className="absolute left-[-400px] top-[-40px] bg-blue shadow-lg rounded-lg p-4 border border-black opacity-0"
+                  className="absolute flex flex-col items-center justify-center pointer-events-none left-[-400px] top-[-50px] text-primary bg-secondary shadow-lg rounded-lg p-4   opacity-0"
                   style={{
                     transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
                     transformOrigin: "center center",
@@ -214,10 +220,15 @@ const Services = () => {
                     height: "300px",
                   }}
                 >
-                  <h4 className="text-lg font-bold">Optimisation</h4>
-                  <p className="text-sm">
-                    Améliorez vos performances avec des solutions adaptées.
-                  </p>
+                  <h3 className="text-xl font-bold text-center mb-2">
+                    PROPULSER
+                  </h3>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <p className="text-[30px]">❊</p>
+                  </div>
+                  <h3 className="text-xl font-bold text-center mt-2">
+                    PROPULSER
+                  </h3>
                 </div>
               </div>
             </ZoomText>
@@ -246,7 +257,7 @@ const Services = () => {
                 {/* Carte flottante: Collaboration */}
                 <div
                   ref={cardRefs.collaboration}
-                  className="absolute left-[-400px] top-[-180px] bg-green-400 shadow-lg rounded-lg p-4 border border-black opacity-0"
+                  className="absolute flex flex-col items-center justify-center pointer-events-none left-[-400px] top-[-180px] text-primary bg-secondary shadow-lg rounded-lg p-4  opacity-0"
                   style={{
                     transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
                     transformOrigin: "center center",
@@ -254,10 +265,15 @@ const Services = () => {
                     height: "300px",
                   }}
                 >
-                  <h4 className="text-lg font-bold">Collaboration</h4>
-                  <p className="text-sm">
-                    Travaillez ensemble pour des projets réussis.
-                  </p>
+                  <h3 className="text-xl font-bold text-center mb-2">
+                    CONSTRUIRE
+                  </h3>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <p className="text-[30px]">❊</p>
+                  </div>
+                  <h3 className="text-xl font-bold text-center mt-2">
+                    CONSTRUIRE
+                  </h3>
                 </div>
               </div>
             </ZoomText>

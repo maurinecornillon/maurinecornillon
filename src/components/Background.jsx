@@ -65,19 +65,12 @@ const BackgroundFlowers = () => {
   return (
     <div className={`fixed inset-0 -z-20 ${zIndexClass}`}>
       <>
-        {/* Fleur 1 */}
-        {/* <img
-          src={cloud}
-          alt="Fleur 1"
-          ref={(el) => (flowerRefs.current[0] = el)}
-          className="absolute w-[200px] bottom-[20%] left-[5%]"
-        /> */}
         {/* Fleur 2 */}
         <img
           src={cloud2}
           alt="Fleur 2"
           ref={(el) => (flowerRefs.current[1] = el)}
-          className="absolute w-[300px] top-[15%] right-[10%]"
+          className="absolute overflow-hidden w-[300px] top-[15%] right-[10%]"
         />
 
         {/* Fleur 4 */}
@@ -85,21 +78,21 @@ const BackgroundFlowers = () => {
           src={cloud2}
           alt="Fleur 4"
           ref={(el) => (flowerRefs.current[3] = el)}
-          className="absolute w-[350px] top-[60%] left-[-0%]"
+          className="absolute overflow-hidden w-[350px] top-[60%] left-[-0%]"
         />
         {/* Fleur 5 ok */}
         <img
           src={cloud2}
           alt="Fleur 5"
           ref={(el) => (flowerRefs.current[4] = el)}
-          className="absolute w-[150px] bottom-[50%] right-[5%]"
+          className="absolute overflow-hidden w-[150px] bottom-[50%] right-[5%]"
         />
         {/* Fleur 6 */}
         <img
           src={cloud}
           alt="Fleur 6"
           ref={(el) => (flowerRefs.current[5] = el)}
-          className="absolute w-[180px] top-[20%] left-[10%]"
+          className="absolute overflow-hidden w-[180px] top-[20%] left-[10%]"
         />
       </>
     </div>

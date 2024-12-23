@@ -5,8 +5,9 @@ import Marquee from "react-fast-marquee";
 import FaqBesoins from "../components/FaqBesoins";
 import FaqProcess from "../components/FaqProcess";
 import FaqResultats from "../components/FaqResultats";
-
 import ZoomText from "../components/ZoomText";
+
+import clouds from "../assets/img/logo/14.png";
 
 // Composant pour l'effet "glider"
 const Glider = ({ position }) => {
@@ -68,7 +69,7 @@ const Faq = () => {
 
   return (
     <>
-      <div className="w-full mx-auto">
+      <div id="faq" className="w-full mx-auto">
         <Marquee speed={50}>
           <div className=" font-sporting-regular text-secondary text-[100px]">
             <p>
@@ -116,7 +117,46 @@ const Faq = () => {
           <ZoomText delay={0.2}>
             <div className="mt-8">{renderContent()}</div>
           </ZoomText>
+          {/* Description */}
+          <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
+            <ZoomText delay={0.2}>
+              <p className="mb-8">
+                Vous avez encore des questions ou souhaitez discuter de votre
+                projet ? Contactez-moi dès maintenant pour en parler !
+              </p>
+            </ZoomText>
+            {/* Call to Action */}
+            <div className="text-center flex justify-center w-full ">
+              <ZoomText delay={0.2}>
+                <a
+                  href="https://linktr.ee/maurinemona"
+                  target="_blank"
+                  rel="noreferrer"
+                  className=" w-full bg-violet mx-4 rounded-full border-2 border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue  text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+                  style={{
+                    boxShadow: "4px 4px 0px 0px #212121",
+                  }}
+                >
+                  Parlons de votre projet
+                </a>
+                <a
+                  href="https://linktr.ee/maurinemona"
+                  target="_blank"
+                  rel="noreferrer"
+                  className=" w-full bg-violet  rounded-full border-2 border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue  text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+                  style={{
+                    boxShadow: "4px 4px 0px 0px #212121",
+                  }}
+                >
+                  Audit offert
+                </a>
+              </ZoomText>
+            </div>
+          </div>
         </section>
+      </div>
+      <div className="overflow-hidden">
+        <img src={clouds} alt="Flower" className="w-full  h-full" />
       </div>
     </>
   );

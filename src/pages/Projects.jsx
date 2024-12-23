@@ -126,8 +126,8 @@ const Projects = () => {
   return (
     <>
       {/* Section du titre */}
-      <div className="">
-        <img src={clouds} alt="Flower" className="w-full h-full" />
+      <div className="overflow-hidden">
+        <img src={clouds} alt="Flower" className="w-full  h-full" />
       </div>
 
       <section
@@ -161,12 +161,12 @@ const Projects = () => {
         {/* Section contenant les cartes */}
         <section
           ref={containerRef}
-          className="relative w-[100%] mx-auto h-[80vh]  flex items-center"
+          className="relative w-[100%] mx-auto h-auto flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4"
         >
           {cards.map((card) => (
             <div
               key={card.id}
-              className="card bg-primary border-dashed border-2 border-black rounded-lg h-[20rem] w-[20rem] p-4 group cursor-grab user-select-none relative"
+              className="card bg-primary border-dashed border-2 border-black rounded-lg h-[20rem] w-[90%] sm:w-[20rem] p-4 group cursor-grab user-select-none relative"
             >
               {/* Contenu dynamique */}
               <div className="absolute top-4 left-4 w-16 h-16 group-hover:w-60 group-hover:h-24 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out flex flex-col text-left">
@@ -220,11 +220,11 @@ const Projects = () => {
           ))}
         </section>
       </section>
-      <div className="">
+      <div className="overflow-hidden">
         <img
           src={clouds}
           alt="Flower"
-          className="w-full h-full transform scale-y-[-1]"
+          className="w-full h-full max-w-full transform scale-y-[-1]"
         />
       </div>
     </>

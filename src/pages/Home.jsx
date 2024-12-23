@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Marquee from "react-fast-marquee";
 
 import AnimatedTitle from "../components/AnimatedTitle";
 import clouds from "../assets/img/logo/14.png";
@@ -85,12 +84,12 @@ const Home = () => {
           <AnimatedTitle title="mes solutions" />
         </div>
         {/* Bouton d'action */}
-        <div className="flex justify-center space-x-6 w-[100%]">
+        <div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 w-full space-y-4 sm:space-y-0">
           <a
             href="https://tidycal.com/maurinecornillon/projet"
             target="_blank"
             rel="noreferrer"
-            className="w-[35%] custom-button rounded-full border-2  border-black px-16 py-2  transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-full hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-full active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+            className="w-full sm:w-[35%] custom-button rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none text-[0.7rem] sm:text-[0.9rem] lg:text-[1rem]"
             ref={buttonRef1}
             style={{
               boxShadow: "4px 4px 0px 0px #212121",
@@ -102,7 +101,7 @@ const Home = () => {
             href="https://tidycal.com/maurinecornillon/audit"
             target="_blank"
             rel="noreferrer"
-            className="custom-button bg-violet rounded-full border-2  border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-full hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-full active:shadow-none text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+            className="w-full sm:w-[35%] custom-button bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none text-[0.7rem] sm:text-[0.9rem] lg:text-[1rem]"
             ref={buttonRef}
             style={{
               boxShadow: "4px 4px 0px 0px #212121",
@@ -112,8 +111,8 @@ const Home = () => {
           </a>
         </div>
       </section>
-      <div className="">
-        <img src={clouds} alt="Flower" className="w-full h-full" />
+      <div className="overflow-hidden">
+        <img src={clouds} alt="Flower" className="w-full max-w-full h-full" />
       </div>
     </>
   );
