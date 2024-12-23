@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const FAQ = ({ data }) => {
   const [faqs, setFaqs] = useState(
@@ -15,23 +15,17 @@ const FAQ = ({ data }) => {
   };
 
   return (
-    <div className="flex w-full min-h-screen  ">
+    <div className="flex w-full min-h-screen">
       {/* FAQ content */}
       <div className="w-[100%] space-y-6 flex flex-col mx-auto">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`border-b border-secondary pb-4 transition-all duration-300 ${
-              faq.open ? "mb-6" : ""
-            }`}
+            className="border-b border-secondary pb-4"
             onClick={() => toggleFAQ(index)}
           >
             {/* Question */}
-            <div
-              className={`relative text-[20px] cursor-pointer flex items-center justify-between ${
-                faq.open ? "mb-4" : ""
-              }`}
-            >
+            <div className="relative text-[20px] cursor-pointer flex items-center justify-between">
               {faq.question}
               <span
                 className={`transform transition-transform duration-300 ${
@@ -44,9 +38,12 @@ const FAQ = ({ data }) => {
 
             {/* Answer */}
             <div
-              className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                faq.open ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
-              }`}
+              className="overflow-hidden transition-all duration-500 ease-in-out"
+              style={{
+                maxHeight: faq.open ? `${faq.ref?.scrollHeight || 0}px` : "0px",
+                opacity: faq.open ? 1 : 0,
+              }}
+              ref={(el) => (faq.ref = el)} // Attach ref dynamically
             >
               <p className="text-sm mt-2">{faq.answer}</p>
             </div>
