@@ -2,7 +2,7 @@ import React from "react";
 import { FaLinkedin, FaGithub, FaCalendar } from "react-icons/fa";
 
 const Footer = () => {
-  return <footer className="w-full relative z-10 bg-violet"></footer>;
+  return <footer className="w-full relative z-10 bg-secondary"></footer>;
 };
 
 export default Footer;

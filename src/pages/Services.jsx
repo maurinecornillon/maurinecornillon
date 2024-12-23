@@ -55,40 +55,53 @@ const Tab = ({ children, setPosition, isActive, onClick }) => {
 const Services = () => {
   const [activeSection, setActiveSection] = useState("creation");
   const [position, setPosition] = useState({ left: 0, width: 0, opacity: 0 });
-  const [showCard, setShowCard] = useState(false); // Gérer l'état du hover
-  const cardRef = useRef(null); // Référence pour la card
+
+  const [showCard, setShowCard] = useState({
+    creation: false,
+    optimisation: false,
+    collaboration: false,
+  });
+
+  const cardRefs = {
+    creation: useRef(null),
+    optimisation: useRef(null),
+    collaboration: useRef(null),
+  };
 
   useEffect(() => {
-    if (showCard) {
-      // Animation d'apparition et d'inclinaison
-      gsap.to(cardRef.current, {
-        opacity: 1,
-        x: 0,
-        rotationX: -5, // Inclinaison 3D
-        rotationY: 40, // Inclinaison horizontale
-        rotationZ: -2, // Légère rotation diagonale
-        duration: 0.5,
-        ease: "power2.out",
-        transformPerspective: 1000, // Perspective pour donner l'effet 3D
-      });
+    Object.entries(showCard).forEach(([key, isShown]) => {
+      const cardRef = cardRefs[key].current;
 
-      // Effet de flottement continu
-      gsap.to(cardRef.current, {
-        y: "-=10", // Monte légèrement
-        repeat: -1, // Boucle infinie
-        yoyo: true, // Revient à sa position initiale
-        duration: 1.5,
-        ease: "sine.inOut",
-      });
-    } else {
-      // Disparaît proprement quand on quitte le hover
-      gsap.to(cardRef.current, {
-        opacity: 0,
-        x: -50, // Déplacement vers la gauche avant de disparaître
-        duration: 0.3,
-        ease: "power2.in",
-      });
-    }
+      if (isShown) {
+        // Animation d'apparition et flottement
+        gsap.to(cardRef, {
+          opacity: 1,
+          x: 0,
+          rotationX: -5,
+          rotationY: 40,
+          rotationZ: -2,
+          duration: 0.5,
+          ease: "power2.out",
+          transformPerspective: 1000,
+        });
+
+        gsap.to(cardRef, {
+          y: "-=10",
+          repeat: -1,
+          yoyo: true,
+          duration: 1.5,
+          ease: "sine.inOut",
+        });
+      } else {
+        // Animation de disparition
+        gsap.to(cardRef, {
+          opacity: 0,
+          x: -50,
+          duration: 0.3,
+          ease: "power2.in",
+        });
+      }
+    });
   }, [showCard]);
 
   // Gère le contenu dynamique en fonction de la section active
@@ -133,8 +146,12 @@ const Services = () => {
             <ZoomText delay={0.2}>
               <div
                 className="flex items-center justify-between border-b border-secondary pb-4 relative"
-                onMouseEnter={() => setShowCard(true)} // Afficher la card
-                onMouseLeave={() => setShowCard(false)} // Masquer la card
+                onMouseEnter={() =>
+                  setShowCard((prev) => ({ ...prev, creation: true }))
+                }
+                onMouseLeave={() =>
+                  setShowCard((prev) => ({ ...prev, creation: false }))
+                }
               >
                 <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
                   01.
@@ -147,15 +164,15 @@ const Services = () => {
                   Création
                 </h3>
 
-                {/* Card flottante */}
+                {/* Carte flottante: Création */}
                 <div
-                  ref={cardRef}
+                  ref={cardRefs.creation}
                   className="absolute left-[-400px] top-[50px] bg-purple shadow-lg rounded-lg p-4 border border-black opacity-0"
                   style={{
-                    transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)", // Inclinaison initiale
-                    transformOrigin: "center center", // Centre de rotation
-                    width: "250px", // Largeur personnalisée
-                    height: "300px", // Hauteur personnalisée
+                    transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
+                    transformOrigin: "center center",
+                    width: "250px",
+                    height: "300px",
                   }}
                 >
                   <h4 className="text-lg font-bold">Création</h4>
@@ -168,7 +185,15 @@ const Services = () => {
 
             {/* Service 2 */}
             <ZoomText delay={0.2}>
-              <div className="flex items-center justify-between border-b border-secondary pb-4">
+              <div
+                className="flex items-center justify-between border-b border-secondary pb-4"
+                onMouseEnter={() =>
+                  setShowCard((prev) => ({ ...prev, optimisation: true }))
+                }
+                onMouseLeave={() =>
+                  setShowCard((prev) => ({ ...prev, optimisation: false }))
+                }
+              >
                 <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
                   02.
                 </span>
@@ -178,12 +203,37 @@ const Services = () => {
                 >
                   Optimisation
                 </h3>
+                {/* Carte flottante: Optimisation */}
+                <div
+                  ref={cardRefs.optimisation}
+                  className="absolute left-[-400px] top-[-40px] bg-blue shadow-lg rounded-lg p-4 border border-black opacity-0"
+                  style={{
+                    transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
+                    transformOrigin: "center center",
+                    width: "250px",
+                    height: "300px",
+                  }}
+                >
+                  <h4 className="text-lg font-bold">Optimisation</h4>
+                  <p className="text-sm">
+                    Améliorez vos performances avec des solutions adaptées.
+                  </p>
+                </div>
               </div>
             </ZoomText>
 
             {/* Service 3 */}
             <ZoomText delay={0.2}>
-              <div className="relative flex items-center justify-between pb-4">
+              <div
+                className="relative flex items-center justify-between pb-4
+              "
+                onMouseEnter={() =>
+                  setShowCard((prev) => ({ ...prev, collaboration: true }))
+                }
+                onMouseLeave={() =>
+                  setShowCard((prev) => ({ ...prev, collaboration: false }))
+                }
+              >
                 <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
                   03.
                 </span>
@@ -193,6 +243,22 @@ const Services = () => {
                 >
                   Collaboration
                 </h3>
+                {/* Carte flottante: Collaboration */}
+                <div
+                  ref={cardRefs.collaboration}
+                  className="absolute left-[-400px] top-[-180px] bg-green-400 shadow-lg rounded-lg p-4 border border-black opacity-0"
+                  style={{
+                    transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
+                    transformOrigin: "center center",
+                    width: "250px",
+                    height: "300px",
+                  }}
+                >
+                  <h4 className="text-lg font-bold">Collaboration</h4>
+                  <p className="text-sm">
+                    Travaillez ensemble pour des projets réussis.
+                  </p>
+                </div>
               </div>
             </ZoomText>
           </div>

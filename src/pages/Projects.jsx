@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 
 import clouds from "../assets/img/logo/cloud.png";
+import clouds2 from "../assets/img/logo/15.png";
 
 gsap.registerPlugin(Draggable, ScrollTrigger);
 
@@ -219,6 +220,13 @@ const Projects = () => {
           ))}
         </section>
       </section>
+      <div className="">
+        <img
+          src={clouds}
+          alt="Flower"
+          className="w-full h-full transform scale-y-[-1]"
+        />
+      </div>
     </>
   );
 };
