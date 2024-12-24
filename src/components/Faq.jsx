@@ -25,7 +25,7 @@ const FAQ = ({ data }) => {
             onClick={() => toggleFAQ(index)}
           >
             {/* Question */}
-            <div className="relative text-[20px] cursor-pointer flex items-center justify-between">
+            <div className="relative text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem] cursor-pointer flex items-center justify-between">
               {faq.question}
               <span
                 className={`transform transition-transform duration-300 ${
@@ -45,7 +45,9 @@ const FAQ = ({ data }) => {
               }}
               ref={(el) => (faq.ref = el)} // Attach ref dynamically
             >
-              <p className="text-sm mt-2">{faq.answer}</p>
+              <p className="text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.5rem] mt-2">
+                {faq.answer}
+              </p>
             </div>
           </div>
         ))}

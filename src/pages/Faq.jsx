@@ -126,31 +126,29 @@ const Faq = () => {
               </p>
             </ZoomText>
             {/* Call to Action */}
-            <div className="text-center flex justify-center w-full ">
-              <ZoomText delay={0.2}>
-                <a
-                  href="https://linktr.ee/maurinemona"
-                  target="_blank"
-                  rel="noreferrer"
-                  className=" w-full bg-violet mx-4 rounded-full border-2 border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue  text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
-                  style={{
-                    boxShadow: "4px 4px 0px 0px #212121",
-                  }}
-                >
-                  Parlons de votre projet
-                </a>
-                <a
-                  href="https://linktr.ee/maurinemona"
-                  target="_blank"
-                  rel="noreferrer"
-                  className=" w-full bg-violet  rounded-full border-2 border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue  text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
-                  style={{
-                    boxShadow: "4px 4px 0px 0px #212121",
-                  }}
-                >
-                  Audit offert
-                </a>
-              </ZoomText>
+            <div className="text-center flex flex-col justify-center items-center space-y-4 w-full">
+              <a
+                href="https://linktr.ee/maurinemona"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
+                style={{
+                  boxShadow: "4px 4px 0px 0px #212121",
+                }}
+              >
+                Parlons de votre projet
+              </a>
+              <a
+                href="https://linktr.ee/maurinemona"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
+                style={{
+                  boxShadow: "4px 4px 0px 0px #212121",
+                }}
+              >
+                Audit offert
+              </a>
             </div>
           </div>
         </section>

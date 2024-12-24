@@ -200,8 +200,11 @@ const Projects = () => {
 
               {/* Flèche au hover */}
               <span
-                onClick={() => handleNavigation(card.title)}
-                className="absolute top-2 right-4 cursor-pointer text-[2rem] font-sporting-bold text-black opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
+                onClick={(e) => {
+                  e.stopPropagation(); // Empêche les événements parent d'interférer
+                  handleNavigation(card.title);
+                }}
+                className="absolute top-2 right-4 cursor-pointer text-[2rem] font-sporting-bold text-black opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 ease-in-out"
                 style={{
                   transform: "translate(10px, 10px) rotate(-45deg)", // Position initiale
                   transition: "all 0.3s ease-in-out", // Animation fluide

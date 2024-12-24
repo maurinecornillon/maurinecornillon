@@ -41,7 +41,7 @@ const Tab = ({ children, setPosition, isActive, onClick }) => {
     <li
       ref={ref}
       onClick={onClick}
-      className={`relative z-10 flex-1 cursor-pointer text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] uppercase ${
+      className={`relative z-10 flex-1 cursor-pointer text-[0.5rem] sm:text-[0.6rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] uppercase ${
         isActive ? "font-bold text-secondary" : "text-secondary"
       }`}
     >
@@ -154,7 +154,7 @@ const Services = () => {
                   setShowCard((prev) => ({ ...prev, creation: false }))
                 }
               >
-                <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
+                <span className="text-[rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
                   01.
                 </span>
 
@@ -281,7 +281,7 @@ const Services = () => {
         </section>
       </main>
 
-      <section className=" w-[90%] z-50 mx-auto flex flex-col space-y-16 text-secondary font-sporting-regular">
+      <section className=" w-[90%] z-50 mx-auto flex flex-col space-y-16  text-secondary font-sporting-regular">
         {/* NAVIGATION */}
         <ZoomText delay={0.2}>
           <div className="relative border border-secondary rounded-full p-1 sm:p-2 overflow-hidden mt-16 w-full">
@@ -319,31 +319,30 @@ const Services = () => {
         <ZoomText delay={0.2}>
           <div className="mt-8">{renderContent()}</div>
         </ZoomText>
-        {/* Description */}
+      </section>
+      <section className=" w-[90%] z-50 mx-auto flex flex-col text-secondary font-sporting-regular">
         <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
           <ZoomText delay={0.2}>
-            <p className="">
+            <p className="mb-8">
               Pour découvrir le pack qui correspond le mieux à vos besoin et
               obtenir une première estimation, utiliser le simulateur de projet
               !
             </p>
           </ZoomText>
-        </div>
-        {/* Call to Action */}
-        <div className="text-center flex justify-center w-full">
-          <ZoomText delay={0.2}>
+          {/* Call to Action */}
+          <div className="text-center flex flex-col justify-center items-center space-y-4 w-full">
             <a
               href="https://linktr.ee/maurinemona"
               target="_blank"
               rel="noreferrer"
-              className=" w-full bg-violet block rounded-full border-2 border-black px-16 py-2 transition-all duration-300 hover:bg-gradient_blue  text-[0.5rem] sm:text-[0.5rem] lg:text-[0.8rem] xl:text-[1rem] 2xl:text-[1rem]"
+              className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
               style={{
                 boxShadow: "4px 4px 0px 0px #212121",
               }}
             >
               Simuler mon projet
             </a>
-          </ZoomText>
+          </div>
         </div>
       </section>
     </>
