@@ -145,20 +145,6 @@ const Projects = () => {
             </p>
           </div>
         </Marquee>
-        {/* <ZoomText delay={0.2}>
-          <div>
-            <h2 className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold leading-none">
-              Mes
-              <br /> Projets
-            </h2>
-          </div>
-        </ZoomText> */}
-
-        {/* <div className="">
-          <img src={cloud} alt="Flower" className="w-full h-full" />
-        </div> */}
-
-        {/* Section contenant les cartes */}
         <section
           ref={containerRef}
           className="relative w-[100%] mx-auto h-auto flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4"

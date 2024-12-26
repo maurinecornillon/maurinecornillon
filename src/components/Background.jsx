@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useLocation } from "react-router-dom";
 
-import Flower1 from "../assets/img/logo/M.B (4).png";
-import Flower2 from "../assets/img/logo/M.B (3).png";
 import cloud from "../assets/img/logo/13.png";
 import cloud2 from "../assets/img/logo/11.png";
 
@@ -12,45 +10,54 @@ const BackgroundFlowers = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Mouvement horizontal des fleurs en fonction de la souris
+    // Stocker la position de la souris
+    let mouseX = 0;
+    let targetX = 0;
+
     const moveFlowers = (e) => {
-      const { clientX } = e; // On se concentre uniquement sur l'axe X
-      const { innerWidth } = window;
+      mouseX = e.clientX;
+    };
+
+    // Animation principale pour suivre la souris
+    const updatePosition = () => {
+      targetX += (mouseX - targetX) * 0.1; // Lissage du mouvement
 
       flowerRefs.current.forEach((flower, index) => {
         const speed = 10 + index * 5; // Différentes vitesses
-        const x = ((clientX / innerWidth) * 2 - 1) * speed;
+        const x = ((targetX / window.innerWidth) * 2 - 1) * speed;
 
         gsap.to(flower, {
           x,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 0.1,
+          overwrite: "auto",
         });
       });
+
+      requestAnimationFrame(updatePosition);
     };
 
-    window.addEventListener("mousemove", moveFlowers);
-
-    // Effet de flottement (léger mouvement vertical et rotation)
+    // Effet de flottement
     flowerRefs.current.forEach((flower, index) => {
       gsap.to(flower, {
-        x: "+=20", // Déplace légèrement vers le haut et le bas
-        y: "+=20", // Déplace légèrement vers le haut et le bas
-        rotation: "+=5", // Ajoute une rotation
-        duration: 3 + index * 0.5, // Différentes durées pour chaque fleur
+        y: "+=20", // Monte et descend légèrement
+        rotation: "+=5", // Ajoute une légère rotation
+        duration: 3 + index * 0.5, // Durées différentes pour chaque nuage
         ease: "power1.inOut",
-        repeat: -1, // Répète indéfiniment
-        yoyo: true, // Fait le mouvement en va-et-vient
+        repeat: -1, // Répétition infinie
+        yoyo: true, // Va-et-vient
       });
     });
 
+    window.addEventListener("mousemove", moveFlowers);
+    updatePosition(); // Démarrer l'animation de suivi
+
     return () => {
       window.removeEventListener("mousemove", moveFlowers);
-      gsap.killTweensOf(flowerRefs.current);
+      gsap.killTweensOf(flowerRefs.current); // Nettoyage
     };
   }, []);
 
-  // Déterminez la classe `z-index` en fonction de la page active
+  // Déterminer la classe `z-index` en fonction de la page active
   const zIndexClass =
     location.pathname === "/" ||
     location.pathname === "/linkera" ||
@@ -65,34 +72,30 @@ const BackgroundFlowers = () => {
   return (
     <div className={`fixed inset-0 -z-20 ${zIndexClass}`}>
       <>
-        {/* Fleur 2 */}
+        {/* Nuages */}
         <img
           src={cloud2}
-          alt="Fleur 2"
+          alt="Nuage 1"
           ref={(el) => (flowerRefs.current[1] = el)}
           className="absolute overflow-hidden lg:w-[300px] xl:w-[300px] 2xl:w-[300px] md:w-[300px] sm:w-[200px] w-[200px] top-[15%] right-[10%]"
         />
-
-        {/* Fleur 4 */}
         <img
           src={cloud2}
-          alt="Fleur 4"
+          alt="Nuage 2"
           ref={(el) => (flowerRefs.current[3] = el)}
-          className="absolute overflow-hidden  lg:w-[350px] xl:w-[350px] 2xl:w-[350px] md:w-[350px] sm:w-[300px] w-[250px] top-[60%] left-[-0%]"
+          className="absolute overflow-hidden lg:w-[350px] xl:w-[350px] 2xl:w-[350px] md:w-[350px] sm:w-[300px] w-[250px] top-[60%] left-[-0%]"
         />
-        {/* Fleur 5 ok */}
         <img
           src={cloud2}
-          alt="Fleur 5"
+          alt="Nuage 3"
           ref={(el) => (flowerRefs.current[4] = el)}
-          className="absolute overflow-hidden lg:w-[150px] xl:w-[150px] 2xl:w-[150px] md:w-[150px] sm:w-[120px] w-[120px]  bottom-[50%] right-[5%]"
+          className="absolute overflow-hidden lg:w-[150px] xl:w-[150px] 2xl:w-[150px] md:w-[150px] sm:w-[120px] w-[120px] bottom-[50%] right-[5%]"
         />
-        {/* Fleur 6 */}
         <img
           src={cloud}
-          alt="Fleur 6"
+          alt="Nuage 4"
           ref={(el) => (flowerRefs.current[5] = el)}
-          className="absolute overflow-hidden  lg:w-[180px] xl:w-[180px] 2xl:w-[180px] md:w-[180px] sm:w-[150px] w-[100px] top-[20%] left-[10%]"
+          className="absolute overflow-hidden lg:w-[180px] xl:w-[180px] 2xl:w-[180px] md:w-[180px] sm:w-[150px] w-[100px] top-[20%] left-[10%]"
         />
       </>
     </div>
