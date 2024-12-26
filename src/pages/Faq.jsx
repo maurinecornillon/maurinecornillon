@@ -128,7 +128,7 @@ const Faq = () => {
             {/* Call to Action */}
             <div className="text-center flex flex-col justify-center items-center space-y-4 w-full">
               <a
-                href="https://linktr.ee/maurinemona"
+                href="https://tidycal.com/maurinecornillon/projet"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
@@ -139,7 +139,7 @@ const Faq = () => {
                 Parlons de votre projet
               </a>
               <a
-                href="https://linktr.ee/maurinemona"
+                href="https://tidycal.com/maurinecornillon/audit"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
@@ -153,9 +153,9 @@ const Faq = () => {
           </div>
         </section>
       </div>
-      <div className="overflow-hidden">
+      {/* <div className="overflow-hidden">
         <img src={clouds} alt="Flower" className="w-full  h-full" />
-      </div>
+      </div> */}
     </>
   );
 };

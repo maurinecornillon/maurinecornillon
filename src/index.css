@@ -157,9 +157,9 @@ h2 {
 .custom-button::after {
   content: "➔"; /* Flèche */
   position: absolute;
-  bottom: -20%; /* Position parfaite conservée */
-  right: 5%; /* Toujours à droite */
-  font-size: 1.5rem; /* Taille de la flèche */
+  bottom: 0%; /* Position parfaite conservée */
+  right: 0%; /* Toujours à droite */
+  font-size: 1.2rem; /* Taille de la flèche */
   color: #212121; /* Couleur de la flèche */
   opacity: 0; /* Invisible par défaut */
   transform: translate(10px, 10px) rotate(-45deg); /* Pointe vers le haut à droite */

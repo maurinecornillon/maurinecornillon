@@ -50,9 +50,6 @@ const App = () => {
                 <section id="faq">
                   <Faq />
                 </section>
-                <section>
-                  <Contact />
-                </section>
               </main>
             }
           />

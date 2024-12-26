@@ -70,7 +70,7 @@ const BackgroundFlowers = () => {
           src={cloud2}
           alt="Fleur 2"
           ref={(el) => (flowerRefs.current[1] = el)}
-          className="absolute overflow-hidden w-[300px] top-[15%] right-[10%]"
+          className="absolute overflow-hidden lg:w-[300px] xl:w-[300px] 2xl:w-[300px] md:w-[300px] sm:w-[200px] w-[200px] top-[15%] right-[10%]"
         />
 
         {/* Fleur 4 */}
@@ -78,21 +78,21 @@ const BackgroundFlowers = () => {
           src={cloud2}
           alt="Fleur 4"
           ref={(el) => (flowerRefs.current[3] = el)}
-          className="absolute overflow-hidden w-[350px] top-[60%] left-[-0%]"
+          className="absolute overflow-hidden  lg:w-[350px] xl:w-[350px] 2xl:w-[350px] md:w-[350px] sm:w-[300px] w-[300px] top-[60%] left-[-0%]"
         />
         {/* Fleur 5 ok */}
         <img
           src={cloud2}
           alt="Fleur 5"
           ref={(el) => (flowerRefs.current[4] = el)}
-          className="absolute overflow-hidden w-[150px] bottom-[50%] right-[5%]"
+          className="absolute overflow-hidden lg:w-[150px] xl:w-[150px] 2xl:w-[150px] md:w-[150px] sm:w-[120px] w-[120px]  bottom-[50%] right-[5%]"
         />
         {/* Fleur 6 */}
         <img
           src={cloud}
           alt="Fleur 6"
           ref={(el) => (flowerRefs.current[5] = el)}
-          className="absolute overflow-hidden w-[180px] top-[20%] left-[10%]"
+          className="absolute overflow-hidden  lg:w-[180px] xl:w-[180px] 2xl:w-[180px] md:w-[180px] sm:w-[150px] w-[150px]  top-[20%] left-[10%]"
         />
       </>
     </div>

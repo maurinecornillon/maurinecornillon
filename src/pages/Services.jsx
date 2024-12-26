@@ -332,7 +332,7 @@ const Services = () => {
           {/* Call to Action */}
           <div className="text-center flex flex-col justify-center items-center space-y-4 w-full">
             <a
-              href="https://linktr.ee/maurinemona"
+              href="https://38ggj4g8nc2.typeform.com/to/kmTw3h77"
               target="_blank"
               rel="noreferrer"
               className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"

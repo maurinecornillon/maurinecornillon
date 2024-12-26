@@ -9,7 +9,7 @@ const FaqResultats = () => {
         "La durée dépend de la complexité du projet. En moyenne, un site vitrine ou une landing page prend 1 à 2 semaines, tandis qu’un MVP ou un e-commerce plus complexe peut nécessiter 4 à 8 semaines. Lors de notre premier échange, je vous propose un calendrier réaliste adapté à vos besoins.",
     },
     {
-      question: "Quelles technologies utilises-tu ?",
+      question: "Quelles sont les technologies utilisées ?",
       answer:
         "J’utilise des technologies adaptées à chaque projet, comme HTML, CSS, JavaScript et des frameworks comme React. Je peux également travailler avec des CMS comme WordPress pour des besoins spécifiques. Tout dépend de ce qui est le mieux pour votre projet.",
     },
@@ -19,7 +19,7 @@ const FaqResultats = () => {
         "Absolument ! Tous les sites que je développe sont optimisés pour offrir une expérience fluide sur tous les appareils, que ce soit mobile, tablette ou ordinateur.",
     },
     {
-      question: "Proposes-tu un support après la livraison ?",
+      question: "Un support est-il proposé après la livraison ?",
       answer:
         "Oui, je reste disponible pour répondre à vos questions ou effectuer des ajustements mineurs après la mise en ligne.",
     },

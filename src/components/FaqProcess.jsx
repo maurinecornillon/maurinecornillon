@@ -24,7 +24,7 @@ const FasProcess = () => {
         "Bien sûr ! Je partage régulièrement les étapes clés avec vous, afin que vous soyez impliqué(e)s et que chaque décision soit alignée avec votre vision.",
     },
     {
-      question: "Quelles sont vos conditions de paiement ?",
+      question: "Quelles sont les conditions de paiement ?",
       answer:
         "Je demande généralement 50 % à l'avance pour lancer le projet, et 50 % à l’achèvement. Cependant, je comprends que les budgets peuvent être serrés, notamment pour les entreprises en phase de démarrage. Je peux donc proposer des calendriers de paiement flexibles pour m’adapter à votre situation.",
     },
