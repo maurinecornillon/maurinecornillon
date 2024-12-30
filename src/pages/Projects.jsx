@@ -132,7 +132,7 @@ const Projects = () => {
 
       <section
         id="projets"
-        className="w-full z-50 mx-auto bg-secondary flex flex-col text-secondary font-sporting-regular"
+        className="w-full  z-50 mx-auto bg-secondary flex flex-col text-secondary font-sporting-regular"
       >
         <Marquee>
           <div className="  font-sporting-regular  text-primary text-[150px]">
