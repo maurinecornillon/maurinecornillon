@@ -118,6 +118,7 @@ header {
 }
 
 body, html {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   height: 100%;
