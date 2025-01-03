@@ -51,7 +51,7 @@ const Creation = () => {
                   <h2 className="text-xl font-bold mb-4">Pack Start</h2>
                   <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                     Création rapide et impactante <br /> Mvp, landing page, site
-                    vitrine
+                    vitrine.
                   </p>
                   <div className="mb-16">
                     <a
