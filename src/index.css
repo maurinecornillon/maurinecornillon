@@ -119,9 +119,13 @@ header {
 
 body, html {
   overflow-x: hidden;
+  overflow-y: auto; /* Garde le scroll vertical actif */
   margin: 0;
   padding: 0;
-  height: 100%;
+  width: 100%;
+  height: auto; /* Ne force pas la hauteur totale */
+  overflow-x: hidden; /* Bloque le débordement horizontal */
+  overflow-y: auto;   /* Assure le scroll vertical */
   scroll-behavior: smooth;
   /* background-color: #212121; */
   background-color: #f2f0e9;
