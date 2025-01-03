@@ -71,7 +71,7 @@ const Faq = () => {
     <>
       <div id="faq" className="w-full mx-auto">
         <Marquee speed={50}>
-          <div className=" font-sporting-regular text-secondary text-[100px]">
+          <div className=" font-sporting-regular text-secondary text-[150px]">
             <p>
               FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊
               FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊ FAQ ❊

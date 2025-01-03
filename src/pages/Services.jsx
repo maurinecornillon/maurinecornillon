@@ -127,7 +127,7 @@ const Services = () => {
       <main id="services" className="  w-[100%]">
         <div className="bg-violet">
           <Marquee speed={50}>
-            <div className=" font-sporting-regular text-secondary text-[100px]">
+            <div className=" font-sporting-regular text-secondary text-[150px]">
               <p>
                 SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES
                 ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
