@@ -6,7 +6,7 @@ const FaqResultats = () => {
     {
       question: "Combien de temps dure un projet ?",
       answer:
-        "La durée dépend de la complexité du projet. En moyenne, un site vitrine ou une landing page prend 1 à 2 semaines, tandis qu’un MVP ou un e-commerce plus complexe peut nécessiter 4 à 8 semaines. Lors de notre premier échange, je vous propose un calendrier réaliste adapté à vos besoins.",
+        " La durée d'un projet peut varier en fonction de sa complexité, de sa taille et vos besoins spécifiques. Lors de nos échanges, nous établissons un calendrier réaliste adapté à vos objectifs. Pour les packs nécessitant uniquement la création de maquettes, les délais sont généralement de 1 à 2 semaines. Pour des projets incluant développement et intégration, les délais varient entre 2 et 6 semaines, selon les fonctionnalités demandées et le nombre de pages. Ces délais peuvent varier en fonction de la réactivité du client et des ajustements demandés.",
     },
     {
       question: "Quelles sont les technologies utilisées ?",

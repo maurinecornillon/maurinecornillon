@@ -24,7 +24,7 @@ const Optimisation = () => {
         {/* Packs */}
         <div className="flex flex-col md:flex-row justify-center gap-24 mb-16">
           {/* Pack Refonte */}
-          <div className="relative md:w-[380px] h-[400px]">
+          <div className="relative md:w-[380px]">
             <ZoomText delay={0.2}>
               <div
                 className="absolute rounded-lg inset-0 translate-x-2 translate-y-2 bg-secondary"
@@ -34,7 +34,7 @@ const Optimisation = () => {
                 }}
               ></div>
               <div
-                className="relative md:w-[380px] h-[400px] rounded-lg border border-secondary p-6 bg-[#eae6f3]"
+                className="relative md:w-[380px] rounded-lg border border-secondary p-6 bg-[#eae6f3]"
                 style={{
                   clipPath:
                     "polygon(72px 0%, calc(100% - 72px) 0%, 100% 72px, 100% 100%, calc(100% - 72px) 100%, 72px 100%, 0px 100%, 0px 0px)",
@@ -63,21 +63,28 @@ const Optimisation = () => {
                     Prendre rendez-vous
                   </a>
                 </div>
-                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                  <li>✓ Audit UX/UI et technique.</li>
+                <ul className="list-none space-y-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   <li>
-                    ✓ Création de maquettes UX/UI modernes et impactantes.
+                    ✓ Audit pour définir vos nouveaux besoins et objectifs.
+                  </li>
+
+                  <li>✓ Maquettes UX/UI sur-mesure et engageantes.</li>
+                  <li>✓ Développement front-end intégré</li>
+                  <li>
+                    ✓ Réunions régulières pour suivre l’avancement et intégrer
+                    vos retours.
                   </li>
                   <li>
-                    ✓ Développement front-end intégré pour un site clé en main.
+                    ✓ Tests de base pour assurer les fonctionnalités du site.
                   </li>
+                  <li>✓ Livraison rapide.</li>
                 </ul>
               </div>
             </ZoomText>
           </div>
 
           {/* Pack Performance */}
-          <div className="relative md:w-[380px] h-[400px]">
+          <div className="relative md:w-[380px]">
             <ZoomText delay={0.4}>
               <div
                 className="absolute rounded-lg inset-0 translate-x-2 translate-y-2 bg-secondary"
@@ -87,7 +94,7 @@ const Optimisation = () => {
                 }}
               ></div>
               <div
-                className="relative md:w-[380px] h-[400px] rounded-lg border border-secondary p-6 bg-[#C4D3EF]"
+                className="relative md:w-[380px] rounded-lg border border-secondary p-6 bg-[#C4D3EF]"
                 style={{
                   clipPath:
                     "polygon(72px 0%, calc(100% - 72px) 0%, 100% 72px, 100% 100%, calc(100% - 72px) 100%, 72px 100%, 0px 100%, 0px 0px)",
@@ -104,7 +111,7 @@ const Optimisation = () => {
                 ></span>
                 <h2 className="text-xl font-bold mb-4">Pack Refresh</h2>
                 <p className="mb-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                  Un nouveau design <br /> pour votre plateforme.
+                  Un nouveau design <br /> pour vous donner un nouvel élan.
                 </p>
                 <div className="mb-16">
                   <a
@@ -116,12 +123,18 @@ const Optimisation = () => {
                     Prendre rendez-vous
                   </a>
                 </div>
-                <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                  <li>✓ Audit UX/UI.</li>
+                <ul className="list-none space-y-4  text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
                   <li>
-                    ✓ Création de maquettes UX/UI modernes et impactantes.
+                    ✓ Audit pour définir vos nouveaux besoins et objectifs.
                   </li>
-                  <li>✓ Livrables prêts pour une intégration technique.</li>
+                  <li>✓ Maquettes UX/UI sur-mesure et engageantes.</li>
+                  <li>✓ Prototypage adapté à vos cibles et objectifs.</li>
+                  <li>✓ Livrables prêts pour une intégration.</li>
+                  <li>
+                    ✓ Réunions régulières pour suivre l’avancement et intégrer
+                    vos retours.
+                  </li>
+                  <li>✓ Livraison rapide.</li>
                 </ul>
               </div>
             </ZoomText>

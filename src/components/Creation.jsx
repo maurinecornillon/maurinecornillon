@@ -23,7 +23,7 @@ const Creation = () => {
           {/* Packs */}
           <div className="flex flex-col md:flex-row justify-center gap-24 mb-16">
             {/* Pack Start */}
-            <div className="relative md:w-[380px] h-[400px]">
+            <div className="relative md:w-[380px] ">
               <ZoomText delay={0.2}>
                 <div
                   className="absolute rounded-lg inset-0 translate-x-2 translate-y-2 bg-secondary"
@@ -33,7 +33,7 @@ const Creation = () => {
                   }}
                 ></div>
                 <div
-                  className="relative rounded-lg border   md:w-[380px] h-[400px] border-secondary p-6 bg-[#eae6f3]"
+                  className="relative rounded-lg border md:w-[380px] border-secondary p-6 bg-[#eae6f3]"
                   style={{
                     clipPath:
                       "polygon(72px 0%, calc(100% - 72px) 0%, 100% 72px, 100% 100%, calc(100% - 72px) 100%, 72px 100%, 0px 100%, 0px 0px)",
@@ -63,11 +63,15 @@ const Creation = () => {
                       Prendre rendez-vous
                     </a>
                   </div>
-                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                    <li>
-                      ✓ Création de maquettes UX/UI modernes et impactantes.
-                    </li>
+                  <ul className="list-none space-y-4 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
+                    <li>✓ Audit pour définir vos besoins et objectifs.</li>
+
+                    <li>✓ Maquettes UX/UI sur-mesure et engageantes.</li>
                     <li>✓ Développement full-stack basique. </li>
+                    <li>
+                      ✓ Réunions régulières pour suivre l’avancement et intégrer
+                      vos retours.
+                    </li>
                     <li>
                       ✓ Tests de base pour assurer les fonctionnalités du site.
                     </li>
@@ -78,7 +82,7 @@ const Creation = () => {
             </div>
 
             {/* Pack Avancée */}
-            <div className="relative md:w-[380px] h-[400px]">
+            <div className="relative md:w-[380px] ">
               <ZoomText delay={0.2}>
                 <div
                   className="absolute rounded-lg inset-0 translate-x-2 translate-y-2 bg-secondary"
@@ -88,7 +92,7 @@ const Creation = () => {
                   }}
                 ></div>
                 <div
-                  className="relative rounded-lg border md:w-[380px] h-[400px]  border-secondary p-6 bg-[#C4D3EF]"
+                  className="relative rounded-lg border md:w-[380px]   border-secondary p-6 bg-[#C4D3EF]"
                   style={{
                     clipPath:
                       "polygon(72px 0%, calc(100% - 72px) 0%, 100% 72px, 100% 100%, calc(100% - 72px) 100%, 72px 100%, 0px 100%, 0px 0px)",
@@ -118,13 +122,16 @@ const Creation = () => {
                       Prendre rendez-vous
                     </a>
                   </div>
-                  <ul className="list-none space-y-4 mb-16 text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
-                    <li>✓ Analyse des besoins et objectifs.</li>
-                    <li>
-                      ✓ Création de maquettes UX/UI modernes et impactantes.
-                    </li>
+                  <ul className="list-none space-y-4  text-[0.6rem] sm:text-[0.6rem] lg:text-[0.8rem] xl:text-[0.8rem] 2xl:text-[0.8rem]">
+                    <li>✓ Audit pour définir vos besoins et objectifs.</li>
+                    <li>✓ Maquettes UX/UI sur-mesure et engageantes.</li>
                     <li>✓ Prototypage adapté à vos cibles et objectifs.</li>
                     <li>✓ Livrables prêts pour une intégration.</li>
+                    <li>
+                      ✓ Réunions régulières pour suivre l’avancement et intégrer
+                      vos retours.
+                    </li>
+                    <li>✓ Livraison rapide.</li>
                   </ul>
                 </div>
               </ZoomText>

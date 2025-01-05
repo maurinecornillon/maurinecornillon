@@ -126,30 +126,33 @@ const Faq = () => {
               </p>
             </ZoomText>
             {/* Call to Action */}
-            <div className="text-center flex flex-col justify-center items-center space-y-4 w-full">
-              <a
-                href="https://tidycal.com/maurinecornillon/projet"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full max-w-[300px] rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
-                style={{
-                  boxShadow: "4px 4px 0px 0px #212121",
-                }}
-              >
-                Parlons de votre projet
-              </a>
-              <a
-                href="https://tidycal.com/maurinecornillon/audit"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
-                style={{
-                  boxShadow: "4px 4px 0px 0px #212121",
-                }}
-              >
-                Audit offert
-              </a>
-            </div>
+            <ZoomText delay={0.2}>
+              <div className="text-center flex flex-col justify-center items-center space-y-4 w-full">
+                <a
+                  href="https://tidycal.com/maurinecornillon/projet"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full max-w-[300px] rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
+                  style={{
+                    boxShadow: "4px 4px 0px 0px #212121",
+                  }}
+                >
+                  Parlons de votre projet
+                </a>
+
+                <a
+                  href="https://tidycal.com/maurinecornillon/audit"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
+                  style={{
+                    boxShadow: "4px 4px 0px 0px #212121",
+                  }}
+                >
+                  Audit offert
+                </a>
+              </div>
+            </ZoomText>
           </div>
         </section>
       </div>
