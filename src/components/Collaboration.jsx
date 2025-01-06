@@ -26,7 +26,7 @@ const Collaboration = () => {
           {/* Contenu principal */}
           <div className="relative md:w-[380px]">
             {/* Encart "Forfait mensuel" */}
-            <div className="absolute top-[-1rem] left-4 bg-[#212121] text-[#eae6f3] rounded-lg text-secondary border border-secondary  px-4 py-1 text-[0.7rem] sm:text-[0.8rem] lg:text-[0.8rem]  shadow-md">
+            <div className="absolute top-[-1rem] left-4 bg-[#212121] text-[#eae6f3] rounded-lg  border border-secondary  px-4 py-1 text-[0.7rem] sm:text-[0.8rem] lg:text-[0.8rem]  shadow-md">
               Forfait mensuel
             </div>
 
