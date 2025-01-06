@@ -69,7 +69,7 @@ const Optimisation = () => {
                   </li>
 
                   <li>✓ Maquettes UX/UI sur-mesure et engageantes.</li>
-                  <li>✓ Développement front-end intégré</li>
+                  <li>✓ Développement front-end intégré.</li>
                   <li>
                     ✓ Réunions régulières pour suivre l’avancement et intégrer
                     vos retours.
