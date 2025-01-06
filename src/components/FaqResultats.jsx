@@ -11,7 +11,7 @@ const FaqResultats = () => {
     {
       question: "Quelles sont les technologies utilisées ?",
       answer:
-        "J’utilise des technologies adaptées à chaque projet, comme HTML, CSS, JavaScript et des frameworks comme React. Je peux également travailler avec des CMS comme WordPress pour des besoins spécifiques. Tout dépend de ce qui est le mieux pour votre projet.",
+        "J’utilise des technologies adaptées à chaque projet, comme HTML, CSS, JavaScript et des frameworks comme React. Je peux également travailler avec des CMS comme WordPress ou Webflow. Tout dépend de ce qui est le mieux pour votre projet.",
     },
     {
       question: "Mon site sera-t-il responsive ?",
