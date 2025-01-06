@@ -19,7 +19,7 @@ const Footer = () => {
       {/* Right side - Copyright */}
       <div className="flex items-center justify-end">
         <p className="font-sporting-regular text-[0.8rem] sm:text-[1rem] lg:text-[0.8rem] text-secondary font-bold">
-          © M.B 2024
+          © M.B 2025
         </p>
       </div>
     </footer>
