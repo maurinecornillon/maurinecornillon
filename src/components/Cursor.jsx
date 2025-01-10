@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 const CustomCursor = () => {
@@ -7,6 +7,7 @@ const CustomCursor = () => {
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
   });
+  const [visible, setVisible] = useState(false); // Gérer la visibilité
   const ease = 0.75;
   const totalLines = 50;
 
@@ -15,9 +16,14 @@ const CustomCursor = () => {
     const root = svgRef.current;
 
     const updatePointer = (e) => {
+      // Afficher le curseur dès le premier mouvement
+      if (!visible) {
+        setVisible(true);
+      }
       pointer.current.x = e.clientX;
       pointer.current.y = e.clientY;
     };
+
     window.addEventListener("mousemove", updatePointer);
 
     let leader = (prop) =>
@@ -31,7 +37,12 @@ const CustomCursor = () => {
       const line = document.createElementNS(svgns, "line");
       root.appendChild(line);
 
-      gsap.set(line, { x: -1500, y: -750 });
+      // Initialiser la ligne à la position du pointeur
+      gsap.set(line, {
+        x: pointer.current.x,
+        y: pointer.current.y,
+      });
+
       const pos = gsap.getProperty(line);
 
       gsap.to(line, {
@@ -64,23 +75,25 @@ const CustomCursor = () => {
     return () => {
       window.removeEventListener("mousemove", updatePointer);
     };
-  }, []);
+  }, [visible]);
 
   return (
     <svg
       ref={svgRef}
       className="fixed inset-0 pointer-events-none z-50"
       xmlns="http://www.w3.org/2000/svg"
+      style={{
+        opacity: visible ? 1 : 0, // Cacher tant que la souris ne bouge pas
+        transition: "opacity 0.3s ease", // Transition fluide pour l'apparition
+      }}
     >
       <defs>
-        {/* Dégradé défini pour stroke */}
         <linearGradient id="cursor-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="#C4D3EF" />
           <stop offset="50%" stopColor="#D9C5FF" />
           <stop offset="100%" stopColor="#CAD0FF" />
         </linearGradient>
       </defs>
-      {/* Les lignes dynamiques */}
     </svg>
   );
 };

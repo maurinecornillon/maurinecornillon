@@ -145,15 +145,7 @@ const Services = () => {
           <div className="space-y-8 flex flex-col w-[60%] ml-auto relative">
             {/* Service 1 */}
             <ZoomText delay={0.2}>
-              <div
-                className="flex items-center justify-between border-b border-secondary pb-4 relative"
-                onMouseEnter={() =>
-                  setShowCard((prev) => ({ ...prev, creation: true }))
-                }
-                onMouseLeave={() =>
-                  setShowCard((prev) => ({ ...prev, creation: false }))
-                }
-              >
+              <div className="flex items-center justify-between border-b border-secondary pb-4 relative">
                 <span className="text-[rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
                   01.
                 </span>
@@ -191,15 +183,7 @@ const Services = () => {
 
             {/* Service 2 */}
             <ZoomText delay={0.2}>
-              <div
-                className="flex items-center justify-between border-b border-secondary pb-4"
-                onMouseEnter={() =>
-                  setShowCard((prev) => ({ ...prev, optimisation: true }))
-                }
-                onMouseLeave={() =>
-                  setShowCard((prev) => ({ ...prev, optimisation: false }))
-                }
-              >
+              <div className="flex items-center justify-between border-b border-secondary pb-4">
                 <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
                   02.
                 </span>
@@ -238,12 +222,6 @@ const Services = () => {
               <div
                 className="relative flex items-center justify-between pb-4
               "
-                onMouseEnter={() =>
-                  setShowCard((prev) => ({ ...prev, collaboration: true }))
-                }
-                onMouseLeave={() =>
-                  setShowCard((prev) => ({ ...prev, collaboration: false }))
-                }
               >
                 <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
                   03.

@@ -80,8 +80,8 @@ const Home = () => {
           variants={zoomVariants}
           transition={zoomTransition}
         >
-          <AnimatedTitle title="vos ambitions" />
-          <AnimatedTitle title="mes solutions" />
+          <AnimatedTitle title="VOS AMBITIONS," />
+          <AnimatedTitle title="MES SOLUTIONS" />
         </div>
         {/* Bouton d'action */}
         <div className="flex flex-col justify-center items-center space-y-4 w-full">
