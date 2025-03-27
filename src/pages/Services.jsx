@@ -1,331 +1,169 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import Marquee from "react-fast-marquee";
-
-import Creation from "./../components/Creation";
-import Optimisation from "./../components/Optimisation";
-import Collaboration from "./../components/Collaboration";
 
 import ZoomText from "../components/ZoomText";
 
-import clouds from "../assets/img/logo/12.png";
-
-// Composant pour l'effet "glider"
-const Glider = ({ position }) => {
-  return (
-    <motion.div
-      animate={position}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="absolute bg-gradient rounded-full z-0 h-[70%] top-[15%] sm:h-[80%] sm:top-[10%]"
-    />
-  );
-};
-
-// Composant Tab
-const Tab = ({ children, setPosition, isActive, onClick }) => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (isActive && ref.current) {
-      const { offsetLeft, offsetWidth } = ref.current;
-      setPosition({
-        left: offsetLeft,
-        width: offsetWidth,
-        opacity: 1,
-      });
-    }
-  }, [isActive, setPosition]);
-
-  return (
-    <li
-      ref={ref}
-      onClick={onClick}
-      className={`relative z-10 flex-1 cursor-pointer text-[0.5rem] sm:text-[0.6rem] md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem] uppercase ${
-        isActive ? "font-bold text-secondary" : "text-secondary"
-      }`}
-    >
-      <div className="h-full px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 flex items-center justify-center">
-        {children}
-      </div>
-    </li>
-  );
-};
+import Image1 from "../assets/img/logo/Card and Envelope Black 2.png";
+import Image2 from "../assets/img/tchintchin/tchintchin.png";
+import Image3 from "../assets/img/sonaura/phonelover.png";
 
 const Services = () => {
-  const [activeSection, setActiveSection] = useState("creation");
-  const [position, setPosition] = useState({ left: 0, width: 0, opacity: 0 });
-
-  const [showCard, setShowCard] = useState({
-    creation: false,
-    optimisation: false,
-    collaboration: false,
-  });
-
-  const cardRefs = {
-    creation: useRef(null),
-    optimisation: useRef(null),
-    collaboration: useRef(null),
-  };
+  const images = [Image1, Image2, Image3];
+  const floatingImageRef = useRef(null);
+  const [hoveredImage, setHoveredImage] = useState(null);
 
   useEffect(() => {
-    Object.entries(showCard).forEach(([key, isShown]) => {
-      const cardRef = cardRefs[key].current;
+    if (!hoveredImage || !floatingImageRef.current) return;
 
-      if (cardRef) {
-        if (isShown) {
-          // Animation d'apparition et flottement
-          gsap.killTweensOf(cardRef); // Arrête les animations en cours
-          gsap.to(cardRef, {
-            opacity: 1,
-            x: 0,
-            rotationX: -5,
-            rotationY: 40,
-            rotationZ: -2,
-            duration: 0.5,
-            ease: "power2.out",
-            transformPerspective: 1000,
-          });
-
-          gsap.to(cardRef, {
-            y: "-=10",
-            repeat: -1,
-            yoyo: true,
-            duration: 1.5,
-            ease: "sine.inOut",
-          });
-        } else {
-          // Animation de disparition
-          gsap.killTweensOf(cardRef); // Arrête les animations en cours
-          gsap.to(cardRef, {
-            opacity: 0,
-            x: -50,
-            duration: 0.3,
-            ease: "power2.in",
-          });
-        }
-      }
+    // Set initial state
+    gsap.set(floatingImageRef.current, {
+      opacity: 0.9,
+      y: 0,
+      scale: 0.95,
     });
-  }, [showCard]);
 
-  // Gère le contenu dynamique en fonction de la section active
-  const renderContent = () => {
-    switch (activeSection) {
-      case "creation":
-        return <Creation />;
-      case "optimisation":
-        return <Optimisation />;
-      case "collaboration":
-        return <Collaboration />;
-      default:
-        return null;
-    }
-  };
+    // Animate in
+    gsap.to(floatingImageRef.current, {
+      opacity: 1,
+      y: -10,
+      rotate: 0,
+      scale: 1,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+
+    // Floating effect
+    const float = gsap.to(floatingImageRef.current, {
+      y: "-=20",
+      x: "-=30",
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+
+    return () => {
+      float.kill();
+    };
+  }, [hoveredImage]);
 
   return (
-    <>
-      <main id="services" className="  w-[100%]">
-        <div className="bg-violet">
-          <Marquee speed={50}>
-            <div className=" font-sporting-regular text-secondary text-[150px]">
-              <p>
-                SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES
-                ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
-                SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES
-                ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊ SERVICES ❊
-                SERVICES ❊ SERVICES ❊ SERVICES ❊
-              </p>
-            </div>
-          </Marquee>
-        </div>
-        <div className="overflow-hidden">
-          <img src={clouds} alt="Flower" className="w-full max-w-full h-full" />
-        </div>
-        <section className=" w-[90%] z-50 mx-auto flex flex-col space-y-16 text-secondary font-sporting-regular">
-          <div className="space-y-8 flex flex-col w-[60%] ml-auto relative">
-            {/* Service 1 */}
-            <ZoomText delay={0.2}>
-              <div className="flex items-center justify-between border-b border-secondary pb-4 relative">
-                <span className="text-[rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
-                  01.
-                </span>
+    <main id="services" className="w-full h-full">
+      {/* Titre principal */}
+      <div>
+        <h2 className="px-6 flex items-center justify-center text-[18.3vw] tracking-wide uppercase leading-none font-bold font-NHAASPRO">
+          SERVICES
+        </h2>
+      </div>
 
-                <h3
-                  id="creation"
-                  className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold "
-                >
-                  Création
-                </h3>
-
-                {/* Carte flottante: Création */}
-                <div
-                  ref={cardRefs.creation}
-                  className="absolute flex flex-col items-center justify-center pointer-events-none left-[-400px] top-[50px] text-primary bg-secondary shadow-lg rounded-lg p-4 border border-black opacity-0"
-                  style={{
-                    transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
-                    transformOrigin: "center center",
-                    width: "250px",
-                    height: "300px",
-                  }}
-                >
-                  <h3 className="text-xl font-bold text-center mb-2">
-                    IMAGINER
-                  </h3>
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <p className="text-[30px]">❊</p>
-                  </div>
-                  <h3 className="text-xl font-bold text-center mt-2">
-                    IMAGINER
-                  </h3>
-                </div>
-              </div>
-            </ZoomText>
-
-            {/* Service 2 */}
-            <ZoomText delay={0.2}>
-              <div className="flex items-center justify-between border-b border-secondary pb-4">
-                <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
-                  02.
-                </span>
-                <h3
-                  id="optimisation"
-                  className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold"
-                >
-                  Optimisation
-                </h3>
-                {/* Carte flottante: Optimisation */}
-                <div
-                  ref={cardRefs.optimisation}
-                  className="absolute flex flex-col items-center justify-center pointer-events-none left-[-400px] top-[-50px] text-primary bg-secondary shadow-lg rounded-lg p-4   opacity-0"
-                  style={{
-                    transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
-                    transformOrigin: "center center",
-                    width: "250px",
-                    height: "300px",
-                  }}
-                >
-                  <h3 className="text-xl font-bold text-center mb-2">
-                    PROPULSER
-                  </h3>
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <p className="text-[30px]">❊</p>
-                  </div>
-                  <h3 className="text-xl font-bold text-center mt-2">
-                    PROPULSER
-                  </h3>
-                </div>
-              </div>
-            </ZoomText>
-
-            {/* Service 3 */}
-            <ZoomText delay={0.2}>
-              <div
-                className="relative flex items-center justify-between pb-4
-              "
-              >
-                <span className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold ">
-                  03.
-                </span>
-                <h3
-                  id="collaboration"
-                  className="text-[1rem] sm:text-[2rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4rem] font-bold"
-                >
-                  Collaboration
-                </h3>
-                {/* Carte flottante: Collaboration */}
-                <div
-                  ref={cardRefs.collaboration}
-                  className="absolute flex flex-col items-center justify-center pointer-events-none left-[-400px] top-[-180px] text-primary bg-secondary shadow-lg rounded-lg p-4  opacity-0"
-                  style={{
-                    transform: "rotateX(-5deg) rotateY(-20deg) rotateZ(-2deg)",
-                    transformOrigin: "center center",
-                    width: "250px",
-                    height: "300px",
-                  }}
-                >
-                  <h3 className="text-xl font-bold text-center mb-2">
-                    CONSTRUIRE
-                  </h3>
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <p className="text-[30px]">❊</p>
-                  </div>
-                  <h3 className="text-xl font-bold text-center mt-2">
-                    CONSTRUIRE
-                  </h3>
-                </div>
-              </div>
-            </ZoomText>
-          </div>
-        </section>
-      </main>
-
-      <section className=" w-[90%] z-50 mx-auto flex flex-col space-y-16  text-secondary font-sporting-regular">
-        {/* NAVIGATION */}
-        <ZoomText delay={0.2}>
-          <div className="relative border border-secondary rounded-full p-1 sm:p-2 overflow-hidden mt-16 w-full">
-            {/* Glider */}
-            <Glider position={position} />
-
-            {/* Tabs */}
-            <ul className="relative flex items-center justify-between w-full h-[40px] sm:h-[48px] md:h-[60px] px-2 sm:px-4 ">
-              <Tab
-                setPosition={setPosition}
-                isActive={activeSection === "creation"}
-                onClick={() => setActiveSection("creation")}
-              >
-                CRÉATION
-              </Tab>
-              <Tab
-                setPosition={setPosition}
-                isActive={activeSection === "optimisation"}
-                onClick={() => setActiveSection("optimisation")}
-              >
-                OPTIMISATION
-              </Tab>
-              <Tab
-                setPosition={setPosition}
-                isActive={activeSection === "collaboration"}
-                onClick={() => setActiveSection("collaboration")}
-              >
-                COLLABORATION
-              </Tab>
-            </ul>
-          </div>
+      {/* Tags */}
+      <section className="w-full items-center justify-between px-6 flex text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] font-ITC">
+        <ZoomText>
+          <span className="hover:text-red cursor-pointer">[ branding ]</span>
         </ZoomText>
-
-        {/* CONTENU DYNAMIQUE */}
-        <ZoomText delay={0.2}>
-          <div className="mt-8">{renderContent()}</div>
+        <ZoomText>
+          <span className="hover:text-red cursor-pointer">[ web design ]</span>
+        </ZoomText>
+        <ZoomText>
+          <span className="hover:text-red cursor-pointer">[ web dev ]</span>
         </ZoomText>
       </section>
-      <section className=" w-[90%] z-50 mx-auto flex flex-col text-secondary font-sporting-regular">
-        <div className="w-[90%] mx-auto text-center mb-16 text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] xl:text-[1.5rem] 2xl:text-[1rem]">
-          <ZoomText delay={0.2}>
-            <p className="mb-8">
-              Pour découvrir le pack qui correspond le mieux à vos besoin et
-              obtenir une première estimation, utiliser le simulateur de projet
-              !
+
+      {/* Sections horizontales */}
+      <section className=" relative z-10 w-full flex flex-col px-6 pt-16 sm:pt-16 md:pt-16 lg:pt-32 ">
+        {[1, 2, 3].map((num, index) => (
+          <ZoomText>
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredImage(images[index])}
+              onMouseLeave={() => setHoveredImage(null)}
+              className={`relative w-full py-4 sm:py-4 md:py-8 lg:py-8 flex justify-between items-center ${
+                index !== 0 ? "border-t border-black" : ""
+              }`}
+            >
+              {/* Titre + numéro */}
+
+              <div className="flex-1 flex items-end gap-8 ">
+                <span className="font-ITC text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] text-secondary block mb-2 ">
+                  [ 0{num} ]
+                </span>
+                <h3 className="font-NHAASDS text-[0.9rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] leading-tight tracking-tight">
+                  {index === 0 && (
+                    <>
+                      WEB DESIGN + <br /> WEB DEV
+                    </>
+                  )}
+                  {index === 1 && (
+                    <>
+                      BRANDING + <br /> WEB DESIGN
+                    </>
+                  )}
+                  {index === 2 && (
+                    <>
+                      BRANDING + <br /> WEB DESIGN + <br /> WEB DEV
+                    </>
+                  )}
+                </h3>
+              </div>
+
+              {/* Bouton */}
+              <div className="flex-1 text-right">
+                <a
+                  href="https://linktr.ee/maurinemona"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-ITC  text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] tracking-wide leading-none font-normal hover:text-red"
+                >
+                  [ prendre rendez-vous → ]
+                </a>
+              </div>
+            </div>
+          </ZoomText>
+        ))}
+        {/* Image flottante */}
+        {hoveredImage && (
+          <img
+            ref={floatingImageRef}
+            src={hoveredImage}
+            alt="Floating preview"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px]  z-50  transition-all duration-300 ease-in-out pointer-events-none"
+          />
+        )}
+      </section>
+
+      <section className="w-full flex flex-col md:flex-row justify-between gap-16 md:gap-32 px-6 py-16 md:py-32">
+        {[
+          {
+            id: 1,
+            label: "branding",
+            text: "Avant de concevoir, je prends le temps de comprendre. J’analyse les besoins, les objectifs et la cible pour poser les fondations du projet. Cette étape me permet de définir une direction claire et cohérente, en accord avec l’identité et les ambitions de ton projet.",
+          },
+          {
+            id: 2,
+            label: "web design",
+            text: "J’imagine une expérience sur-mesure qui te ressemble. À travers des maquettes épurées et intuitives, je façonne une interface à la fois esthétique et fonctionnelle, pensée pour valoriser ton message et captiver tes visiteurs.",
+          },
+          {
+            id: 3,
+            label: "web dev",
+            text: "Je donne vie au design avec un code propre et performant. Grâce à des technologies modernes, je transforme les maquettes en un site rapide, responsive et durable, optimisé pour une expérience fluide sur tous les supports.",
+          },
+        ].map(({ id, label, text }, index) => (
+          <div key={index} className="w-full md:w-1/3">
+            {" "}
+            <ZoomText>
+              <div className="mb-4 flex gap-2  items-center text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] font-ITC  text-secondary">
+                <span>[ 0{id} ]</span>
+                <span>[ {label} ]</span>
+              </div>
+            </ZoomText>
+            <p className=" w-[100%] font-NHAASDS  text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] uppercase leading-relaxed tracking-tight text-secondary text-justify font-bold">
+              {text}
             </p>
-          </ZoomText>
-          {/* Call to Action */}
-          <ZoomText delay={0.2}>
-            <div className="text-center flex flex-col justify-center items-center space-y-4 w-full">
-              <a
-                href="https://38ggj4g8nc2.typeform.com/to/kmTw3h77"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full max-w-[300px] bg-violet rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue text-[0.8rem] sm:text-[1rem]"
-                style={{
-                  boxShadow: "4px 4px 0px 0px #212121",
-                }}
-              >
-                Simuler mon projet
-              </a>
-            </div>
-          </ZoomText>
-        </div>
+          </div>
+        ))}
       </section>
-    </>
+    </main>
   );
 };
 

@@ -2,99 +2,71 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 const CustomCursor = () => {
-  const svgRef = useRef(null);
-  const pointer = useRef({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
-  });
-  const [visible, setVisible] = useState(false); // Gérer la visibilité
-  const ease = 0.75;
-  const totalLines = 50;
+  const canvasRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const points = useRef([]);
 
   useEffect(() => {
-    const svgns = "http://www.w3.org/2000/svg";
-    const root = svgRef.current;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
 
-    const updatePointer = (e) => {
-      // Afficher le curseur dès le premier mouvement
-      if (!visible) {
-        setVisible(true);
-      }
-      pointer.current.x = e.clientX;
-      pointer.current.y = e.clientY;
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
-    window.addEventListener("mousemove", updatePointer);
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
-    let leader = (prop) =>
-      prop === "x" ? pointer.current.x : pointer.current.y;
+    const addPoint = (x, y) => {
+      points.current.push({ x, y });
+      if (points.current.length > 10) points.current.shift(); // efface plus vite
+    };
 
-    for (let i = 0; i < totalLines; i++) {
-      leader = createLine(leader, i);
-    }
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = "#DF2531";
+      ctx.lineWidth = 2;
+      ctx.lineJoin = "round";
+      ctx.lineCap = "round";
+      ctx.beginPath();
 
-    function createLine(leader, i) {
-      const line = document.createElementNS(svgns, "line");
-      root.appendChild(line);
+      for (let i = 0; i < points.current.length - 1; i++) {
+        const p1 = points.current[i];
+        const p2 = points.current[i + 1];
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+      }
 
-      // Initialiser la ligne à la position du pointeur
-      gsap.set(line, {
-        x: pointer.current.x,
-        y: pointer.current.y,
-      });
+      ctx.stroke();
+      animationFrameId = requestAnimationFrame(draw);
+    };
 
-      const pos = gsap.getProperty(line);
+    const handleMouseMove = (e) => {
+      if (!visible) setVisible(true);
+      addPoint(e.clientX, e.clientY);
+    };
 
-      gsap.to(line, {
-        duration: 10000,
-        x: "+=150",
-        y: "+=10",
-        repeat: -1,
-        ease: "expo.inOut",
-        modifiers: {
-          x: () => {
-            const posX = pos("x");
-            const leaderX = leader("x");
-            const x = posX + (leaderX - posX) * ease;
-            line.setAttribute("x2", leaderX - x);
-            return x;
-          },
-          y: () => {
-            const posY = pos("y");
-            const leaderY = leader("y");
-            const y = posY + (leaderY - posY) * ease;
-            line.setAttribute("y2", leaderY - y);
-            return y;
-          },
-        },
-      });
-
-      return pos;
-    }
+    window.addEventListener("mousemove", handleMouseMove);
+    animationFrameId = requestAnimationFrame(draw);
 
     return () => {
-      window.removeEventListener("mousemove", updatePointer);
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [visible]);
 
   return (
-    <svg
-      ref={svgRef}
-      className="fixed inset-0 pointer-events-none z-50"
-      xmlns="http://www.w3.org/2000/svg"
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-[9999]"
       style={{
-        opacity: visible ? 1 : 0, // Cacher tant que la souris ne bouge pas
-        transition: "opacity 0.3s ease", // Transition fluide pour l'apparition
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.3s ease",
       }}
-    >
-      <defs>
-        <linearGradient id="cursor-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#C4D3EF" />
-          <stop offset="50%" stopColor="#D9C5FF" />
-          <stop offset="100%" stopColor="#CAD0FF" />
-        </linearGradient>
-      </defs>
-    </svg>
+    />
   );
 };
 

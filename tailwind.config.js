@@ -3,20 +3,18 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: ["hover"],
       letterSpacing: {
         tightest: "0.1em",
       },
-      colors: {
-        primary: "#F2F0E9",
-        secondary: "#212121",
-        purple: "#D9C5FF",
-        violet: "#DDE1FF",
-        blue: "#C4D3EF",
+      fontFamily: {
+        NHAASDS: ["NHAASDS", "sans-serif"],
+        ITC: ["ITC", "sans-serif"],
       },
-      backgroundImage: {
-        gradient_blue: "linear-gradient(90deg,#D9C5FF, #C4D3EF, #CAD0FF)",
-        gradient: "linear-gradient(90deg, #D9C5FF, #C4D3EF, #CAD0FF)",
-        purple: "#D9C5FF",
+      colors: {
+        primary: "#F6F4F4",
+        secondary: "#212121",
+        red: "#DF2531",
       },
     },
   },

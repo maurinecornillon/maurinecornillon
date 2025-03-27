@@ -36,11 +36,11 @@ const Anna = () => {
 
   return (
     <>
-      <div className="relative z-10">
-        <div className="w-[90%] mx-auto py-16 font-sporting-regular text-secondary min-h-screen">
+      <div className="px-6 relative z-10">
+        <div className="w-[100%] mx-auto py-16  text-secondary min-h-screen">
           {/* Header Section */}
           <ZoomText delay={0.2}>
-            <div className="relative flex items-center border border-secondary px-28 py-6 rounded-full justify-between w-full mb-16">
+            <div className="relative flex items-center  py-6 rounded-full justify-between w-full mb-16">
               {/* Left Arrow */}
               <div
                 onClick={() => handleNavigation("/estimeo")}

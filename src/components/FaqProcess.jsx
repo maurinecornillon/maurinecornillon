@@ -6,7 +6,7 @@ const FasProcess = () => {
     {
       question: "Comment se déroule la collaboration ?",
       answer:
-        "Après un premier échange pour comprendre vos besoins, je vous propose le pack le plus adapté. Nous avançons ensuite par étapes : design, développement, tests et mise en ligne, tout en restant en contact à chaque étape pour intégrer vos retours.",
+        "Après un premier échange pour cerner vos besoins, je vous envoie une proposition détaillée avec devis et planning. Une fois validée, nous avançons étape par étape : design, développement, tests et mise en ligne. Tout au long du processus, je reste disponible pour échanger, intégrer vos retours et faire évoluer le projet dans la bonne direction.",
     },
     {
       question: "Quelles sont les étapes d’un projet ?",
@@ -26,7 +26,7 @@ const FasProcess = () => {
     {
       question: "Quelles sont les conditions de paiement ?",
       answer:
-        "Je demande généralement 50 % à l'avance pour lancer le projet, et 50 % à l’achèvement. Cependant, je comprends que les budgets peuvent être serrés, notamment pour les entreprises en phase de démarrage. Je peux donc proposer des calendriers de paiement flexibles pour m’adapter à votre situation.",
+        "Je demande généralement 50 % à l'avance pour lancer le projet, et 50 % à l’achèvement. Cependant, je comprends que les budgets peuvent être serrés, notamment si vous êtes en phase de démarrage. Je peux donc proposer des calendriers de paiement flexibles pour m’adapter à votre situation.",
     },
   ];
 

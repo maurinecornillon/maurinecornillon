@@ -6,12 +6,12 @@ const FaqResultats = () => {
     {
       question: "Combien de temps dure un projet ?",
       answer:
-        " La durée d'un projet peut varier en fonction de sa complexité, de sa taille et vos besoins spécifiques. Lors de nos échanges, nous établissons un calendrier réaliste adapté à vos objectifs. Pour les packs nécessitant uniquement la création de maquettes, les délais sont généralement de 1 à 2 semaines. Pour des projets incluant développement et intégration, les délais varient entre 2 et 6 semaines, selon les fonctionnalités demandées et le nombre de pages. Ces délais peuvent varier en fonction de la réactivité du client et des ajustements demandés.",
+        " La durée d'un projet peut varier en fonction de sa complexité, de sa taille et vos besoins spécifiques. Lors de nos échanges, nous établissons un calendrier réaliste adapté à vos objectifs. Les délais peuvent varier en fonction de la réactivité du client et des ajustements demandés.",
     },
     {
       question: "Quelles sont les technologies utilisées ?",
       answer:
-        "J’utilise des technologies adaptées à chaque projet, comme HTML, CSS, JavaScript et des frameworks comme React. Je peux également travailler avec des CMS comme WordPress ou Webflow. Tout dépend de ce qui est le mieux pour votre projet.",
+        "Je développe principalement des sites en full-stack avec des technologies comme React, Next.js, Node.js ou MongoDB, mais je peux aussi utiliser des solutions CMS comme WordPress ou Webflow lorsque c’est plus adapté. Chaque projet est unique : je choisis les outils en fonction de vos besoins, de vos objectifs et de votre budget.",
     },
     {
       question: "Mon site sera-t-il responsive ?",
@@ -21,7 +21,7 @@ const FaqResultats = () => {
     {
       question: "Un support est-il proposé après la livraison ?",
       answer:
-        "Oui, je reste disponible pour répondre à vos questions ou effectuer des ajustements mineurs après la mise en ligne.",
+        "Oui, je reste disponible après la mise en ligne pour répondre à vos questions ou effectuer des ajustements mineurs. Une documentation complète vous est également remise, avec toutes les informations nécessaires pour comprendre et gérer votre site. Si besoin, un accompagnement plus poussé ou un forfait de maintenance peut être envisagé.",
     },
   ];
 

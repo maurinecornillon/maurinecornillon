@@ -4,120 +4,47 @@
 
 
 /****** FONTS ******/
-* {
-  z-index: 9999;
+
+
+@font-face {
+  font-family: 'NHaasGroteskDSPRO55';
+  src: url('./assets/fonts/NHaasGroteskDSPro-55Rg.otf') format('opentype');
+}
+@font-face {
+  font-family: 'NHaasGroteskPRO65MD';
+  src: url('./assets/fonts/NHaasGroteskTXPro-65Md.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Respira Black';
-  src: url('./assets/fonts/Respira\ Black.ttf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Sporting Grotesque';
-  src: url('./assets/fonts/SportingGrotesque-Regular.otf') format('opentype');
-  font-weight: lighter;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Sporting Grotesque';
-  src: url('./assets/fonts/SportingGrotesque-Bold.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Canela Trial';
-  src: url('./assets/fonts/Canela-RegularItalic-Trial.otf') format('opentype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Canela Trial';
-  src: url('./assets/fonts/Canela-Bold-Trial.otf') format('opentype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Canela Trial';
-  src: url('./assets/fonts/Canela-LightItalic-Trial.otf') format('opentype');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Canela Trial';
-  src: url('./assets/fonts/Canela-Regular-Trial.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'ITC';
+  src: url('./assets/fonts/ITCGaramondStd-LtIta.ttf') format('opentype');
 }
 
 
-.font-respira {
-  font-family: 'Respira Black';
 
+
+
+
+.font-NHAASDS {
+  font-family:"NHaasGroteskDSPRO55";
 }
 
-.font-sporting-regular {
-  font-family: 'Sporting Grotesque';
-  font-weight: normal;
-  font-style: normal;
-}
-
-.font-sporting-bold {
-  font-family: 'Sporting Grotesque';
-  font-weight: bold;
-  font-style: normal;
+.font-NHAASPRO {
+  font-family:"NHaasGroteskPRO65MD";
 }
 
 
-.font-canela-regular {
-  font-family: 'Canela Trial', serif;
-  font-weight: normal;
-  font-style: normal;
-  
-}
 
-.font-canela-light-italic {
-  font-family: 'Canela Trial', serif;
-  font-weight: 100;
-  font-style: italic;
-  
-}
 
-.font-canela-bold {
-font-family: 'Canela Trial', serif;
-font-weight: bold;
-font-style: normal;
 
-}
 
-.font-canela-italic {
-  font-family: 'Canela Trial', serif;
-  font-style: italic;
-}
-
-.letter-spacing-tight {
-  letter-spacing: -0.1em; /* Réduit l'espacement de 10% */
-}
-
-.hover-font-change:hover {
-  font-family: 'Canela Trial', serif;
-  font-weight: 300;
-  font-style: italic;
-  transition: font-family 0.3s ease-in-out;
-}
 
 /****** BODY ******/
 
-header {
-  z-index: 9999 !important;
-}
+
 
 body, html {
+  color:#212121;
   overflow-x: hidden;
   overflow-y: auto; /* Garde le scroll vertical actif */
   margin: 0;
@@ -127,17 +54,10 @@ body, html {
   overflow-x: hidden; /* Bloque le débordement horizontal */
   overflow-y: auto;   /* Assure le scroll vertical */
   scroll-behavior: smooth;
-  /* background-color: #212121; */
-  background-color: #f2f0e9;
-  background-image: 
-    radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    radial-gradient(circle, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 3px 3px, 2px 2px;
-  background-blend-mode: multiply;
-  position: static; /* Pas de position relative/globale sur le body */
+  background-color: #F6F4F4;
 
 }
-
+  
 main {
   margin: 0;
   padding: 0;
@@ -176,14 +96,6 @@ h2 {
 }
 
 
-
-
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.75);
-}
 
 
 

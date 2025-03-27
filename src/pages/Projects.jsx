@@ -1,221 +1,199 @@
-import React, { useRef, useEffect } from "react";
-import ZoomText from "../components/ZoomText";
-import Marquee from "react-fast-marquee";
+import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { Draggable } from "gsap/Draggable";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
+import ZoomText from "../components/ZoomText";
 
-import clouds from "../assets/img/logo/cloud.png";
-import clouds2 from "../assets/img/logo/15.png";
-
-gsap.registerPlugin(Draggable, ScrollTrigger);
-
-const cards = [
-  {
-    text2: "FRONT-END",
-    text3: "BACK-END",
-    text1: "PROJECT MANAGEMENT",
-    text7: "UI/UX",
-    text4: "REACTJS",
-    text5: "NODEJS",
-    text6: "MONGODB",
-    title: "LINKERA",
-    id: 1,
-  },
-  {
-    text1: "FRONT-END",
-    text2: "BACK-END",
-    text3: "JS VANILLA",
-    text4: "NODEJS",
-    text5: "MONGODB",
-    text6: "DOCKER",
-    title: "ESTIMEO",
-    id: 2,
-  },
-  {
-    title: "ANOMUSIC",
-    text1: "FRONT-END",
-    text2: "BACK-END",
-    text6: "UI/UX",
-    text4: "REACTJS",
-    text5: "NODEJS",
-    text3: "MONGODB",
-    id: 3,
-  },
-  {
-    title: "SMARTBACK",
-    text1: "FRONT-END",
-    text4: "PO",
-    text3: "UI/UX",
-    text2: "REACTJS",
-    id: 4,
-  },
-  {
-    text2: "RENPY",
-    text1: "LEAD DEV",
-    text5: "UI/UX",
-    text4: "PYTHON",
-    title: "OTOME GAME",
-    id: 5,
-  },
-];
+import Image1 from "../assets/img/sonaura/phonesonaura.png";
+import Image2 from "../assets/img/lineup/LOGO LINE UP 2.png";
+import Image3 from "../assets/img/tchintchin/tchintchin.png";
+import Image4 from "../assets/img/anna/5.png";
+import Image5 from "../assets/img/linkera/Accueil.png";
+import Image7 from "../assets/img/otome/MockUpOtome-min.png";
+import Image6 from "../assets/img/pimente/54b2476d659865ae8c5c851ad3728744.jpg";
 
 const Projects = () => {
-  const navigate = useNavigate(); // Use navigate inside the Card component
+  const [activeTab, setActiveTab] = useState("2024");
 
-  const handleNavigation = (title) => {
-    switch (title) {
-      case "ANOMUSIC":
-        navigate("/anomusic");
-        break;
-      case "ESTIMEO":
-        navigate("/estimeo");
-        break;
-      case "LINKERA":
-        navigate("/linkera");
-        break;
-      case "SMARTBACK":
-        navigate("/smartback");
-        break;
-      case "OTOME GAME":
-        navigate("/otome");
-        break;
-      case "FIGHT GAME":
-        navigate("/game");
-        break;
-      default:
-        break;
-    }
-  };
-  const containerRef = useRef(null); // Référence au conteneur des cartes
+  const navigate = useNavigate();
 
+  const images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7];
+  const floatingImageRef = useRef(null);
+  const [hoveredImage, setHoveredImage] = useState(null);
+
+  // const projectRoutes = [
+  //   "/sonaura", // index 0
+  //   "/lineup", // index 1
+  //   "/tchintchin", // index 2
+  //   "/anomusic", // index 3
+  //   "/linkera", // index 4
+  //   "/pimentee", // index 5
+  //   "/otome", // index 6
+  // ];
+
+  const projectRoutes = [
+      "/incoming", // index 0
+      "/incoming", // index 1
+      "/incoming", // index 2
+      "/anomusic", // index 3
+      "/linkera", // index 4
+      "/incoming", // index 5
+      "/otome", // index 6
+    ];
   useEffect(() => {
-    const cards = Array.from(containerRef.current.querySelectorAll(".card"));
+    if (!hoveredImage || !floatingImageRef.current) return;
 
-    if (cards.length > 0) {
-      // Initialisation de Draggable avec GSAP pour chaque carte
-      Draggable.create(cards, {
-        type: "x,y", // Déplacement horizontal et vertical
-        bounds: containerRef.current, // Limite le déplacement au conteneur
-      });
+    // Set initial state
+    gsap.set(floatingImageRef.current, {
+      opacity: 0.9,
+      y: 0,
+      scale: 0.95,
+    });
 
-      // Animation de chute avec des variations
-      cards.forEach((card, index) => {
-        gsap.set(card, {
-          y: -300 - Math.random() * 200, // Position initiale au-dessus de l'écran
-          opacity: 0, // Initialement invisible
-        });
+    // Animate in
+    gsap.to(floatingImageRef.current, {
+      opacity: 1,
+      y: -10,
+      rotate: 0,
+      scale: 1,
+      duration: 0.6,
+      ease: "power2.out",
+    });
 
-        gsap.to(card, {
-          scrollTrigger: {
-            trigger: card, // Déclencheur : chaque carte
-            start: "top 80%", // Quand la carte entre dans la vue
-          },
-          y: Math.random() * 50 - 25, // Arrivée à une position aléatoire
-          opacity: 1, // Rend visible
-          duration: 1.5 + Math.random(), // Durée aléatoire
-          delay: Math.random() * 0.5, // Délai aléatoire avant de commencer
-          rotation: Math.random() * 20 - 10, // Rotation pendant la chute
-          ease: "bounce.out", // Effet de gravité
-        });
-      });
-    }
-  }, []);
+    // Floating effect
+    const float = gsap.to(floatingImageRef.current, {
+      y: "-=20",
+      x: "-=30",
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+
+    return () => {
+      float.kill();
+    };
+  }, [hoveredImage]);
 
   return (
     <>
-      {/* Section du titre */}
-      <div className="overflow-hidden">
-        <img src={clouds} alt="Flower" className="w-full  h-full" />
-      </div>
-
-      <section
-        id="projets"
-        className="w-full  z-50 mx-auto bg-secondary flex flex-col text-secondary font-sporting-regular"
-      >
-        <Marquee>
-          <div className="  font-sporting-regular  text-primary text-[150px]">
-            <p>
-              PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊
-              PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊
-              PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊
-              PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊ PROJETS ❊
-              PROJETS ❊
-            </p>
-          </div>
-        </Marquee>
-        <section
-          ref={containerRef}
-          className="relative w-[100%] mx-auto h-auto flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4"
-        >
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              className="card bg-primary border-dashed border-2 border-black rounded-lg h-[20rem] w-[90%] sm:w-[20rem] p-4 group cursor-grab user-select-none relative"
+      <main id="projets" className=" w-full h-full ">
+        <div className="">
+          <h2 className=" px-6 flex items-center justify-center  text-[21.8vw] tracking-wide uppercase leading-none font-bold font-NHAASDPRO">
+            PROJETS
+          </h2>
+        </div>
+        <section className="w-full items-center justify-between  px-6 flex  text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] font-ITC   ">
+          <ZoomText>
+            <span
+              className={`hover:text-red cursor-pointer ${
+                activeTab === "2024" ? "" : ""
+              }`}
+              onClick={() => setActiveTab("2024")}
             >
-              {/* Contenu dynamique */}
-              <div className="absolute top-4 left-4 w-16 h-16 group-hover:w-60 group-hover:h-24 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out flex flex-col text-left">
-                <p className="text-[0.75rem] font-sporting-regular">
-                  {card.text1}
-                </p>
-                <p className="text-[0.75rem] font-sporting-regular">
-                  {card.text2}
-                </p>
-                <p className="text-[0.75rem] font-sporting-regular">
-                  {card.text3}
-                </p>
-                <p className="text-[0.75rem] font-sporting-regular">
-                  {card.text4}
-                </p>
-                <p className="text-[0.75rem] font-sporting-regular">
-                  {card.text5}
-                </p>
-                <p className="text-[0.75rem] font-sporting-regular">
-                  {card.text6}
-                </p>
-                <p className="text-[0.75rem] font-sporting-regular">
-                  {card.text7}
-                </p>
-              </div>
-
-              {/* Numéro de la carte */}
-              <span className="absolute top-4 left-4 text-[2rem] font-sporting-bold transition-all duration-300 ease-in-out group-hover:opacity-0">
-                0{card.id}.
-              </span>
-
-              {/* Flèche au hover */}
-              <span
-                onClick={(e) => {
-                  e.stopPropagation(); // Empêche les événements parent d'interférer
-                  handleNavigation(card.title);
-                }}
-                className="absolute top-2 right-4 cursor-pointer text-[2rem] font-sporting-bold text-black opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 ease-in-out"
-                style={{
-                  transform: "translate(10px, 10px) rotate(-45deg)", // Position initiale
-                  transition: "all 0.3s ease-in-out", // Animation fluide
-                }}
-              >
-                ➔
-              </span>
-
-              {/* Titre */}
-              <div className="absolute bottom-4 left-4">
-                <h2 className="text-2xl lg:text-[1rem] font-sporting-bold group-hover:text-2xl lg:group-hover:text-[1.5rem] md:group-hover:text-[1.5rem] transition-all duration-300 ease-in-out">
-                  {card.title}
-                </h2>
-              </div>
-            </div>
-          ))}
+              [ 2024 ]
+            </span>
+          </ZoomText>
+          <ZoomText>
+            <span
+              className={`hover:text-red cursor-pointer ${
+                activeTab === "2024" ? "" : ""
+              }`}
+              onClick={() => setActiveTab("2024")}
+            >
+              [ 2025 ]
+            </span>
+          </ZoomText>
+          <ZoomText>
+            <span
+              className={`hover:text-red cursor-pointer ${
+                activeTab === "archives" ? "" : ""
+              }`}
+              onClick={() => setActiveTab("archives")}
+            >
+              [ archives ]
+            </span>
+          </ZoomText>
         </section>
-      </section>
-      <div className="overflow-hidden">
-        <img
-          src={clouds}
-          alt="Flower"
-          className="w-full h-full max-w-full transform scale-y-[-1]"
-        />
-      </div>
+      </main>
+
+      {activeTab === "archives" ? (
+        <section className="w-full flex justify-center items-center px-6 py-32">
+          <p className="font-ITC text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] text-secondary  tracking-wide text-center">
+            [ en construction ]
+          </p>
+        </section>
+      ) : (
+        <section className="relative z-10 w-full flex flex-col px-6 py-16 sm:py-16 md:py-16 lg:py-32">
+          {[1, 2, 3, 4, 5, 6, 7].map((num, index) => (
+            <ZoomText key={index}>
+              <div
+                onMouseEnter={() => setHoveredImage(images[index])}
+                onMouseLeave={() => setHoveredImage(null)}
+                className={`relative w-full py-4 sm:py-4 md:py-8 lg:py-8 flex justify-between items-center ${
+                  index !== 0 ? "border-t border-black" : ""
+                }`}
+              >
+                {/* Titre + numéro */}
+                <div className="flex-1 flex items-end gap-8 ">
+                  <span className="font-ITC text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] text-secondary block mb-2 ">
+                    [ 0{num} ]
+                  </span>
+                  <h3 className="font-NHAASDS text-[0.9rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem]  leading-tight tracking-tight">
+                    {index === 0 && <>SONAURA.FM</>}
+                    {index === 1 && <>LINE UP.</>}
+                    {index === 2 && <>TCHINTCHIN</>}
+                    {index === 3 && <>ANOMUSIC</>}
+                    {index === 4 && <>LINKERA</>}
+                    {index === 5 && <>PIMENTEE</>}
+                    {index === 6 && <>OTOME GAME</>}
+                  </h3>
+                </div>
+
+                <div className="hidden sm:block flex-1 text-center sm:text-center md:text-left lg:text-left xl:text-left">
+                  <p className="font-ITC  text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] tracking-wide leading-none font-normal ">
+                    {index === 0 && <>[ services ] [ playlist ]</>}
+                    {index === 1 && <>[ services ] [ web app ]</>}
+                    {index === 2 && <>[ services ] [ e-commerce ]</>}
+                    {index === 3 && <>[ services ] [ réseau social ]</>}
+                    {index === 4 && <>[ services ] [ web app ]</>}
+                    {index === 5 && <>[ services ] [ e-commerce ]</>}
+                    {index === 6 && <>[ services ] [ jeu vidéo ]</>}
+                  </p>
+                  <p className="font-NHAASDS text-secondary text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px]">
+                    {index === 0 && <>branding + web design + web dev</>}
+                    {index === 1 && <>branding + web design + web dev</>}
+                    {index === 2 && <>branding + web design</>}
+                    {index === 3 && <>branding + web design + web dev</>}
+                    {index === 4 && <>web design + web dev</>}
+                    {index === 5 && <>web design + web dev</>}
+                    {index === 6 && <>web dev</>}
+                  </p>
+                </div>
+
+                {/* Bouton */}
+                <div className="flex-1 text-right">
+                  <button
+                    onClick={() => navigate(projectRoutes[index])}
+                    className="font-ITC underline text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] tracking-wide leading-none font-normal hover:text-red"
+                  >
+                    [ voir + ]
+                  </button>
+                </div>
+              </div>
+            </ZoomText>
+          ))}
+
+          {/* Image flottante */}
+          {hoveredImage && (
+            <img
+              ref={floatingImageRef}
+              src={hoveredImage}
+              alt="Floating preview"
+              className="fixed left-3/4 top-2/3 -translate-x-1/2 -translate-y-1/2 w-[420px] z-50 pointer-events-none transition-all duration-300 ease-in-out"
+            />
+          )}
+        </section>
+      )}
     </>
   );
 };

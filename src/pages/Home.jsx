@@ -1,120 +1,93 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import React from "react";
+import ZoomText from "../components/ZoomText";
+import Logo from "../assets/img/logo/LOGO.svg";
 
-import AnimatedTitle from "../components/AnimatedTitle";
-import clouds from "../assets/img/logo/14.png";
+import { AnimatePresence, motion } from "framer-motion";
 
-// Composant principal
-const Home = () => {
-  const buttonRef = useRef(null);
-  const buttonRef1 = useRef(null);
-
-  // Animation de gravité pour le bouton
-  useEffect(() => {
-    const timeline = gsap.timeline();
-    timeline
-      .fromTo(
-        buttonRef.current,
-        { y: "-200vh", rotation: -15, opacity: 0 },
-        { y: 100, rotation: 10, opacity: 1, duration: 1.5, ease: "power1.out" }
-      )
-      .to(buttonRef.current, {
-        y: -30,
-        rotation: 0,
-        duration: 1.2,
-        ease: "power2.out",
-      })
-      .to(buttonRef.current, {
-        y: 0,
-        rotation: 0,
-        duration: 2,
-        ease: "elastic.out(1.4, 0.5)",
-      });
-  }, []);
-
-  useEffect(() => {
-    const timeline = gsap.timeline();
-    timeline
-      .fromTo(
-        buttonRef1.current,
-        { y: "-200vh", rotation: -20, opacity: 0 }, // Départ incliné et hors écran
-        { y: 150, rotation: -25, opacity: 1, duration: 1.8, ease: "power1.out" } // Inclinaison pendant la chute
-      )
-      .to(buttonRef1.current, {
-        y: -20, // Descend légèrement sous sa position finale
-        rotation: -10, // Angle intermédiaire
-        duration: 1.2,
-        ease: "power2.out",
-      })
-      .to(buttonRef1.current, {
-        y: 0, // Retour à la position finale
-        rotation: 0, // Retour à l'angle final
-        duration: 2.5, // Durée légèrement plus longue
-        ease: "power3.out", // Transition très douce sans élasticité
-      });
-  }, []);
-
-  // Variants pour l'effet de zoom
-  const zoomVariants = {
-    hidden: { opacity: 0, scale: 0.8 }, // État initial (invisible et réduit)
-    visible: { opacity: 1, scale: 1 }, // État final (visible et normal)
-  };
-
-  // Transition personnalisée
-  const zoomTransition = {
-    duration: 1, // Durée totale
-    ease: "easeOut", // Type d'animation
-  };
-
+const LogoZoom = ({ children }) => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, scale: 1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="w-full h-full flex items-center justify-center"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const Home = () => {
+  return (
+    <AnimatePresence mode="wait">
       <section
         id="accueil"
-        className="mt-20 w-[90%] z-10 mx-auto h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center space-y-8 font-sporting-regular relative overflow-hidden"
+        className=" w-full h-[calc(100vh-80px)] px-6 flex items-center justify-center overflow-hidden h-full "
       >
-        {/* Titre principal avec effet de zoom */}
-        <div
-          className="relative w-[100%]"
-          initial="hidden"
-          animate="visible"
-          variants={zoomVariants}
-          transition={zoomTransition}
-        >
-          <AnimatedTitle title="VOS AMBITIONS," />
-          <AnimatedTitle title="MES SOLUTIONS" />
-        </div>
-        {/* Bouton d'action */}
-        <div className="flex flex-col justify-center items-center space-y-4 w-full">
-          <a
-            href="https://tidycal.com/maurinecornillon/projet"
-            target="_blank"
-            rel="noreferrer"
-            ref={buttonRef1}
-            className="w-full max-w-[300px] bg-transparent custom-button rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none text-[0.8rem] sm:text-[1rem]"
-            style={{
-              boxShadow: "4px 4px 0px 0px #212121",
-            }}
-          >
-            Parlons de votre projet
-          </a>
-          <a
-            href="https://tidycal.com/maurinecornillon/audit"
-            target="_blank"
-            rel="noreferrer"
-            ref={buttonRef}
-            className="w-full max-w-[300px] bg-violet custom-button rounded-full border-2 border-black px-8 py-3 transition-all duration-300 hover:bg-gradient_blue hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none text-[0.8rem] sm:text-[1rem]"
-            style={{
-              boxShadow: "4px 4px 0px 0px #212121",
-            }}
-          >
-            Audit Gratuit
-          </a>
-        </div>
+        <LogoZoom key="logo">
+          <img
+            src={Logo}
+            alt="Logo Maurine Cornillon"
+            className="pt-[42px] pointer-events-none"
+          />
+        </LogoZoom>
       </section>
-      <div className="overflow-hidden">
-        <img src={clouds} alt="Flower" className="w-full max-w-full h-full" />
+
+      <div className=" flex justify-center overflow-hidden ">
+        <div
+          key="content"
+          className=" px-6  py-16 sm:py-16 md:py-16 lg:py-32 sm:text-left w-full"
+        >
+          <div className="  text-[0.9rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] leading-tight tracking-tight ">
+            <p className="font-NHAASDS  font-bold text-right tracking-wide ">
+              JE SUIS MAURINE — DÉVELOPPEUSE WEB SPÉCIALISÉE EN
+            </p>
+
+            <div className="flex flex-wrap justify-between sm:justify-between gap-x-4 gap-y-8">
+              <ZoomText>
+                <span className="tracking-wide font-ITC font-bold text-red ">
+                  [ web design ]
+                </span>
+              </ZoomText>
+
+              <ZoomText>
+                <span className=" font-ITC font-bold tracking-wide text-red ">
+                  [ développement full stack ]
+                </span>
+              </ZoomText>
+
+              <ZoomText>
+                <span className=" font-ITC  font-bold tracking-wide text-red ">
+                  [ branding ]
+                </span>
+              </ZoomText>
+            </div>
+
+            <p className=" font-NHAASDS font-bold tracking-wide text-justify">
+              JE CRÉE DES SITES SUR-MESURE QUI MÊLENT DESIGN, INTERACTIVITÉ ET
+              PERFORMANCE, POUR CELLES ET CEUX QUI VEULENT AFFIRMER LEUR
+              SINGULARITÉ EN LIGNE.
+            </p>
+          </div>
+
+          <ZoomText>
+            <div className="pt-8 ">
+              <a
+                href="https://linktr.ee/maurinemona"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" font-ITC  text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px]  tracking-wide  leading-none hover:text-red"
+              >
+                [ démarrer un projet → ]
+              </a>
+            </div>
+          </ZoomText>
+        </div>
       </div>
-    </>
+
+      <></>
+    </AnimatePresence>
   );
 };
 

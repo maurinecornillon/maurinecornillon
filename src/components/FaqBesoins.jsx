@@ -11,7 +11,7 @@ const FaqBesoins = () => {
     {
       question: "Quels types de projets peuvent être réalisés ? ",
       answer:
-        "Que vous soyez en phase de lancement ou en pleine croissance, je m’adapte à vos besoins pour créer une solution unique et sur mesure. Qu'il s'agisse de sites vitrines pour donner de la visibilité à votre activité, de MVP pour tester et valider une idée rapidement, de landing pages percutantes pour capter l’attention et générer des conversions, de sites e-commerce pour booster vos ventes en ligne, ou encore de la création de maquettes prêtes à être intégrées.",
+        "Que vous soyez en phase de lancement ou en pleine évolution, je m’adapte à vos besoins pour créer une solution unique et sur mesure. Cela peut aller du site vitrine pour présenter votre activité, au MVP pour tester une idée rapidement, en passant par des landing pages percutantes, des sites e-commerce, des portfolios, des plateformes pour votre marque ou encore la création de maquettes prêtes à être intégrées.",
     },
 
     {
@@ -26,9 +26,9 @@ const FaqBesoins = () => {
         "Absolument ! Je peux m’appuyer sur votre identité visuelle pour concevoir un site qui la reflète parfaitement. Ensemble, nous veillerons à ce que votre site renforce votre image et transmette vos valeurs.",
     },
     {
-      question: "Quels sont mes tarifs ?",
+      question: "Quels sont les tarifs ?",
       answer:
-        "Mes tarifs varient en fonction de la complexité et des besoins spécifiques de votre projet. Pour vous donner une idée, vous pouvez utiliser mon simulateur de projet pour obtenir une première estimation. Ensemble, nous ajusterons la solution en fonction de vos objectifs et de votre budget.",
+        "Mes tarifs varient en fonction de la complexité et des besoins spécifiques de votre projet. Lors de notre premier échange, je prends le temps de comprendre vos objectifs pour vous proposer une estimation sur-mesure, adaptée à vos priorités et à votre budget.",
     },
   ];
 

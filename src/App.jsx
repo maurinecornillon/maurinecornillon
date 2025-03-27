@@ -7,19 +7,14 @@ import {
 import Cursor from "./components/Cursor";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Background from "./components/Background";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Faq from "./pages/Faq";
-import Contact from "./pages/Contact";
-
+import Construction from "./components/Construction";
 import Anna from "./pages/Anna";
-import Estimeo from "./pages/Estimeo";
 import Linkera from "./pages/Linkera";
 import Otome from "./pages/Otome";
-import SmartBack from "./pages/SmartBack";
-import Game from "./pages/Game";
 
 const App = () => {
   const location = useLocation();
@@ -30,7 +25,6 @@ const App = () => {
     <>
       <Cursor />
       <Header />
-      <Background />
       <div className={`${isMainPage ? "" : "pt-[120px]"}`}>
         <Routes>
           {/* Page principale */}
@@ -55,14 +49,12 @@ const App = () => {
           />
           {/* Pages des projets */}
           <Route path="/anomusic" element={<Anna />} />
-          <Route path="/estimeo" element={<Estimeo />} />
           <Route path="/linkera" element={<Linkera />} />
           <Route path="/otome" element={<Otome />} />
-          <Route path="/smartback" element={<SmartBack />} />
-          <Route path="/game" element={<Game />} />
+          <Route path="/incoming" element={<Construction />} />
         </Routes>
       </div>
-      <Footer />
+      {location.pathname !== "/incoming" && <Footer />}
     </>
   );
 };

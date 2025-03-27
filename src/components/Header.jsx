@@ -1,134 +1,85 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-
-import logo from "../assets/img/logo/9.png";
+import { HashLink } from "react-router-hash-link";
+import ZoomText from "../components/ZoomText";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
-  const [isHidden, setIsHidden] = useState(false);
-  const [isTop, setIsTop] = useState(true); // Garde en mémoire si on est en haut de la page
-  const location = useLocation();
-
-  const isProjectPage = [
-    "/anomusic",
-    "/estimeo",
-    "/linkera",
-    "/otome",
-    "/smartback",
-    "/game",
-  ].includes(location.pathname);
-
+  const [hideHeader, setHideHeader] = useState(false);
+  const [scrollY, setScrollY] = useState(window.scrollY);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+  // Détecte si on entre ou sort du footer
   useEffect(() => {
-    let lastScrollY = 0;
+    const footer = document.getElementById("footer");
+    if (!footer) return;
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inFooter = entry.isIntersecting;
+        setIsFooterVisible(inFooter);
+        if (inFooter) setHideHeader(true); // si dans footer, on cache
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Gère le scroll vers le haut pour réafficher le header
+  useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const currentY = window.scrollY;
 
-      // Cacher le header lorsqu'on défile vers le bas
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsHidden(true);
+      // Si on sort du footer et on scroll vers le haut → réaffiche
+      if (!isFooterVisible && currentY < scrollY) {
+        setHideHeader(false);
       }
 
-      // Révéler le header uniquement si on est tout en haut de la page
-      if (currentScrollY === 0) {
-        setIsHidden(false);
-        setIsTop(true);
-      } else {
-        setIsTop(false);
-      }
-
-      lastScrollY = currentScrollY;
+      setScrollY(currentY);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollY, isFooterVisible]);
   return (
     <header
-      className={`fixed top-0 left-0 w-full h-[100px] sm:h-[100px] transition-transform duration-700 ease-in-out font-sporting-regular ${
-        isHidden && !isTop ? "-translate-y-full" : "translate-y-0"
+      className={`fixed z-50 top-0 left-0 w-full py-4 px-6 font-ITC bg-primary transition-transform duration-300 ${
+        hideHeader ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="w-full h-full ">
-        {/* Conteneur principal */}
-        <div className="w-[90%] h-full flex justify-between items-center mx-auto">
-          {/* Section gauche (Logo) */}
-          <div className="h-full flex-1 flex justify-start items-center">
-            <img
-              src={logo}
-              className="max-h-[60px] hidden sm:block object-contain"
-              alt="Logo"
-            />
-          </div>
-
-          {/* Section centrale (Navigation) */}
-          <nav className="flex-1 flex justify-center">
-            <ul className="flex justify-around space-x-4 sm:space-x-6 text-secondary border border-secondary px-6 sm:px-12 md:px-16 lg:px-20 py-2 rounded-full text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]">
-              {isProjectPage ? (
-                // Afficher ACCUEIL uniquement sur les pages de projets
-                <li>
-                  <Link to="/">ACCUEIL</Link>
-                </li>
-              ) : (
-                // Afficher SERVICES, FAQ, PROJETS sur les autres pages
-                <>
-                  <li>
-                    {location.pathname === "/" ? (
-                      <button onClick={() => scrollToSection("services")}>
-                        SERVICES
-                      </button>
-                    ) : (
-                      <Link to="/">SERVICES</Link>
-                    )}
-                  </li>
-                  <li>
-                    {location.pathname === "/" ? (
-                      <button onClick={() => scrollToSection("faq")}>
-                        FAQ
-                      </button>
-                    ) : (
-                      <Link to="/">FAQ</Link>
-                    )}
-                  </li>
-                  <li>
-                    {location.pathname === "/" ? (
-                      <button onClick={() => scrollToSection("projets")}>
-                        PROJETS
-                      </button>
-                    ) : (
-                      <Link to="/">PROJETS</Link>
-                    )}
-                  </li>
-                </>
-              )}
-            </ul>
-          </nav>
-
-          {/* Section droite (CTA) */}
-          <div className="flex-1 flex justify-end">
-            <a
-              href="https://linktr.ee/maurinemona"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                boxShadow: "4px 4px 0px 0px #212121",
-              }}
-              className=" flex items-center justify-center text-center hidden sm:block rounded-full bg-violet border-2 border-black px-6 py-2 t hover:bg-gradient  text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[0.8rem]"
-            >
-              CONTACT
-            </a>
-          </div>
-        </div>
-      </div>
+      <nav className="w-full flex justify-between items-center text-[8px] sm:text-[8px] md:text-[16px] tracking-wide leading-none">
+        <ZoomText>
+          <HashLink to="/#accueil" className="hover:text-red">
+            [ maurine cornillon bourgeois ]
+          </HashLink>
+        </ZoomText>
+        <ZoomText>
+          <HashLink smooth to="/#services" className="hover:text-red">
+            [ services ]
+          </HashLink>
+        </ZoomText>
+        <ZoomText>
+          <HashLink smooth to="/#projets" className="hover:text-red">
+            [ projets ]
+          </HashLink>
+        </ZoomText>
+        <ZoomText>
+          <HashLink smooth to="/#faq" className="hover:text-red">
+            [ f.a.q ]
+          </HashLink>
+        </ZoomText>
+        <ZoomText>
+          <a
+            href="https://linktr.ee/maurinemona"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-red"
+          >
+            [ contact ]
+          </a>
+        </ZoomText>
+      </nav>
     </header>
   );
 };
