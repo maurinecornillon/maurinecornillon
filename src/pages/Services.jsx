@@ -3,9 +3,9 @@ import { gsap } from "gsap";
 
 import ZoomText from "../components/ZoomText";
 
-import Image1 from "../assets/img/logo/Card and Envelope Black 2.png";
-import Image2 from "../assets/img/tchintchin/tchintchin.png";
-import Image3 from "../assets/img/sonaura/phonelover.png";
+import Image1 from "../assets/img/logo/Card-and-Envelope-Black-2-1.webp";
+import Image2 from "../assets/img/tchintchin/tchintchin.webp";
+import Image3 from "../assets/img/sonaura/phonelover.webp";
 
 const Services = () => {
   const images = [Image1, Image2, Image3];
@@ -78,7 +78,7 @@ const Services = () => {
               onMouseEnter={() => setHoveredImage(images[index])}
               onMouseLeave={() => setHoveredImage(null)}
               className={`relative w-full py-4 sm:py-4 md:py-8 lg:py-8 flex justify-between items-center ${
-                index !== 0 ? "border-t border-black" : ""
+                index !== 0 ? "border-t-2 border-secondary" : ""
               }`}
             >
               {/* Titre + numéro */}

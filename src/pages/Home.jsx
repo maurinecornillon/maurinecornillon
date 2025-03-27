@@ -1,6 +1,6 @@
 import React from "react";
 import ZoomText from "../components/ZoomText";
-import Logo from "../assets/img/logo/LOGO.svg";
+import Logo from "../assets/img/logo/LOGO TEST.svg";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -29,7 +29,7 @@ const Home = () => {
           <img
             src={Logo}
             alt="Logo Maurine Cornillon"
-            className="pt-[42px] pointer-events-none"
+            className="pt-[52px] w-full pointer-events-none"
           />
         </LogoZoom>
       </section>
@@ -39,7 +39,7 @@ const Home = () => {
           key="content"
           className=" px-6  py-16 sm:py-16 md:py-16 lg:py-32 sm:text-left w-full"
         >
-          <div className="  text-[0.9rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] leading-tight tracking-tight ">
+          <div className="  text-[0.7rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] leading-tight tracking-tight ">
             <p className="font-NHAASDS  font-bold text-right tracking-wide ">
               JE SUIS MAURINE — DÉVELOPPEUSE WEB SPÉCIALISÉE EN
             </p>

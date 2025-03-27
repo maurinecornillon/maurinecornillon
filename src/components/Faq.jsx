@@ -23,7 +23,7 @@ const FAQ = ({ data }) => {
           <ZoomText>
             <div
               key={index}
-              className={`pb-4 border-b transition-colors duration-300 cursor-pointer ${
+              className={`pb-4 border-b-2 transition-colors duration-300 cursor-pointer ${
                 faq.open ? "border-red" : "border-secondary hover:border-red"
               }`}
               onClick={() => toggleFAQ(index)}

@@ -3,11 +3,11 @@ import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom";
 import ZoomText from "../components/ZoomText";
 
-import Image1 from "../assets/img/sonaura/phonesonaura.png";
-import Image2 from "../assets/img/lineup/LOGO LINE UP 2.png";
-import Image3 from "../assets/img/tchintchin/tchintchin.png";
-import Image4 from "../assets/img/anna/5.png";
-import Image5 from "../assets/img/linkera/Accueil.png";
+import Image1 from "../assets/img/sonaura/phonesonaura.webp";
+import Image2 from "../assets/img/lineup/LineUpDesktop.webp";
+import Image3 from "../assets/img/tchintchin/tchintchin.webp";
+import Image4 from "../assets/img/anna/desktopanna-1.webp";
+import Image5 from "../assets/img/linkera/MockupLinkera 1.webp";
 import Image7 from "../assets/img/otome/MockUpOtome-min.png";
 import Image6 from "../assets/img/pimente/54b2476d659865ae8c5c851ad3728744.jpg";
 
@@ -31,14 +31,14 @@ const Projects = () => {
   // ];
 
   const projectRoutes = [
-      "/incoming", // index 0
-      "/incoming", // index 1
-      "/incoming", // index 2
-      "/anomusic", // index 3
-      "/linkera", // index 4
-      "/incoming", // index 5
-      "/otome", // index 6
-    ];
+    "/incoming", // index 0
+    "/incoming", // index 1
+    "/incoming", // index 2
+    "/anomusic", // index 3
+    "/linkera", // index 4
+    "/incoming", // index 5
+    "/otome", // index 6
+  ];
   useEffect(() => {
     if (!hoveredImage || !floatingImageRef.current) return;
 
@@ -62,7 +62,7 @@ const Projects = () => {
     // Floating effect
     const float = gsap.to(floatingImageRef.current, {
       y: "-=20",
-      x: "-=30",
+      x: "-=20",
       duration: 2,
       repeat: -1,
       yoyo: true,
@@ -130,7 +130,7 @@ const Projects = () => {
                 onMouseEnter={() => setHoveredImage(images[index])}
                 onMouseLeave={() => setHoveredImage(null)}
                 className={`relative w-full py-4 sm:py-4 md:py-8 lg:py-8 flex justify-between items-center ${
-                  index !== 0 ? "border-t border-black" : ""
+                  index !== 0 ? "border-t-2 border-secondary " : ""
                 }`}
               >
                 {/* Titre + numéro */}
@@ -176,7 +176,13 @@ const Projects = () => {
                     onClick={() => navigate(projectRoutes[index])}
                     className="font-ITC underline text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] tracking-wide leading-none font-normal hover:text-red"
                   >
-                    [ voir + ]
+                    {index === 0 && <>[ voir + ] </>}
+                    {index === 1 && <>[ in progress ] </>}
+                    {index === 2 && <>[ voir + ] </>}
+                    {index === 3 && <>[ voir + ]</>}
+                    {index === 4 && <>[ voir + ] </>}
+                    {index === 5 && <>[ in progress ] </>}
+                    {index === 6 && <>[ voir + ] </>}
                   </button>
                 </div>
               </div>
@@ -189,7 +195,7 @@ const Projects = () => {
               ref={floatingImageRef}
               src={hoveredImage}
               alt="Floating preview"
-              className="fixed left-3/4 top-2/3 -translate-x-1/2 -translate-y-1/2 w-[420px] z-50 pointer-events-none transition-all duration-300 ease-in-out"
+              className="fixed left-3/4 top-3/4 -translate-x-1/2 -translate-y-1/2 w-[420px] z-50 pointer-events-none transition-all duration-300 ease-in-out"
             />
           )}
         </section>

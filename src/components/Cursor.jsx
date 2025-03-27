@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
 
 const CustomCursor = () => {
   const canvasRef = useRef(null);
   const [visible, setVisible] = useState(false);
   const points = useRef([]);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
+    if (!isDesktop) return;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     let animationFrameId;
@@ -56,7 +57,8 @@ const CustomCursor = () => {
       window.removeEventListener("resize", resizeCanvas);
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [visible]);
+  }, [visible, isDesktop]);
+  if (!isDesktop) return null; // Rien ne s’affiche sur mobile
 
   return (
     <canvas

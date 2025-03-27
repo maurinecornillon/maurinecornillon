@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <Cursor />
+      {/* <Cursor /> */}
       <Header />
       <div className={`${isMainPage ? "" : "pt-[120px]"}`}>
         <Routes>
