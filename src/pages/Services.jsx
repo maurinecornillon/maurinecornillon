@@ -131,7 +131,7 @@ const Services = () => {
         )}
       </section>
 
-      <section className="w-full flex flex-col md:flex-row justify-between gap-16 md:gap-32 px-6 py-16 md:py-32">
+      <section className="w-full flex flex-col md:flex-row justify-between gap-8 md:gap-32 px-6 py-16 md:py-32">
         {[
           {
             id: 1,
