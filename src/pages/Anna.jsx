@@ -40,10 +40,10 @@ const Anna = () => {
         <div className="w-[100%] mx-auto py-16  text-secondary min-h-screen">
           {/* Header Section */}
           <ZoomText delay={0.2}>
-            <div className="relative flex items-center  py-6 rounded-full justify-between w-full mb-16">
+            <div className="relative flex items-center  py-6  border border-secondary  justify-between w-full mb-16">
               {/* Left Arrow */}
               <div
-                onClick={() => handleNavigation("/estimeo")}
+                onClick={() => handleNavigation("/otome")}
                 className="absolute left-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
               >
                 <span className="text-[1.5rem] font-bold">&#8592;</span>
@@ -51,7 +51,7 @@ const Anna = () => {
 
               {/* Right Arrow */}
               <div
-                onClick={() => handleNavigation("/otome")}
+                onClick={() => handleNavigation("/linkera")}
                 className="absolute right-0 flex items-center justify-center  p-4 w-[4rem] h-[4rem] cursor-pointer"
               >
                 <span className="text-[1.5rem] font-bold">&#8594;</span>
@@ -75,16 +75,16 @@ const Anna = () => {
               <div className="border-t md:border-t-0 md:border-l p-6 border-secondary flex flex-col justify-between">
                 {/* Title and Subtitle at the Top */}
                 <div>
-                  <h1 className="text-[1rem] sm:text-[2rem] md:text-[2rem] lg:text-[4rem] font-bold leading-none">
+                  <h1 className="font-NHAASDS text-[0.9rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] leading-tight tracking-tight">
                     ANO <b></b>MUSIC
                   </h1>
                 </div>
                 {/* "Mon Rôle" Section at the Bottom */}
                 <div className="mt-4 sm:mt-8">
-                  <h2 className="text-[0.5rem] sm:text-[0.5rem] md:text-[0.8rem] lg:text-[1.2rem] font-bold uppercase mb-4">
+                  <h2 className="font-NHAASDS uppercase text-[0.9rem] sm:text-[1rem] md:text-[1rem] lg:text-[2rem] leading-tight tracking-tightmb-4">
                     Mon Rôle
                   </h2>
-                  <p className="text-[0.8rem] lg:text-[1rem] leading-relaxed">
+                  <p className="font-NHAASDS  text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] uppercase leading-relaxed tracking-tight text-secondary ">
                     Ce projet est un side project sur lequel je travaille durant
                     mon temps libre, combinant mes deux passions : le code et la
                     musique.
@@ -113,16 +113,18 @@ const Anna = () => {
           <ZoomText delay={0.2}>
             {/* Bottom Section */}
             <div className="text-center">
-              <p className=" relative z-10 text-center w-[90%] mx-auto text-[0.8rem] sm:text-[1rem] lg:text-[1.5rem] text-secondary leading-relaxed">
+              <p className=" relative z-10 text-center w-[90%] mx-auto font-NHAASDS  text-[8px] sm:text-[8px] md:text-[16px] lg:text-[16px] uppercase leading-relaxed tracking-tight text-secondary ">
                 Anomusic est une plateforme de réseau social dédiée à la
                 musique. Inspirée d’Instagram et de Bandcamp, elle permet aux
-                artistes indépendants de partager leurs morceaux.
+                artistes indépendants de partager leurs morceaux. <br />
                 Inscrivez-vous, suivez de nouveaux artistes et explorez votre
                 fil d’actualité pour découvrir votre prochain son préféré. Grâce
                 à des filtres par genre, laissez-vous surprendre par des sons
                 que vous n’auriez jamais imaginés.
               </p>
             </div>
+            {/* Separator */}
+            <hr className="border-secondary mt-16" />
           </ZoomText>
         </div>
       </div>
