@@ -136,17 +136,17 @@ const Services = () => {
           {
             id: 1,
             label: "branding",
-            text: "Avant de concevoir, je prends le temps de comprendre. J’analyse les besoins, les objectifs et la cible pour poser les fondations du projet. Cette étape me permet de définir une direction claire et cohérente, en accord avec l’identité et les ambitions de ton projet.",
+            text: "Je crée une identité visuelle unique et cohérente, à l’image de votre projet. Du logo à la palette de couleurs, chaque élément est pensé pour refléter la personnalité du projet, capter l’attention et poser des bases solides.",
           },
           {
             id: 2,
             label: "web design",
-            text: "J’imagine une expérience sur-mesure qui te ressemble. À travers des maquettes épurées et intuitives, je façonne une interface à la fois esthétique et fonctionnelle, pensée pour valoriser ton message et captiver tes visiteurs.",
+            text: "J’imagine une expérience sur mesure, audacieuse et singulière. Chaque interface est pensée comme une composition visuelle forte, au service de votre univers et de votre message. Mon approche mêle créativité et stratégie pour marquer les esprits.",
           },
           {
             id: 3,
             label: "web dev",
-            text: "Je donne vie au design avec un code propre et performant. Grâce à des technologies modernes, je transforme les maquettes en un site rapide, responsive et durable, optimisé pour une expérience fluide sur tous les supports.",
+            text: "Je conçois des architectures robustes et performantes, du front-end au back-end. En tant que développeuse full stack, j’assure une maîtrise technique globale, pour donner vie à des plateformes rapides, durables et évolutives.",
           },
         ].map(({ id, label, text }, index) => (
           <div key={index} className="w-full md:w-1/3">
